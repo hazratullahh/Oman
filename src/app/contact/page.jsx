@@ -54,7 +54,7 @@ const Page = () => {
                 <h1 className="font-manrope text-gray-50 text-4xl font-bold leading-10 absolute top-11 left-11">
                   Contact us
                 </h1>
-
+ 
                 <div className="absolute bottom-0 w-full lg:p-11 p-5 backdrop-filter">
                   <div className="bg-gray-600/15 backdrop-blur-2xl rounded-lg p-6 block">
                     <div className="flex items-center mb-6">
