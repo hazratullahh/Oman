@@ -99,7 +99,7 @@ export function FeatureSteps({
                         width={1000}
                         height={500}
                       />
-                      <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-background via-background/50 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-gray-950 via-gray-950/50 to-transparent" />
                     </motion.div>
                   ),
               )}
