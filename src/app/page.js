@@ -44,7 +44,7 @@ export default function Home() {
       <InfiniteScrollImages />
 
       <div
-        className="bg-gradient-to-b from-gray-900 via-gray-950 to-black h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+        className="bg-gradient-to-b from-gray-900 via-gray-950 to-black h-[40rem] flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <Testimonials items={testimonials} direction="right" speed="slow" />
       </div>
     </>
