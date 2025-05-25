@@ -29,7 +29,7 @@ export function FeatureSteps({
   }, [progress, features.length, autoPlayInterval])
 
   return (
-    <div className={cn("p-8 md:p-12", className)}>
+    <div className={cn("p-8 md:p-12 bg-gradient-to-t from-gray-900 via-gray-950 to-black text-gray-50", className)}>
       <div className="max-w-7xl mx-auto w-full my-20">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
           {title}
