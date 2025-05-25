@@ -22,7 +22,7 @@ const Form = () => {
 
   return (
     <div className="lg:pt-5 lg:px-11 lg:rounded-r-2xl rounded-2xl">
-      <h2 className="font-manrope text-4xl font-semibold leading-10 mb-5">
+      <h2 className="font-manrope text-4xl font-semibold leading-10 mb-5 text-gray-50">
         Send Us A Message
       </h2>
 
