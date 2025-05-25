@@ -72,7 +72,7 @@ export function Hero() {
                 />
                 Setup your business investment with expert!
               </h1>
-              <div className="flex items-center justify-center gap-1 pt-5">
+              <div className="flex items-center justify-center gap-1">
                 <span className="relative flex h-3 w-3 items-center justify-center">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
