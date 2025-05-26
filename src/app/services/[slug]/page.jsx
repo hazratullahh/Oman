@@ -177,7 +177,7 @@ export async function generateMetadata({ params }) {
 
 const Page = async ({ params }) => {
     const resolvedParams = await params;
-    const service = services.find(async (s) => s.slug === await resolvedParams.slug);
+    const service = services.find(async (s) => s.slug === resolvedParams.slug);
 
     if (!service) {
         return (
