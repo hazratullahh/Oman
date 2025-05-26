@@ -63,7 +63,7 @@ const Footer = () => {
                             <Link href="/services/web-app-development">Web App Development</Link>
                         </li>
                         <li className="my-4 list-none">
-                            <Link href="/services/mvp-development-business">`Business MVP Development</Link>
+                            <Link href="/services/mvp-development-business">Business MVP Development</Link>
                         </li>
                     </div>
                     <div className="mb-4 md:mb-0">
