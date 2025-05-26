@@ -39,7 +39,9 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Feature />
+      <div id="services">
+        <Feature />
+      </div>
       <WhyChooseUS />
       <InfiniteScrollImages />
 

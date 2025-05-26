@@ -6,17 +6,13 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { ContactSchema } from '@/schema/contact';
 
 const Form = () => {
-  // Setting up form validation and state handling
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm({
     resolver: yupResolver(ContactSchema),
   });
 
-  // Mutation for creating a contact
-//   const { mutate: createContactMutation, isPending } = useCreateContactMutation();
-
-  // Handling form submission
   const onSubmit = (data) => {
-    // createContactMutation(JSON.stringify(data)); 
+    // Your submit logic here, e.g. API call
+    console.log(data);
     reset();
   };
 
@@ -26,29 +22,63 @@ const Form = () => {
         Send Us A Message
       </h2>
 
-      {/* Form starts here */}
       <form onSubmit={handleSubmit(onSubmit)}>
-        {/* Email Input */}
+        {/* First Name and Last Name side by side */}
+        <div className="flex flex-col md:flex-row md:gap-4 mb-3">
+          <div className="flex-1">
+            <input
+              type="text"
+              className="w-full h-12 text-gray-50 placeholder-gray-50 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-lg border border-gray-200 focus:outline-none focus:border-gray-500 pl-4"
+              placeholder="First Name"
+              {...register("firstName")}
+            />
+            {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>}
+          </div>
+
+          <div className="flex-1 mt-3 md:mt-0">
+            <input
+              type="text"
+              className="w-full h-12 text-gray-50 placeholder-gray-50 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-lg border border-gray-200 focus:outline-none focus:border-gray-500 pl-4"
+              placeholder="Last Name"
+              {...register("lastName")}
+            />
+            {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>}
+          </div>
+        </div>
+
+
+        {/* Subject */}
         <input
           type="text"
-          className="w-full h-12 text-gray-50 placeholder-gray-50 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-lg border border-gray-200 focus:outline-none focus:border-gray-500 pl-4"
+          className="w-full h-12 text-gray-50 placeholder-gray-50 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-lg border border-gray-200 focus:outline-none focus:border-gray-500 pl-4 mb-3"
+          placeholder="Subject"
+          {...register("subject")}
+        />
+        {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>}
+
+        {/* Email */}
+        <input
+          type="text"
+          className="w-full h-12 text-gray-50 placeholder-gray-50 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-lg border border-gray-200 focus:outline-none focus:border-gray-500 pl-4 mb-3"
           placeholder="Email"
-          {...register("email")} // Registering with react-hook-form
+          {...register("email")}
         />
         {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
 
-        {/* Message Input */}
+        {/* Message */}
         <textarea
           className="resize-none w-full h-44 text-gray-50 placeholder-gray-50 shadow-sm bg-transparent text-lg font-normal leading-7 rounded-lg border border-gray-200 focus:outline-none focus:border-gray-500 p-4 mt-5"
           placeholder="Message"
-          {...register("message")} // Registering with react-hook-form
+          {...register("message")}
         />
         {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
 
-        {/* Privacy Policy Notice */}
-        <p className="tracking-wide leading-relaxed text-xs px-1 mb-4">By submitting this form, you agree to our privacy policy.</p>
+        {/* Privacy Policy */}
+        <p className="tracking-wide leading-relaxed text-xs px-1 mb-4">
+          By submitting this form, you agree to our privacy policy.
+        </p>
 
-        {/* Submit Button */}
+        {/* Submit */}
         <div className="text-center mb-10">
           <button
             type="submit"
@@ -59,8 +89,9 @@ const Form = () => {
           </button>
         </div>
       </form>
+
     </div>
   );
 };
 
-export default Form;
+export default Form; 

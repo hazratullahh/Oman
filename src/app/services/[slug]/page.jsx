@@ -102,7 +102,7 @@ const services = [
         id: 11,
     },
     {
-        title: "Graphic Design Service",
+        title: "Graphic Design",
         description1: "**Graphic Design:** Graphic design is the art of visually communicating ideas through digital or print media. Whether it's creating logos, marketing materials, or user interfaces, graphic design plays a key role in shaping a brand's identity. Effective design not only attracts attention but also communicates your message clearly, ensuring customers understand and engage with your brand. A strong graphic design can elevate your marketing efforts and create a memorable customer experience.",
         description2: "Incorporating graphic design into your business strategy allows you to build a cohesive brand identity, enhance customer engagement, and create visually appealing content. From social media posts to packaging and advertisements, graphic design ensures consistency across all touchpoints with your audience. Professional designers will work with you to craft designs that align with your brand's values and target market, helping you stand out in a competitive environment.",
         slug: "graphic-design",
@@ -131,7 +131,8 @@ const services = [
 ];
 
 export async function generateMetadata({ params }) {
-    const service = services.find((s) => s.slug === params.slug);
+    const resolvedParams = await params;
+    const service = services.find((s) => s.slug === resolvedParams.slug);
 
     if (!service) {
         return {
@@ -175,7 +176,8 @@ export async function generateMetadata({ params }) {
 }
 
 const Page = async ({ params }) => {
-    const service = services.find((s) => s.slug === params.slug);
+    const resolvedParams = await params;
+    const service = services.find(async (s) => s.slug === await resolvedParams.slug);
 
     if (!service) {
         return (
@@ -187,8 +189,6 @@ const Page = async ({ params }) => {
             </section>
         );
     }
-
-    const imageUrl = `https://fqg.com${service.image}`;
 
     return (
         <>
@@ -220,4 +220,4 @@ const Page = async ({ params }) => {
     );
 };
 
-export default Page;
+export default Page; 

@@ -13,12 +13,12 @@ export function Hero() {
   return (
     <motion.section
       id="home"
-      className="relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-950 to-black"
+      className="relative overflow-hidden bg-gradient-to-b from-gray-900 via-black to-black"
       initial={{ y: 50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <div className="animation-delay-8 animate-fadeIn pt-1 flex flex-col items-center justify-center px-4 text-center md:pt-16">
+      <div className="animation-delay-8 animate-fadeIn pt-1 flex flex-col items-center justify-center px-4 text-center">
         <div className="z-10 mb-6 md:mt-5 sm:justify-center md:mb-4">
           {/*
             Uncomment and customize this promo badge if needed:
@@ -40,11 +40,16 @@ export function Hero() {
           */}
         </div>
 
-        <div className="mb-10 mt-4 md:mt-6">
+        <div className="mb-10">
 
-          <h2 className="mb-7 md:mb-10 text-xl md:text-3xl text-gray-50">
-            Comopmay Name be in there
-          </h2>
+          <div className="w-full mx-auto flex items-center justify-around">
+            <h2 className="mb-7 md:mb-10 text-2xl md:text-6xl font-semibold text-gray-50 uppercase">
+              Tas-Hell Co
+            </h2>
+            <h2 className="mb-7 md:mb-10 text-2xl md:text-6xl font-semibold text-gray-50">
+              تسهیل کمپنی
+            </h2>
+          </div>
 
           {/* <p className="md:text-md mx-auto mb-16 mt-2 max-w-2xl px-6 text-sm text-gray-50 sm:px-6 md:max-w-4xl md:px-20 lg:text-lg">
             I craft enchanting visuals for brands, and conjure design resources
