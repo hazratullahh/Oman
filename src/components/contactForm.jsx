@@ -74,7 +74,7 @@ const Form = () => {
         {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
 
         {/* Privacy Policy */}
-        <p className="tracking-wide leading-relaxed text-xs px-1 mb-4">
+        <p className="tracking-wide leading-relaxed text-xs px-1 mb-4 text-gray-50">
           By submitting this form, you agree to our privacy policy.
         </p>
 
