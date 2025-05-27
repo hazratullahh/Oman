@@ -6,13 +6,13 @@ import { WhyChooseUS } from "@/components/WhyChoose-Us";
 import { testimonials } from "@/lib/utils";
 
 export const metadata = {
-  title: "Home | Your UAE Business & PRO Partner",
+  title: "Home | Your Oman Business & PRO Partner",
   description:
-    "To transform life and business in the UAE by making every interaction simple, every process predictable, and every outcome successful. Empowering clients with innovative solutions and personalized support.",
+    "To transform life and business in the Oman by making every interaction simple, every process predictable, and every outcome successful. Empowering clients with innovative solutions and personalized support.",
   openGraph: {
-    title: "Your UAE Business & PRO Partner",
+    title: "Your Oman Business & PRO Partner",
     description:
-      "Transforming life and business in the UAE with simple, predictable, and successful processes. Expert PRO, visa, company setup, and more.",
+      "Transforming life and business in the Oman with simple, predictable, and successful processes. Expert PRO, visa, company setup, and more.",
     url: "https://yourdomain.com/",
     siteName: "YourBrand",
     images: [
@@ -20,7 +20,7 @@ export const metadata = {
         url: "https://yourdomain.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "YourBrand – Transforming UAE Business",
+        alt: "YourBrand – Transforming Oman Business",
       },
     ],
     locale: "en_US",
@@ -28,9 +28,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Your UAE Business & PRO Partner",
+    title: "Your Oman Business & PRO Partner",
     description:
-      "Transforming life and business in the UAE with simple, predictable, and successful processes. Expert PRO, visa, company setup, and more.",
+      "Transforming life and business in the Oman with simple, predictable, and successful processes. Expert PRO, visa, company setup, and more.",
     images: ["https://yourdomain.com/twitter-image.jpg"],
   },
 };

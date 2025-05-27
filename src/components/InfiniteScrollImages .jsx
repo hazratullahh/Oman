@@ -5,15 +5,20 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const images = [
+    "/images/wazarat.png",
+    "/images/fedral.png",
+    "/images/bank.png",
+    "/images/arab.png",
+    "/images/saltant.png",
+    "/images/rop.png",
+    "/images/oman2024.png",
+    "/images/omano.png",
+    "/images/commernce.png",
     "https://sacbgroup.com/wp-content/uploads/2024/09/fdubaigov_0003_dubai_economy.png",
     "https://sacbgroup.com/wp-content/uploads/2024/09/fdubaigov_0001_dubaieconomy.png",
     "https://sacbgroup.com/wp-content/uploads/2024/09/fdubaigov_0002_dubaiairport.png",
     "https://sacbgroup.com/wp-content/uploads/2024/09/fdubaigov_0000_dubaipolice.png",
     "https://sacbgroup.com/wp-content/uploads/2024/09/fdubaigov_0011_Background-1.png",
-    "https://sacbgroup.com/wp-content/uploads/2024/09/fdubaigov_0004_dubai-tourism-copy.png",
-    "https://sacbgroup.com/wp-content/uploads/2024/09/Dubai_International_Financial_Centre_logo.png",
-    "https://sacbgroup.com/wp-content/uploads/2024/09/dmcc-1.svg",
-    "https://sacbgroup.com/wp-content/uploads/2024/09/fdubaigov_0005_Dfm.png"
 ];
 
 const InfiniteScrollImages = () => {

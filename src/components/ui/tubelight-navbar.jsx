@@ -28,6 +28,17 @@ export function NavBar({ items, className }) {
         </div>
       </div>
 
+      <div className="bg-gradient-to-t from-gray-900 via-gray-950 to-950">
+        <div className="max-w-[85%] mx-auto">
+          <div className="md:hidden flex items-center justify-between">
+            <Image src="/logo.png" alt="logo" className="rounded w-40" width={1000} height={1000} />
+            <h2 className="text-2xl font-semibold text-gray-50">
+              تسهیل ک
+            </h2>
+          </div>
+        </div>
+      </div>
+
       <div
         className={cn(
           "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",

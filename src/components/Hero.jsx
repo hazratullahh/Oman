@@ -42,12 +42,12 @@ export function Hero() {
 
         <div className="mb-10">
 
-          <div className="w-full mx-auto flex items-center justify-around">
+          <div className="w-full mx-auto hidden md:flex items-center justify-around ">
             <h2 className="mb-7 md:mb-10 text-2xl md:text-6xl font-semibold text-gray-50 uppercase">
-              Tas-Hell Co
+              Tas-HEEL Co
             </h2>
             <h2 className="mb-7 md:mb-10 text-2xl md:text-6xl font-semibold text-gray-50">
-              تسهیل کمپنی
+              تسهیل ک
             </h2>
           </div>
 
