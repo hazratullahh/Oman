@@ -23,8 +23,7 @@ const Footer = () => {
                     <div className="flex flex-col gap-5">
                         <Image src="/logo.png" alt="tasheel-logo" className="w-36 rounded-lg" width={1000} height={1000} />
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, deleniti dolores
-                            vel ipsa reiciendis corporis similique dolor earum aut itaque.
+                            To transform life and business in Oman by making every interaction simple, every process predictable, and every outcome successful. Empowering clients with innovative solutions and personalized support.
                         </p>
                     </div>
 
