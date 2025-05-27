@@ -29,7 +29,7 @@ export function WhoWeAreSection() {
       viewport={{ once: true, amount: 0.3 }}
     >
       <motion.div variants={fadeUp}>
-        <div className="px-6 pb-5 mx-auto max-w-7xl pt-20 sm:pt-24 lg:px-4 lg:pt-28">
+        <div className="px-6 pb-5 mx-auto max-w-7xl pt-16 sm:pt-16 lg:px-4 lg:pt-24">
           <motion.div
             className="max-w-2xl mx-auto gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center"
             variants={fadeUp}
@@ -44,7 +44,7 @@ export function WhoWeAreSection() {
               </h1>
               <p className="relative mt-6 text-lg leading-8 text-gray-100 sm:max-w-md lg:max-w-xl text-justify">
                 We are a one-stop service center providing comprehensive support
-                for individuals, entrepreneurs, and businesses in the UAE. We
+                for individuals, entrepreneurs, and businesses in the Oman. We
                 specialize in business setup and administration, visa assistance,
                 vehicle registration, and handling legal and bureaucratic matters
                 of any complexity.

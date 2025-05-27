@@ -25,7 +25,7 @@ export function MissionVision() {
         >
           <h3 className="text-3xl font-semibold text-white">Our Mission</h3>
           <p className="text-lg text-gray-50 leading-relaxed">
-            To transform life and business in the UAE by making every interaction simple, every process predictable,
+            To transform life and business in the Oman by making every interaction simple, every process predictable,
             and every outcome successful. We are committed to empowering our clients with innovative solutions, personalized
             support, and unwavering dedication—ensuring they thrive in a dynamic and evolving environment.
           </p>
@@ -53,7 +53,7 @@ export function MissionVision() {
         >
           <h3 className="text-3xl font-semibold text-white">Our Vision</h3>
           <p className="text-lg text-gray-50 leading-relaxed">
-            To become the most trusted and sought-after partner in the UAE, recognized for driving exceptional value and sustainable
+            To become the most trusted and sought-after partner in the Oman, recognized for driving exceptional value and sustainable
             success for individuals and businesses alike. We envision a future where our clients confidently navigate challenges,
             seize opportunities, and realize their full potential through our expertise and passion for excellence.
           </p>

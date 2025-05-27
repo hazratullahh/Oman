@@ -4,11 +4,11 @@ import { WhoWeAreSection } from '@/components/WhoWeAreSection'
 export const metadata = {
     title: "About Us | YourBrand",
     description:
-        "Learn how YourBrand transforms life and business in the UAE—making every interaction simple, every process predictable, and every outcome successful.",
+        "Learn how YourBrand transforms life and business in the Oman—making every interaction simple, every process predictable, and every outcome successful.",
     openGraph: {
         title: "About Us | YourBrand",
         description:
-            "Discover YourBrand’s mission and vision: empowering clients in the UAE with innovative solutions, personalized support, and unwavering dedication.",
+            "Discover YourBrand’s mission and vision: empowering clients in the Oman with innovative solutions, personalized support, and unwavering dedication.",
         url: "https://yourdomain.com/about",
         siteName: "YourBrand",
         images: [
@@ -26,7 +26,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "About Us | YourBrand",
         description:
-            "Discover YourBrand’s mission & vision to transform life and business in the UAE with simple, predictable, successful processes.",
+            "Discover YourBrand’s mission & vision to transform life and business in the Oman with simple, predictable, successful processes.",
         images: ["https://yourdomain.com/twitter-about.jpg"],
     },
 };

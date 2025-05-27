@@ -7,11 +7,11 @@ import LocationMap from "@/components/MapLocation";
 export const metadata = {
   title: "Contact Us | YourBrand",
   description:
-    "Get in touch with YourBrand. Whether you have questions about our services, need support, or want to discuss a project, our team is here to help you succeed in the UAE.",
+    "Get in touch with YourBrand. Whether you have questions about our services, need support, or want to discuss a project, our team is here to help you succeed in the Oman.",
   openGraph: {
     title: "Contact Us | YourBrand",
     description:
-      "Reach out to YourBrand for expert guidance in business setup, PRO services, visa assistance and more. We're ready to support your growth in the UAE.",
+      "Reach out to YourBrand for expert guidance in business setup, PRO services, visa assistance and more. We're ready to support your growth in the Oman.",
     url: "https://yourdomain.com/contact",
     siteName: "YourBrand",
     images: [
@@ -29,7 +29,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Contact Us | YourBrand",
     description:
-      "Need assistance? Contact YourBrand for personalized business solutions, PRO support, and more in the UAE.",
+      "Need assistance? Contact YourBrand for personalized business solutions, PRO support, and more in the Oman.",
     images: ["https://yourdomain.com/twitter-contact.jpg"],
   },
 };
@@ -38,7 +38,7 @@ export const metadata = {
 const Page = () => {
   return (
     <section
-      className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden py-24 md:pt-36">
+      className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden py-12 md:pt-28">
       <div className="m-auto max-w-7xl px-4">
         <div className="grid lg:grid-cols-2 grid-cols-1">
           <div className="lg:mb-0 mb-10">

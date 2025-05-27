@@ -3,8 +3,8 @@ import { FeatureSteps } from "@/components/ui/WhyChooseSection"
 const features = [
     {
         step: 'Step 1',
-        title: 'Expertise – Deep knowledge of UAE regulations',
-        content: 'Our experienced team ensures your business fully complies with all UAE regulations, minimizing risks and avoiding delays.',
+        title: 'Expertise – Deep knowledge of Oman regulations',
+        content: 'Our experienced team ensures your business fully complies with all Oman regulations, minimizing risks and avoiding delays.',
         image: 'https://images.unsplash.com/photo-1723958929247-ef054b525153?q=80&w=2070&auto=format&fit=crop'
     },
     {

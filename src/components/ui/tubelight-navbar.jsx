@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
+import { ContactBtn } from "../ContactButton"
 
 export function NavBar({ items, className }) {
   const [activeTab, setActiveTab] = useState(items[0].name)
@@ -32,9 +33,7 @@ export function NavBar({ items, className }) {
         <div className="max-w-[85%] mx-auto">
           <div className="md:hidden flex items-center justify-between">
             <Image src="/logo.png" alt="logo" className="rounded w-40" width={1000} height={1000} />
-            <h2 className="text-2xl font-semibold text-gray-50">
-              تسهیل ک
-            </h2>
+            <ContactBtn />
           </div>
         </div>
       </div>

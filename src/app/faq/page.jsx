@@ -4,11 +4,11 @@ import Link from "next/link";
 export const metadata = {
     title: "FAQ | fqg",
     description:
-        "Find answers to the most frequently asked questions about fqg’s services, processes, and how we can help you succeed in the UAE.",
+        "Find answers to the most frequently asked questions about fqg’s services, processes, and how we can help you succeed in the Oman.",
     openGraph: {
         title: "FAQ | fqg",
         description:
-            "Explore fqg’s FAQ to learn more about our business setup, PRO services, visa assistance, and more in the UAE.",
+            "Explore fqg’s FAQ to learn more about our business setup, PRO services, visa assistance, and more in the Oman.",
         url: "https://fqg.com/faq",
         siteName: "fqg",
         images: [
@@ -26,7 +26,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "FAQ | fqg",
         description:
-            "Got questions? Check out fqg’s FAQ for quick answers on our services, processes, and how we support your growth in the UAE.",
+            "Got questions? Check out fqg’s FAQ for quick answers on our services, processes, and how we support your growth in the Oman.",
         images: ["https://fqg.com/twitter-faq.jpg"],
     },
 };
@@ -57,7 +57,7 @@ const faqData = [
 
 export default function FaqServer() {
     return (
-        <main className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-950 to-black text-gray-100 flex flex-col items-center px-4 py-12 sm:px-6 lg:px-8 md:pt-32">
+        <main className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-950 to-black text-gray-100 flex flex-col items-center px-4 py-10 sm:px-6 lg:px-8 md:pt-14">
             {/* Back Button */}
             <div className="w-full max-w-3xl mb-8">
                 <Link
