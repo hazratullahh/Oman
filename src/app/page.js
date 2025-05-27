@@ -1,5 +1,5 @@
 import { Feature } from "@/components/Feature";
-import { Hero } from "@/components/Hero";
+import HeroSection from "@/components/HeroSection";
 import InfiniteScrollImages from "@/components/InfiniteScrollImages ";
 import { Testimonials } from "@/components/Testimonials";
 import { WhyChooseUS } from "@/components/WhyChoose-Us";
@@ -38,7 +38,7 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <Hero />
+      <HeroSection />
       <div id="services">
         <Feature />
       </div>

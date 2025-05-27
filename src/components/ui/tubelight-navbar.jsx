@@ -33,14 +33,14 @@ export function NavBar({ items, className }) {
         <div className="max-w-[85%] mx-auto">
           <div className="md:hidden flex items-center justify-between">
             <Image src="/logo.png" alt="logo" className="rounded w-40" width={1000} height={1000} />
-            <ContactBtn />
+            <ContactBtn path="/contact" name={"Contact Us"} />
           </div>
         </div>
       </div>
 
       <div
         className={cn(
-          "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
+          "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2  mb-6 sm:pt-6",
           className,
         )}
       >

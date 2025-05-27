@@ -9,6 +9,7 @@ const images = [
     "/images/fedral.png",
     "/images/bank.png",
     "/images/arab.png",
+    "/images/basm.png",
     "/images/saltant.png",
     "/images/rop.png",
     "/images/oman2024.png",

@@ -1,11 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
     {
-        title: "Obtain Emirates ID",
-        description1: "**Obtaining an Emirates ID:** Obtaining an Emirates ID is a crucial step for foreign residents and UAE nationals. It acts as a key identifier and is required for various administrative tasks. The application process involves submitting your biometric data and proof of identity to relevant authorities. Once processed, you will receive your ID, which should be carried for all official transactions within the UAE. The process is straightforward, but ensuring the right documents are submitted can make the experience easier.",
-        description2: "The Emirates ID serves as a national identification card and is also integrated with other government services. It can be used for accessing health services, voting, and other activities that require personal identification. Additionally, Emirates ID is a mandatory document for opening a bank account or engaging in business activities within the UAE.",
+        title: "How to Easily Obtain an Emirati ID",
+        description1: "We offer comprehensive services to facilitate and expedite the process of obtaining UAE residency for Omani and Gulf citizens. All required steps can be completed within just one business day. This includes providing specialized consultations and comprehensive guidance, as well as preparing the necessary documents. Our goal is to ensure a smooth and efficient experience for our customers in obtaining their Emirati ID quickly and professionally.",
+        description2: "",
         slug: "obtaining-an-emirates-id",
         image: "/images/contact.png",
         link: "https://www.uae.gov.ae/en/about-uae/emirates-id",
@@ -13,17 +14,17 @@ const services = [
     },
     {
         title: "Renew Emirates ID",
-        description1: "**Renewing an Emirates ID:** Renewing your Emirates ID is essential to ensure its validity for continued use in legal and administrative matters. The renewal process typically takes place before the expiration date. It involves submitting an application along with necessary documents, including your old Emirates ID. The renewal is straightforward, but timing it correctly can prevent lapses in validity, which might cause inconveniences for the holder.",
-        description2: "The renewal process can be done online or in person at the nearest relevant authority. Once renewed, the Emirates ID will continue to serve as a key document for identity verification in the UAE. It is important to keep your Emirates ID updated to avoid potential legal issues or difficulties with other transactions, such as immigration procedures and banking activities.",
+        description1: "Emirates ID cards must be renewed within 30 days of their expiration. Failure to renew will result in a late fee. We offer an Emirates ID card renewal service, meeting all requirements in as little as 24 hours.",
+        description2: "Renewing your Emirates ID is essential to ensure its validity for continued use in legal and administrative matters. The renewal process typically takes place before the expiration date. It involves submitting an application along with necessary documents, including your old Emirates ID. The renewal is straightforward, but timing it correctly can prevent lapses in validity, which might cause inconveniences for the holder.",
         slug: "renewing-an-emirates-id",
         image: "/images/contact.png",
         link: "https://www.uae.gov.ae/en/about-uae/emirates-id-renewal",
         id: 2,
     },
     {
-        title: "Setup Omani Company",
-        description1: "**Opening companies and establishments in Oman:** Opening a company or establishment in Oman requires understanding the local business laws and regulations. The process typically includes choosing the type of company, submitting relevant documentation, obtaining business licenses, and registering with the Omani authorities. Oman offers a favorable business environment, especially for foreign investors, by providing various tax incentives and opportunities for growth across different sectors.",
-        description2: "The application process for opening companies in Oman involves several stages such as obtaining approval from government authorities, registering the company name, and ensuring compliance with Oman’s commercial regulations. Investors need to understand the legal framework, including required capital and operational guidelines, to ensure a smooth business setup in the Sultanate.",
+        title: "Establishing Companies and Establishments in the Sultanate of Oman",
+        description1: "**Opening companies and establishments in Oman:** We provide fast and reliable licensing and commercial registration services for Gulf and Omani companies and establishments in the Sultanate of Oman. Our team of experts provides personalized advice and comprehensive guidance to facilitate all legal procedures, ensuring a smooth and efficient experience for our clients establishing their businesses in the Omani market.",
+        description2: "",
         slug: "opening-companies-in-oman",
         image: "/images/contact.png",
         link: "https://www.oman.om/business/starting-a-business",
@@ -40,8 +41,8 @@ const services = [
     },
     {
         title: "Complete Omani Residency",
-        description1: "**Completing Omani residency transactions:** Completing residency transactions in Oman is a critical step for expatriates and investors wishing to live and work in the country. The residency process includes submitting relevant documents such as proof of employment, health insurance, and accommodation details. Once approved, expatriates are granted residency status, allowing them to live and work in Oman legally. It’s essential to follow all immigration procedures and ensure that all requirements are met to prevent delays.",
-        description2: "The Omani residency process also involves registering with the government’s immigration office, obtaining a residency card, and updating your address and employment status when required. Once granted, Omani residency opens up opportunities for long-term stays and better access to various benefits and services in the country. It is essential to stay informed about changes in the residency laws to avoid complications.",
+        description1: "A notification from the Ministry of Labor for private sector employees and a letter from the government agency for government sector employees for the first issuance. Attach a 4x6 passport-sized photo with a white background for the first-time issuance of a resident card for those under the age of seven.",
+        description2: "",
         slug: "completing-omani-residency",
         image: "/images/contact.png",
         link: "https://www.oman.om/residency-services",
@@ -67,17 +68,17 @@ const services = [
     },
     {
         title: "Renew Commercial Records",
-        description1: "**Renewing commercial records:** Renewing commercial records is a necessary step for businesses to maintain their legitimacy and operational capacity. This process involves updating existing business records and ensuring that all details comply with the latest requirements set by governing bodies. Businesses must ensure that their records are renewed on time to avoid penalties and to continue to operate without disruptions.",
-        description2: "Failure to renew commercial records on time can lead to legal complications, including fines, penalties, or even business closure. The renewal process typically involves submitting forms, paying fees, and providing proof of business continuity. It's an important step to ensure that a business can legally operate and access services like bank accounts or government contracts.",
+        description1: "An investor whose commercial registration has expired must renew or cancel it to avoid financial penalties resulting from delays in renewal. The commercial registration in the Sultanate of Oman is renewed every five or three years, depending on the type of registration. We provide you with a commercial registration renewal service with consultations.",
+        description2: " ",
         slug: "renewing-commercial-records",
         image: "/images/contact.png",
         link: "https://www.business.gov.au/business/renewing-records",
         id: 8,
     },
     {
-        title: "Transfer Car Ownership",
-        description1: "**Transferring car ownership:** Transferring car ownership is an important procedure for individuals buying or selling vehicles. This process involves submitting documentation to relevant authorities, including proof of ownership and identity verification. The car must also pass certain inspections to ensure it is roadworthy. The ownership transfer ensures that the buyer legally owns the vehicle and can legally drive it on the road.",
-        description2: "In many countries, transferring car ownership also requires paying transfer fees and taxes. Once the transfer is completed, the new owner receives updated documents reflecting their ownership. The process varies by region, but it is essential to ensure compliance with local laws and regulations for a smooth transaction.",
+        title: "Traffic Services",
+        description1: "We provide comprehensive services for completing traffic transactions and renewing vehicles without the need for a physical visit or inspection. We also offer quick and efficient car export services from the UAE to Oman, ensuring all procedures run smoothly to save our customers time and effort.",
+        description2: "",
         slug: "transferring-car-ownership",
         image: "/images/contact.png",
         link: "https://www.carregistry.com/transfer-ownership",
@@ -85,9 +86,9 @@ const services = [
     },
     {
         title: "Authenticate Documents",
-        description1: "**Authenticating official documents from the Omani Ministry of Foreign Affairs and the UAE Ministry of Foreign Affairs:** Authenticating official documents from the Omani and UAE Ministries of Foreign Affairs is necessary for individuals and businesses needing to validate legal documents for use in foreign countries. The authentication process ensures that documents like birth certificates, contracts, and degrees are legally recognized outside the UAE or Oman. This process requires the submission of original documents and verification by the respective authorities.",
-        description2: "Once authenticated, these documents can be used for various legal and administrative procedures, such as visa applications, business contracts, and international litigation. The process may involve additional steps, like translations or notarization, depending on the destination country. Document authentication is a crucial step for individuals and businesses engaged in international transactions or relocations.",
+        description1: "Providing documentation and authentication services for all documents from foreign ministries or embassies.",
         slug: "authenticating-documents-omani-uae-foreign-affairs",
+        description2: "",
         image: "/images/contact.png",
         link: "https://www.mofa.gov.om/en/services/authentication",
         id: 10,
@@ -113,7 +114,7 @@ const services = [
     {
         title: "Mobile App Development",
         description1: "**Mobile App Development:** Mobile app development allows businesses to create applications for smartphones and tablets, enhancing customer engagement and offering services on the go. With mobile apps, businesses can improve user experience, facilitate transactions, and increase customer retention. The development process involves creating apps that are intuitive, functional, and compatible with both iOS and Android systems.",
-        description2: "Mobile apps offer the ability to access services directly from a user’s pocket, providing convenience and speed. With push notifications, personalized experiences, and integrated payment options, businesses can create mobile solutions that increase brand loyalty and customer satisfaction. Mobile app development can also provide valuable data insights, helping businesses optimize their services and offerings based on real-time user behavior.",
+        description2: "Deliver your products and services directly to your customers’ fingertips—anywhere, anytime—through a tailor-made mobile app. Engage users instantly through targeted push notifications, deliver personalized content and recommendations, streamline transactions with secure in-app payments and one-tap checkout, and build loyalty via rewards and exclusive perks. Plus, gain deep, real-time insights into user behavior to continuously refine your offerings and boost satisfaction. Whether you’re booking appointments, showcasing products, or offering on-demand services, a mobile app empowers your business to drive retention, strengthen customer relationships, and stay ahead in today’s fast-paced market.",
         slug: "mobile-app-development",
         image: "/images/contact.png",
         link: "https://www.appdevservices.com/mobile-app-development",
@@ -136,12 +137,12 @@ export async function generateMetadata({ params }) {
 
     if (!service) {
         return {
-            title: "Service Not Found | fqg",
+            title: "Service Not Found | TAS-HEEL",
             description: "We couldn't find the service you requested.",
         };
     }
 
-    const title = `${service.title} | fqg`;
+    const title = `${service.title} | TAS-HEEL`;
     const description =
         service.description1.replace(/\*\*/g, "").slice(0, 157).trim() + "...";
     const url = `https://fqg.com/services/${service.slug}`;
@@ -177,7 +178,8 @@ export async function generateMetadata({ params }) {
 
 const Page = async ({ params }) => {
     const resolvedParams = await params;
-    const service = services.find(async (s) => s.slug === resolvedParams.slug);
+
+    const service = services.find((s) => s.slug === resolvedParams.slug);
 
     if (!service) {
         return (
@@ -192,8 +194,33 @@ const Page = async ({ params }) => {
 
     return (
         <>
-            <section className="bg-gradient-to-b from-gray-900 via-gray-950 to-black py-12 md:pt-32">
+            <section className="bg-gradient-to-b from-gray-900 via-gray-950 to-black py-12 md:pt-10">
                 <div className="max-w-3xl mx-auto px-4">
+                    {/* Back Button */}
+                    <div className="w-full max-w-3xl mb-8">
+                        <Link
+                            href="/#service"
+                            className="inline-flex items-center space-x-2 text-indigo-400 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M15 19l-7-7 7-7"
+                                />
+                            </svg>
+                            <span>Back</span>
+                        </Link>
+                    </div>
+
                     <h1 className="text-3xl font-extrabold text-white mb-6">
                         {service.title}
                     </h1>

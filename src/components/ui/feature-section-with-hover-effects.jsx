@@ -14,9 +14,9 @@ import Link from "next/link";
 export function FeaturesSectionWithHoverEffects() {
   const services = [
     {
-      title: "Obtain Emirates ID",
+      title: "How to Easily Obtain an Emirati ID",
       description1: "**Obtaining an Emirates ID:** Obtaining an Emirates ID is a crucial step for foreign residents and Oman nationals. It acts as a key identifier and is required for various administrative tasks. The application process involves submitting your biometric data and proof of identity to relevant authorities. Once processed, you will receive your ID, which should be carried for all official transactions within the Oman. The process is straightforward, but ensuring the right documents are submitted can make the experience easier.",
-      description2: "The Emirates ID serves as a national identification card and is also integrated with other government services. It can be used for accessing health services, voting, and other activities that require personal identification. Additionally, Emirates ID is a mandatory document for opening a bank account or engaging in business activities within the Oman.",
+      description2: "We offer comprehensive services to facilitate and expedite the process of obtaining UAE residency for Omani and Gulf citizens. All required steps can be completed within just one business day. This includes providing specialized consultations and comprehensive guidance, as well as preparing the necessary documents. Our goal is to ensure a smooth and efficient experience for our customers in obtaining their Emirati ID quickly and professionally.",
       slug: "obtaining-an-emirates-id",
       image: "image_of_emirates_id.jpg",
       link: "https://www.Oman.gov.ae/en/about-Oman/emirates-id",
@@ -24,7 +24,7 @@ export function FeaturesSectionWithHoverEffects() {
       icon: <IconHeart />,
     },
     {
-      title: "Renew Emirates ID",
+      title: "How to Easily Renew an Emirati ID",
       description1: "**Renewing an Emirates ID:** Renewing your Emirates ID is essential to ensure its validity for continued use in legal and administrative matters. The renewal process typically takes place before the expiration date. It involves submitting an application along with necessary documents, including your old Emirates ID. The renewal is straightforward, but timing it correctly can prevent lapses in validity, which might cause inconveniences for the holder.",
       description2: "The renewal process can be done online or in person at the nearest relevant authority. Once renewed, the Emirates ID will continue to serve as a key document for identity verification in the Oman. It is important to keep your Emirates ID updated to avoid potential legal issues or difficulties with other transactions, such as immigration procedures and banking activities.",
       slug: "renewing-an-emirates-id",
@@ -34,17 +34,7 @@ export function FeaturesSectionWithHoverEffects() {
       icon: <IconAdjustmentsBolt />,
     },
     {
-      title: "Setup Omani Company",
-      description1: "**Opening companies and establishments in Oman:** Opening a company or establishment in Oman requires understanding the local business laws and regulations. The process typically includes choosing the type of company, submitting relevant documentation, obtaining business licenses, and registering with the Omani authorities. Oman offers a favorable business environment, especially for foreign investors, by providing various tax incentives and opportunities for growth across different sectors.",
-      description2: "The application process for opening companies in Oman involves several stages such as obtaining approval from government authorities, registering the company name, and ensuring compliance with Oman’s commercial regulations. Investors need to understand the legal framework, including required capital and operational guidelines, to ensure a smooth business setup in the Sultanate.",
-      slug: "opening-companies-in-oman",
-      image: "image_of_oman_business.jpg",
-      link: "https://www.oman.om/business/starting-a-business",
-      id: 3,
-      icon: <IconHelp />,
-    },
-    {
-      title: "Transfer Saudi Records",
+      title: "How To Transfer Saudi Records",
       description1: "**Existing commercial records and transferring them with the lists to open an investment in Saudi Arabia:** In Saudi Arabia, managing commercial records and transferring them for investment purposes is an integral step for businesses wishing to operate in the kingdom. Investors must ensure that they meet local regulations for transferring commercial records, including proper documentation and permits. The process facilitates foreign investment and helps businesses enter the Saudi market with ease.",
       description2: "The transfer of commercial records must comply with Saudi Arabia’s investment and business laws, which require providing detailed records and up-to-date legal documents. Once the records are successfully transferred, businesses can initiate operations with minimal legal hurdles. The government has streamlined this process to encourage economic diversification and attract global investments.",
       slug: "transferring-commercial-records-saudi-investment",
@@ -54,9 +44,9 @@ export function FeaturesSectionWithHoverEffects() {
       icon: <IconRouteAltLeft />,
     },
     {
-      title: "Complete Omani Residency",
+      title: "How To Complete Omani Residency",
       description1: "**Completing Omani residency transactions:** Completing residency transactions in Oman is a critical step for expatriates and investors wishing to live and work in the country. The residency process includes submitting relevant documents such as proof of employment, health insurance, and accommodation details. Once approved, expatriates are granted residency status, allowing them to live and work in Oman legally. It’s essential to follow all immigration procedures and ensure that all requirements are met to prevent delays.",
-      description2: "The Omani residency process also involves registering with the government’s immigration office, obtaining a residency card, and updating your address and employment status when required. Once granted, Omani residency opens up opportunities for long-term stays and better access to various benefits and services in the country. It is essential to stay informed about changes in the residency laws to avoid complications.",
+      description2: "Facilitating the procedures for obtaining residency in Oman for investors, employees, and workers. Bring an original valid passport with a valid residency visa.A notification from the Ministry of Labor for private sector employees and a letter from the government agency for government sector employees for the first issuance.Attach a 4x6 passport-sized photo with a white background for the first-time issuance of a resident card for those under the age of seven.",
       slug: "completing-omani-residency",
       image: "image_of_omani_residency.jpg",
       link: "https://www.oman.om/residency-services",
@@ -86,7 +76,7 @@ export function FeaturesSectionWithHoverEffects() {
     {
       title: "Renew Commercial Records",
       description1: "**Renewing commercial records:** Renewing commercial records is a necessary step for businesses to maintain their legitimacy and operational capacity. This process involves updating existing business records and ensuring that all details comply with the latest requirements set by governing bodies. Businesses must ensure that their records are renewed on time to avoid penalties and to continue to operate without disruptions.",
-      description2: "Failure to renew commercial records on time can lead to legal complications, including fines, penalties, or even business closure. The renewal process typically involves submitting forms, paying fees, and providing proof of business continuity. It's an important step to ensure that a business can legally operate and access services like bank accounts or government contracts.",
+      description2: "An investor whose commercial registration has expired must renew or cancel it to avoid financial penalties resulting from delays in renewal. The commercial registration in the Sultanate of Oman is renewed every five or three years, depending on the type of registration. We provide you with a commercial registration renewal service with consultations.",
       slug: "renewing-commercial-records",
       image: "image_of_renewing_commercial_records.jpg",
       link: "https://www.business.gov.au/business/renewing-records",
@@ -94,9 +84,9 @@ export function FeaturesSectionWithHoverEffects() {
       icon: <IconTerminal2 />,
     },
     {
-      title: "Transfer Car Ownership",
-      description1: "**Transferring car ownership:** Transferring car ownership is an important procedure for individuals buying or selling vehicles. This process involves submitting documentation to relevant authorities, including proof of ownership and identity verification. The car must also pass certain inspections to ensure it is roadworthy. The ownership transfer ensures that the buyer legally owns the vehicle and can legally drive it on the road.",
-      description2: "In many countries, transferring car ownership also requires paying transfer fees and taxes. Once the transfer is completed, the new owner receives updated documents reflecting their ownership. The process varies by region, but it is essential to ensure compliance with local laws and regulations for a smooth transaction.",
+      title: "Traffic Services Transactions ",
+      description1: "We provide comprehensive services for completing traffic transactions and renewing vehicles without the need for a physical visit or inspection. We also offer quick and efficient car export services from the UAE to Oman, ensuring all procedures run smoothly to save our customers time and effort.",
+      description2: "We provide comprehensive services for completing traffic transactions and renewing vehicles without the need for a physical visit or inspection. We also offer quick and efficient car export services from the UAE to Oman, ensuring all procedures run smoothly to save our customers time and effort.",
       slug: "transferring-car-ownership",
       image: "image_of_car_ownership_transfer.jpg",
       link: "https://www.carregistry.com/transfer-ownership",
@@ -105,7 +95,7 @@ export function FeaturesSectionWithHoverEffects() {
     },
     {
       title: "Authenticate Documents",
-      description1: "**Authenticating official documents from the Omani Ministry of Foreign Affairs and the Oman Ministry of Foreign Affairs:** Authenticating official documents from the Omani and Oman Ministries of Foreign Affairs is necessary for individuals and businesses needing to validate legal documents for use in foreign countries. The authentication process ensures that documents like birth certificates, contracts, and degrees are legally recognized outside the Oman or Oman. This process requires the submission of original documents and verification by the respective authorities.",
+      description1: "Providing documentation and authentication services for all documents from foreign ministries or embassies.",
       description2: "Once authenticated, these documents can be used for various legal and administrative procedures, such as visa applications, business contracts, and international litigation. The process may involve additional steps, like translations or notarization, depending on the destination country. Document authentication is a crucial step for individuals and businesses engaged in international transactions or relocations.",
       slug: "authenticating-documents-omani-Oman-foreign-affairs",
       image: "image_of_document_authentication.jpg",
@@ -153,10 +143,20 @@ export function FeaturesSectionWithHoverEffects() {
       id: 14,
       icon: <IconTerminal2 />,
     },
+    {
+      title: "Establishing Companies and Establishments in the Sultanate of Oman",
+      description1: "**Opening companies and establishments in Oman:** Opening a company or establishment in Oman requires understanding the local business laws and regulations. The process typically includes choosing the type of company, submitting relevant documentation, obtaining business licenses, and registering with the Omani authorities. Oman offers a favorable business environment, especially for foreign investors, by providing various tax incentives and opportunities for growth across different sectors.",
+      description2: " ",
+      slug: "opening-companies-in-oman",
+      image: "image_of_oman_business.jpg",
+      link: "https://www.oman.om/business/starting-a-business",
+      id: 3,
+      icon: <IconHelp />,
+    },
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto">
+    <div className="md:z-50 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative py-10 max-w-7xl mx-auto">
       {services.map((feature, index) => (
         <Feature key={feature.title} {...feature} index={index} />
       ))}

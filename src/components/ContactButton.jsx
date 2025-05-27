@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { GlowEffect } from './ui/glow-effect';
 import Link from 'next/link';
 
-export function ContactBtn() {
+export function ContactBtn({ path, name }) {
   return (
     <div className='relative'>
       <GlowEffect
@@ -12,10 +12,10 @@ export function ContactBtn() {
         duration={3}
         scale={0.9}
       />
-      <Link href="/contact">
-      <button className='relative cursor-pointer inline-flex items-center gap-1 rounded-md bg-zinc-950 px-2.5 py-1.5 text-sm text-zinc-50 outline outline-1 outline-[#fff2f21f]'>
-        Contact Us <ArrowRight className='h4 w-4' />
-      </button>
+      <Link href={path}>
+        <button className='relative cursor-pointer inline-flex items-center gap-1 rounded-md bg-zinc-950 px-2.5 py-1.5 text-sm text-zinc-50 outline outline-1 outline-[#fff2f21f]'>
+          {name} <ArrowRight className='h4 w-4' />
+        </button>
       </Link>
     </div>
   );
