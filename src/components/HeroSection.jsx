@@ -17,7 +17,10 @@ export default function HeroSection() {
       src: "/images/hero/hero-2.jpg",
       alt: "Professional in business meeting, focusing on a tablet",
     },
-    { src: "/images/hero/hero-3.jpg", alt: "Sleek office building against a blue sky" },
+    {
+      src: "/images/hero/hero-3.jpg",
+      alt: "Sleek office building against a blue sky",
+    },
     {
       src: "/images/hero/hero-4.jpg",
       alt: "Abstract network connections representing global reach",
@@ -53,15 +56,19 @@ export default function HeroSection() {
         <HeroContent />
 
         {/* Right Side: Overlapping Image Slider */}
-        <HeroImageSlider
-          heroImages={heroImages}
-          currentSlideIndex={currentSlideIndex}
-          setCurrentSlideIndex={setCurrentSlideIndex}
-        />
+        <div className="py-8 sm:py-0">
+          <HeroImageSlider
+            heroImages={heroImages}
+            currentSlideIndex={currentSlideIndex}
+            setCurrentSlideIndex={setCurrentSlideIndex}
+          />
+        </div>
       </div>
 
       {/* Stats Cards Section - positioned to overlap the bottom of the hero */}
-      <StatsCardsSection />
+      <div className="pb-8 sm:py-0">
+        <StatsCardsSection />
+      </div>
     </main>
   );
 }
