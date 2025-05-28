@@ -1,6 +1,7 @@
 import { Feature } from "@/components/Feature";
 import HeroSection from "@/components/HeroSection";
 import InfiniteScrollImages from "@/components/InfiniteScrollImages ";
+import ScrollToHash from "@/components/ScrollToHash";
 import { Testimonials } from "@/components/Testimonials";
 import { WhyChooseUS } from "@/components/WhyChoose-Us";
 import { testimonials } from "@/lib/utils";
@@ -38,15 +39,14 @@ export const metadata = {
 export default function Home() {
   return (
     <>
+      <ScrollToHash /> {/* Render the client component */}
       <HeroSection />
       <div id="services">
         <Feature />
       </div>
       <WhyChooseUS />
       <InfiniteScrollImages />
-
-      <div
-        className="bg-gradient-to-b from-gray-900 via-gray-950 to-black h-[40rem] flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <div className="bg-gradient-to-b from-gray-900 via-gray-950 to-black h-[40rem] flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <Testimonials items={testimonials} direction="right" speed="slow" />
       </div>
     </>

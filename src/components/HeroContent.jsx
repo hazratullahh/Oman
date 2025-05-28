@@ -71,7 +71,7 @@ export default function HeroContent() {
         <Link href="/contact">
           <motion.button
             aria-label="Contact us"
-            className="flex items-center justify-center gap-2 px-8 py-4 sm:px-10 sm:py-5 bg-gradient-to-r from-green-500 to-red-500 text-white font-bold rounded-full shadow-md hover:from-green-600 hover:to-red-600 transition-all duration-300 transform hover:scale-3d cursor-pointer active:scale-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-green-300 text-sm sm:text-base"
+            className="flex items-center justify-center w-full gap-2 px-8 py-4 sm:px-10 sm:py-5 bg-gradient-to-r from-green-500 to-red-500 text-white font-bold rounded-full shadow-md hover:from-green-600 hover:to-red-600 transition-all duration-300 transform hover:scale-3d cursor-pointer active:scale-95 focus:outline-none focus-visible:ring-4 focus-visible:ring-green-300 text-sm sm:text-base"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

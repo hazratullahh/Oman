@@ -1,53 +1,83 @@
-"use client"
+"use client";
 
-import React, { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { cn } from "@/lib/utils"
-import Image from "next/image"
-import { ContactBtn } from "../ContactButton"
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import { ContactBtn } from "../ContactButton";
 
-export function NavBar({ items, className }) {
-  const [activeTab, setActiveTab] = useState(items[0].name)
-  const [isMobile, setIsMobile] = useState(false)
+export function Navbar({ items, className }) {
+  const [activeTab, setActiveTab] = useState(items[0].name);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
+      setIsMobile(window.innerWidth < 768);
+    };
 
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <div className="bg-gradient-to-t from-gray-900 via-gray-950 to-950">
+      {/* Top gradient background with logo (desktop) */}
+      <div className="bg-gradient-to-t pl-0 md:pl-10 from-gray-900 via-gray-950 to-950">
         <div className="max-w-[85%] mx-auto">
-          <Image src="/logo.png" alt="logo" className="rounded w-40 hidden md:flex" width={1000} height={1000} />
+          <Link href="/">
+            <Image
+              src="/logo.png"
+              alt="logo"
+              className="rounded w-40 hidden md:flex"
+              width={1000}
+              height={1000}
+            />
+          </Link>
         </div>
       </div>
 
+      {/* Mobile header */}
       <div className="bg-gradient-to-t from-gray-900 via-gray-950 to-950">
         <div className="max-w-[85%] mx-auto">
           <div className="md:hidden flex items-center justify-between">
-            <Image src="/logo.png" alt="logo" className="rounded w-40" width={1000} height={1000} />
+            <Link href="/">
+              <Image
+                src="/logo.png"
+                alt="logo"
+                className="rounded w-40"
+                width={1000}
+                height={1000}
+              />
+            </Link>
             <ContactBtn path="/contact" name={"Contact Us"} />
           </div>
         </div>
       </div>
 
+      {/* Navigation menu */}
       <div
         className={cn(
-          "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
-          className,
+          "fixed left-1/2 -translate-x-1/2 z-100 transition-all duration-300",
+          isMobile ? "bottom-5 mb-2" : isScrolled ? "top-5" : "top-14",
+          className
         )}
       >
         <div className="flex items-center gap-3 bg-background border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
           {items.map((item) => {
-            const Icon = item.icon
-            const isActive = activeTab === item.name
+            const Icon = item.icon;
+            const isActive = activeTab === item.name;
 
             return (
               <Link
@@ -57,7 +87,7 @@ export function NavBar({ items, className }) {
                 className={cn(
                   "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
                   "text-foreground/80 hover:text-primary",
-                  isActive && "bg-muted text-primary",
+                  isActive && "bg-muted text-primary"
                 )}
               >
                 <span className="hidden md:inline">{item.name}</span>
@@ -83,10 +113,10 @@ export function NavBar({ items, className }) {
                   </motion.div>
                 )}
               </Link>
-            )
+            );
           })}
         </div>
       </div>
     </>
-  )
+  );
 }
