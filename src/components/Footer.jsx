@@ -197,7 +197,7 @@ const Footer = () => {
               <p className="text-sm leading-5 text-gray-400">
                 © {Year} TAS-HEEL CO. All rights reserved.
               </p>
-              <p className="mt-2 text-xs leading-5 text-gray-400">
+              <p className="mt-2 text-xs leading-5 text-gray-400 sr-only">
                 Built with love by
                 <a
                   href="https://www.manzoorify.com"
