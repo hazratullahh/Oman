@@ -34,11 +34,9 @@ export const metadata = {
   },
 };
 
-
 const Page = () => {
   return (
-    <section
-      className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden py-12 md:pt-28">
+    <section className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden py-12 md:pt-28">
       <div className="m-auto max-w-7xl px-4">
         <div className="grid lg:grid-cols-2 grid-cols-1">
           <div className="lg:mb-0 mb-10">
@@ -54,18 +52,24 @@ const Page = () => {
                 <h1 className="font-manrope text-gray-50 text-4xl font-bold leading-10 absolute top-11 left-11">
                   Contact us
                 </h1>
- 
+
                 <div className="absolute bottom-0 w-full lg:p-11 p-5 backdrop-filter">
                   <div className="bg-gray-600/15 backdrop-blur-2xl rounded-lg p-6 block">
                     <div className="flex items-center mb-6">
                       <FaPhoneAlt color="white" />
-                      <a href="tel:470-601-1911" className="text-white text-base lg:text-lg font-normal leading-6 ml-5">
-                        +96 877 386 169
+                      <a
+                        href="tel:470-601-1911"
+                        className="text-white text-base lg:text-lg font-normal leading-6 ml-5"
+                      >
+                        +96 899 726 225
                       </a>
                     </div>
                     <div className="flex items-center">
                       <IoIosMail color="white" />
-                      <a href="mailto:contact@filingform.com" className="text-white text-base lg:text-lg font-normal leading-6 ml-5">
+                      <a
+                        href="mailto:contact@filingform.com"
+                        className="text-white text-base lg:text-lg font-normal leading-6 ml-5"
+                      >
                         contact@manzoor.com
                       </a>
                     </div>
@@ -80,7 +84,7 @@ const Page = () => {
 
       <LocationMap />
     </section>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

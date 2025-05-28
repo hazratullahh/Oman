@@ -2,9 +2,9 @@
 "use client";
 
 import { Home, User, Contact, FileText, MailQuestion } from "lucide-react";
-import { NavBar } from "@/components/ui/tubelight-navbar";
+import { Navbar } from "@/components/ui/Navbar";
 
-export function NavBarMobile() {
+export function NavbarItem() {
   const navItems = [
     { name: "Home", url: "/", icon: Home },
     { name: "About", url: "/about", icon: User },
@@ -14,5 +14,5 @@ export function NavBarMobile() {
     { name: "FAQ", url: "/faq", icon: MailQuestion },
   ];
 
-  return <NavBar items={navItems} />;
+  return <Navbar items={navItems} />;
 }
