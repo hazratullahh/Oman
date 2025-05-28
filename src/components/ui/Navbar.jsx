@@ -69,7 +69,7 @@ export function Navbar({ items, className }) {
       {/* Navigation menu */}
       <div
         className={cn(
-          "fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300",
+          "fixed left-1/2 -translate-x-1/2 z-100 transition-all duration-300",
           isMobile ? "bottom-5 mb-2" : isScrolled ? "top-5" : "top-14",
           className
         )}
