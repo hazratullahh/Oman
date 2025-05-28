@@ -166,6 +166,12 @@ const Footer = () => {
                 >
                   +96 877 386 169
                 </Link>
+                <Link
+                  href="tel:+971526540233"
+                  className="hover:text-white transition-colors block"
+                >
+                  +971526540233
+                </Link>
               </div>
             </div>
 
