@@ -246,7 +246,7 @@ const Footer = () => {
               </Link>
               <Link
                 className="hover:text-green-400 transform hover:scale-125 transition-all duration-200 ease-in-out"
-                href="https://www.instagram.com/tasheelalburaimi/"
+                href="https://wa.me/96899726225"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Whatsapp"
@@ -255,7 +255,7 @@ const Footer = () => {
               </Link>
               <Link
                 className="hover:text-blue-400 transform hover:scale-125 transition-all duration-200 ease-in-out"
-                href="https://www.instagram.com/tasheelalburaimi/"
+                href="https://t.me/+971526540233"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Telegram"
