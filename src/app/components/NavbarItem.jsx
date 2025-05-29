@@ -1,24 +1,28 @@
-// src/components/NavbarItem.jsx (or wherever your NavbarItem component is located)
+// src/components/NavbarItem.jsx
 "use client";
 
 import { Home, User, Contact, FileText, MailQuestion } from "lucide-react";
-import { Navbar } from "@/app/components/ui/Navbar";
+import { Navbar } from "@/app/components/ui/Navbar"; // Note: this path might need to be relative depending on your actual structure
 
 export function NavbarItem({ dictionary, currentLocale }) {
   // All URLs must be constructed with the currentLocale
+  // The 'name' property now corresponds to the dictionary key
   const navItems = [
-    { name: "Home", url: `/${currentLocale}`, icon: Home }, // Home page for the current locale
-    { name: "About", url: `/${currentLocale}/about`, icon: User }, // Localized About page
-    // For hash links, still include the locale prefix for consistency
-    { name: "Services", url: `/${currentLocale}/#services`, icon: FileText },
-    { name: "Contact", url: `/${currentLocale}/contact`, icon: Contact }, // Localized Contact page
-    { name: "FAQ", url: `/${currentLocale}/faq`, icon: MailQuestion }, // Localized FAQ page
+    { key: "menu_home", url: `/${currentLocale}`, icon: Home },
+    { key: "menu_about", url: `/${currentLocale}/about`, icon: User },
+    {
+      key: "menu_services",
+      url: `/${currentLocale}/#services`,
+      icon: FileText,
+    },
+    { key: "menu_contact", url: `/${currentLocale}/contact`, icon: Contact },
+    { key: "menu_faq", url: `/${currentLocale}/faq`, icon: MailQuestion },
   ];
 
   return (
     <Navbar
       items={navItems}
-      dictionary={dictionary}
+      dictionary={dictionary} // Pass dictionary to Navbar
       currentLocale={currentLocale}
     />
   );

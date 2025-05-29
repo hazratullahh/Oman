@@ -1,3 +1,4 @@
+// src/app/components/ui/Navbar.jsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -9,7 +10,8 @@ import { ContactBtn } from "../ContactButton";
 import LanguageSwitcher from "../LanguageSwitcher";
 
 export function Navbar({ items, className, dictionary, currentLocale }) {
-  const [activeTab, setActiveTab] = useState(items[0].name);
+  // Active tab should probably use the `key` now, or a derived value
+  const [activeTab, setActiveTab] = useState(items[0].key); // Initialize with the key of the first item
   const [isMobile, setIsMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -67,7 +69,11 @@ export function Navbar({ items, className, dictionary, currentLocale }) {
                 height={1000}
               />
             </Link>
-            <ContactBtn path="/contact" name={"Contact Us"} />
+            {/* Use dictionary for the Contact Us button */}
+            <ContactBtn
+              path="/contact"
+              name={dictionary.menu_contact_us_button}
+            />
           </div>
         </div>
       </div>
@@ -83,20 +89,21 @@ export function Navbar({ items, className, dictionary, currentLocale }) {
         <div className="flex items-center gap-3 bg-background border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
           {items.map((item) => {
             const Icon = item.icon;
-            const isActive = activeTab === item.name;
+            const isActive = activeTab === item.key; // Compare with item.key now
 
             return (
               <Link
-                key={item.name}
+                key={item.key} // Use item.key for the unique key prop
                 href={item.url}
-                onClick={() => setActiveTab(item.name)}
+                onClick={() => setActiveTab(item.key)} // Set active tab by key
                 className={cn(
                   "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
                   "text-foreground/80 hover:text-primary",
                   isActive && "bg-muted text-primary"
                 )}
               >
-                <span className="hidden md:inline">{item.name}</span>
+                {/* Use the dictionary to get the translated name */}
+                <span className="hidden md:inline">{dictionary[item.key]}</span>
                 <span className="md:hidden">
                   <Icon size={18} strokeWidth={2.5} />
                 </span>

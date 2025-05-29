@@ -8,5 +8,12 @@
   "open_graph_title": "Your Oman Business & PRO Partner",
   "open_graph_description": "Transforming life and business in the Oman with simple, predictable, and successful processes. Expert PRO, visa, company setup, and more.",
   "twitter_title": "Your Oman Business & PRO Partner",
-  "twitter_description": "Transforming life and business in the Oman with simple, predictable, and successful processes. Expert PRO, visa, company setup, and more."
+  "twitter_description": "Transforming life and business in the Oman with simple, predictable, and successful processes. Expert PRO, visa, company setup, and more.",
+
+  "menu_home": "Home",
+  "menu_about": "About",
+  "menu_services": "Services",
+  "menu_contact": "Contact",
+  "menu_faq": "FAQ",
+  "menu_contact_us_button": "Contact Us"
 }
