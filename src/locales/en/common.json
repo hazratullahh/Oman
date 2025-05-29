@@ -32,5 +32,54 @@
   "feature_title": "Our Services",
   "feature_paragraph1": "We offer a comprehensive suite of services to better assist you. Starting with setting standards of excellence in more efficient ways and helping you streamline procedures.",
   "feature_paragraph2": "We can combine any of our products and services to create a package tailored to your business. This eliminates unnecessary complexity and cost to get you where you want to go—whatever your starting point.",
-  "feature_paragraph3": "Take a look at our services, including completing all government transactions and web development…"
+  "feature_paragraph3": "Take a look at our services, including completing all government transactions and web development…",
+
+  "why_choose_us": {
+    "title": "Why Choose Us",
+    "subtitle": "At TAS-HEEL, we transform life and business in Oman by making every interaction simple, every process predictable, and every outcome successful. We empower clients with innovative solutions and personalized support, setting new standards of excellence.",
+    "features": [
+      {
+        "step": "Step 1",
+        "title": "Expertise – Deep knowledge of Oman regulations",
+        "content": "Our experienced team ensures your business fully complies with all Oman regulations, minimizing risks and avoiding delays."
+      },
+      {
+        "step": "Step 2",
+        "title": "Efficiency – Fast and hassle-free processing",
+        "content": "We provide a streamlined process using advanced tools to deliver fast, hassle-free approvals and keep your projects moving smoothly."
+      },
+      {
+        "step": "Step 3",
+        "title": "Personalized Support – Dedicated coordinator for each client",
+        "content": "Every client receives a dedicated coordinator who offers personalized guidance and regular updates throughout the entire process."
+      }
+    ]
+  },
+
+  "testimonials_heading": "Trusted by Clients Worldwide",
+  "testimonials_subheading": "Join thousands of satisfied citizens building a brighter future with us every day.",
+
+  "our_partners_heading": "Our Partners",
+
+  "footer": {
+    "about_text": "To transform life and business in Oman by making every interaction simple, every process predictable, and every outcome successful. Empowering clients with innovative solutions and personalized support.",
+    "explore_heading": "Explore",
+    "home_link": "Home",
+    "about_us_link": "About Us",
+    "contact_us_link": "Contact Us",
+    "faq_link": "FAQ",
+    "our_services_heading": "Our Services",
+    "service_emirates_id_obtain": "Obtain Emirates ID",
+    "service_emirates_id_renew": "Renew Emirates ID",
+    "service_omani_company_setup": "Setup Omani Company",
+    "service_web_app_dev": "Web App Development",
+    "service_mvp_dev": "Business MVP Development",
+    "get_in_touch_heading": "Get In Touch",
+    "email_label": "Email:",
+    "phone_label": "Phone:",
+    "address_label": "Address:",
+    "oman_address_line1": "Oman-Al Buraimi",
+    "oman_address_line2": "Tas'heel Document Printing and Copying No. 27",
+    "copyright_text": "© {year} TAS-HEEL CO. All rights reserved."
+  }
 }

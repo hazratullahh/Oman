@@ -1,36 +1,24 @@
-import { FeatureSteps } from "@/app/components/ui/WhyChooseSection";
+// src/app/components/ui/WhyChooseUS.jsx
+import { WhyChooseSection } from "./ui/WhyChooseSection";
+// Import your dictionary utility
 
-const features = [
-  {
-    step: "Step 1",
-    title: "Expertise – Deep knowledge of Oman regulations",
-    content:
-      "Our experienced team ensures your business fully complies with all Oman regulations, minimizing risks and avoiding delays.",
-    image: "/images/choose/choose-1.jpg",
-  },
-  {
-    step: "Step 2",
-    title: "Efficiency – Fast and hassle-free processing",
-    content:
-      "We provide a streamlined process using advanced tools to deliver fast, hassle-free approvals and keep your projects moving smoothly.",
-    image: "/images/choose/choose-2.jpg",
-  },
-  {
-    step: "Step 3",
-    title: "Personalized - Support Dedicated coordinator  for each client",
-    content:
-      "Every client receives a dedicated coordinator who offers personalized guidance and regular updates throughout the entire process.",
-    image: "/images/choose/choose-3.jpg",
-  },
-];
+export async function WhyChooseUS({ dictionary, currentLocale }) {
+  const whyChooseUsData = dictionary.why_choose_us; // Access the why_choose_us data from the dictionary
 
-export function WhyChooseUS() {
+  // Static image paths (not part of translation)
+  const featuresWithImages = whyChooseUsData.features.map((feature, index) => ({
+    ...feature,
+    image: `/images/choose/choose-${index + 1}.jpg`, // Construct image path dynamically
+  }));
+
   return (
-    <FeatureSteps
-      features={features}
-      title="Why Choose Us"
+    <WhyChooseSection
+      features={featuresWithImages} // Pass the features with images
+      title={whyChooseUsData.title}
+      subtitle={whyChooseUsData.subtitle}
       autoPlayInterval={4000}
       imageHeight="h-[500px]"
+      currentLocale={currentLocale}
     />
   );
 }

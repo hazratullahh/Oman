@@ -1,3 +1,4 @@
+// src/app/components/Footer.jsx
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -9,11 +10,16 @@ import {
 } from "react-icons/fa";
 import { Mail, Phone, MapPin } from "lucide-react";
 
-const Footer = () => {
+// Accept dictionary and currentLocale props
+const Footer = ({ dictionary, currentLocale }) => {
   const Year = new Date().getFullYear();
+  const isArabic = currentLocale === "ar"; // Determine if Arabic for RTL
+
+  // Access the footer section of the dictionary
+  const footerDict = dictionary.footer;
 
   return (
-    <footer className="relative text-white">
+    <footer className={`relative text-white ${isArabic ? "rtl" : "ltr"}`}>
       <div className="absolute top-0 left-0 bg-gradient-to-b from-gray-900 via-gray-950 to-black w-[100%] overflow-hidden">
         <svg
           data-name="Layer 1"
@@ -30,8 +36,11 @@ const Footer = () => {
         </svg>
 
         {/* Main Footer Content Grid */}
-
-        <div className="grid lg:grid-cols-4 gap-12 sm:grid-cols-1 px-8 py-12 md:px-20">
+        <div
+          className={`grid lg:grid-cols-4 gap-12 sm:grid-cols-1 px-8 py-12 md:px-20 ${
+            isArabic ? "text-right" : "text-left"
+          }`}
+        >
           {/* Company Info / About Section */}
           <div className="flex flex-col gap-5">
             <Image
@@ -42,17 +51,14 @@ const Footer = () => {
               height={1000}
             />
             <p className="text-gray-300 text-sm leading-relaxed">
-              To transform life and business in Oman by making every interaction
-              simple, every process predictable, and every outcome successful.
-              Empowering clients with innovative solutions and personalized
-              support.
+              {footerDict.about_text} {/* Translated text */}
             </p>
           </div>
 
           {/* Quick Links Section */}
           <div>
             <h3 className="text-[20px] font-semibold text-gray-50 pb-4 uppercase border-b border-gray-700 mb-6">
-              Explore
+              {footerDict.explore_heading} {/* Translated heading */}
             </h3>
             <ul>
               <li className="my-3">
@@ -60,7 +66,7 @@ const Footer = () => {
                   href="/"
                   className="hover:text-green-300 transition-colors"
                 >
-                  Home
+                  {footerDict.home_link} {/* Translated link text */}
                 </Link>
               </li>
               <li className="my-3">
@@ -68,7 +74,7 @@ const Footer = () => {
                   href="/about"
                   className="hover:text-green-300 transition-colors"
                 >
-                  About Us
+                  {footerDict.about_us_link} {/* Translated link text */}
                 </Link>
               </li>
               <li className="my-3">
@@ -76,7 +82,7 @@ const Footer = () => {
                   href="/contact"
                   className="hover:text-green-300 transition-colors"
                 >
-                  Contact Us
+                  {footerDict.contact_us_link} {/* Translated link text */}
                 </Link>
               </li>
               <li className="my-3">
@@ -84,7 +90,7 @@ const Footer = () => {
                   href="/faq"
                   className="hover:text-green-300 transition-colors"
                 >
-                  FAQ
+                  {footerDict.faq_link} {/* Translated link text */}
                 </Link>
               </li>
             </ul>
@@ -93,7 +99,7 @@ const Footer = () => {
           {/* Services Section */}
           <div>
             <h3 className="text-[20px] font-semibold text-gray-50 pb-4 uppercase border-b border-gray-700 mb-6">
-              Our Services
+              {footerDict.our_services_heading} {/* Translated heading */}
             </h3>
             <ul>
               <li className="my-3">
@@ -101,7 +107,8 @@ const Footer = () => {
                   href="/services/obtaining-an-emirates-id"
                   className="hover:text-green-300 transition-colors"
                 >
-                  Obtain Emirates ID
+                  {footerDict.service_emirates_id_obtain}{" "}
+                  {/* Translated service name */}
                 </Link>
               </li>
               <li className="my-3">
@@ -109,7 +116,8 @@ const Footer = () => {
                   href="/services/enewing-an-emirates-id"
                   className="hover:text-green-300 transition-colors"
                 >
-                  Renew Emirates ID
+                  {footerDict.service_emirates_id_renew}{" "}
+                  {/* Translated service name */}
                 </Link>
               </li>
               <li className="my-3">
@@ -117,7 +125,8 @@ const Footer = () => {
                   href="/services/opening-companies-in-oman"
                   className="hover:text-green-300 transition-colors"
                 >
-                  Setup Omani Company
+                  {footerDict.service_omani_company_setup}{" "}
+                  {/* Translated service name */}
                 </Link>
               </li>
               <li className="my-3">
@@ -125,7 +134,8 @@ const Footer = () => {
                   href="/services/web-app-development"
                   className="hover:text-green-300 transition-colors"
                 >
-                  Web App Development
+                  {footerDict.service_web_app_dev}{" "}
+                  {/* Translated service name */}
                 </Link>
               </li>
               <li className="my-3">
@@ -133,7 +143,7 @@ const Footer = () => {
                   href="/services/mvp-development-business"
                   className="hover:text-green-300 transition-colors"
                 >
-                  Business MVP Development
+                  {footerDict.service_mvp_dev} {/* Translated service name */}
                 </Link>
               </li>
             </ul>
@@ -141,7 +151,7 @@ const Footer = () => {
 
           <div className="mb-4 md:mb-0">
             <h3 className="text-[20px] font-semibold text-gray-50 pb-4 uppercase border-b border-gray-700 mb-6">
-              Get In Touch
+              {footerDict.get_in_touch_heading} {/* Translated heading */}
             </h3>
             {/* Email */}
             <Link
@@ -150,7 +160,10 @@ const Footer = () => {
             >
               <Mail size={18} className="text-green-400 mt-1 flex-shrink-0" />{" "}
               <div>
-                <span className="font-semibold block">Email:</span>
+                <span className="font-semibold block">
+                  {footerDict.email_label}
+                </span>{" "}
+                {/* Translated label */}
                 <span>youremail.gmail.com</span>
               </div>
             </Link>
@@ -159,7 +172,10 @@ const Footer = () => {
             <div className="text-gray-300 text-sm flex items-start gap-3 my-4">
               <Phone size={18} className="text-red-400 mt-1 flex-shrink-0" />{" "}
               <div>
-                <span className="font-semibold block">Phone:</span>
+                <span className="font-semibold block">
+                  {footerDict.phone_label}
+                </span>{" "}
+                {/* Translated label */}
                 <Link
                   href="tel:+96899726225"
                   className="hover:text-white transition-colors block"
@@ -185,25 +201,35 @@ const Footer = () => {
             <div className="text-gray-300 text-sm flex items-start gap-3 my-4">
               <MapPin size={18} className="text-blue-400 mt-1 flex-shrink-0" />{" "}
               <div>
-                <span className="font-semibold block">Address:</span>
-                <span>Oman-Al Buraimi</span>
+                <span className="font-semibold block">
+                  {footerDict.address_label}
+                </span>{" "}
+                {/* Translated label */}
+                <span>{footerDict.oman_address_line1}</span>{" "}
+                {/* Translated address line */}
                 <br />
-                <span>Tas'heel Document Printing and Copying No. 27</span>
+                <span>{footerDict.oman_address_line2}</span>{" "}
+                {/* Translated address line */}
               </div>
             </div>
           </div>
         </div>
 
         {/* Copyright and Social Media */}
-        <div className="mt-10 mx-auto max-w-[90%] pb-6 md:pb-8">
-          {/* Adjusted padding */}
+        <div
+          className={`mt-10 mx-auto max-w-[90%] pb-6 md:pb-8 ${
+            isArabic ? "text-right" : "text-left"
+          }`}
+        >
           <div className="flex flex-col justify-between pt-8 pb-6 mt-12 border-t sm:flex-row gap-y-4 border-white/10">
             {/* Copyright */}
             <div>
               <p className="text-sm leading-5 text-gray-400">
-                © {Year} TAS-HEEL CO. All rights reserved.
+                {footerDict.copyright_text.replace("{year}", Year)}{" "}
+                {/* Translated copyright */}
               </p>
               <p className="mt-2 text-xs leading-5 text-gray-400 sr-only">
+                {/* Consider if "Built with love by" also needs translation */}
                 Built with love by
                 <Link
                   href="https://www.manzoorify.com"
@@ -215,8 +241,12 @@ const Footer = () => {
                 </Link>
               </p>
             </div>
-            {/* Social Media Icons */}
-            <div className="flex space-x-6 text-xl">
+            {/* Social Media Icons - no text translation needed here */}
+            <div
+              className={`flex space-x-6 text-xl ${
+                isArabic ? "flex-row-reverse space-x-reverse" : ""
+              }`}
+            >
               <Link
                 className="hover:text-blue-500 transform hover:scale-125 transition-all duration-200 ease-in-out"
                 href="https://www.facebook.com/profile.php?id=61576596532114"

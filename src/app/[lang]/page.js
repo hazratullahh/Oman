@@ -24,14 +24,21 @@ export default async function Home({ params }) {
       <div id="services">
         <Feature dictionary={dictionary} currentLocale={resolvedParams.lang} />
       </div>
-      <WhyChooseUS dictionary={dictionary} />
-      <InfiniteScrollImages />
+      <WhyChooseUS
+        dictionary={dictionary}
+        currentLocale={resolvedParams.lang}
+      />
+      <InfiniteScrollImages
+        dictionary={dictionary}
+        currentLocale={resolvedParams.lang}
+      />
       <div className="bg-gradient-to-b from-gray-900 via-gray-950 to-black h-[40rem] flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <Testimonials
           items={testimonials}
           direction="right"
           speed="slow"
           dictionary={dictionary}
+          currentLocale={resolvedParams.lang}
         />
       </div>
     </>

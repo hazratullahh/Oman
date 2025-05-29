@@ -1,59 +1,77 @@
-"use client"
+// src/app/components/ui/WhyChooseSection.jsx
+"use client";
 
-import React, { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
-import { cn } from "@/lib/utils"
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
 
-export function FeatureSteps({
+export function WhyChooseSection({
   features,
   className,
-  title = "How to get Started",
+  title = "How to get Started", // Default fallback for title
+  subtitle = "", // New prop for the paragraph below the title
   autoPlayInterval = 3000,
   imageHeight = "h-[400px]",
+  currentLocale, // New prop to receive the current locale
 }) {
-  const [currentFeature, setCurrentFeature] = useState(0)
-  const [progress, setProgress] = useState(0)
+  const [currentFeature, setCurrentFeature] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const isArabic = currentLocale === "ar"; // Determine if Arabic for RTL
 
   useEffect(() => {
     const timer = setInterval(() => {
       if (progress < 100) {
-        setProgress((prev) => prev + 100 / (autoPlayInterval / 100))
+        setProgress((prev) => prev + 100 / (autoPlayInterval / 100));
       } else {
-        setCurrentFeature((prev) => (prev + 1) % features.length)
-        setProgress(0)
+        setCurrentFeature((prev) => (prev + 1) % features.length);
+        setProgress(0);
       }
-    }, 100)
+    }, 100);
 
-    return () => clearInterval(timer)
-  }, [progress, features.length, autoPlayInterval])
+    return () => clearInterval(timer);
+  }, [progress, features.length, autoPlayInterval]);
 
   return (
-    <div className={cn("p-8 md:p-12 bg-gradient-to-t from-gray-900 via-gray-950 to-black text-gray-50", className)}>
+    <div
+      className={cn(
+        "p-8 md:p-12 bg-gradient-to-t from-gray-900 via-gray-950 to-black text-gray-50",
+        className,
+        isArabic ? "rtl" : "ltr" // Apply RTL globally to the section
+      )}
+    >
       <div className="max-w-7xl mx-auto w-full my-20">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
           {title}
         </h2>
         <p className="text-gray-50 text-md md:text-xl w-full md:w-[70%] overflow-hidden mb-20">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ipsum eos doloribus neque voluptas cons!
+          {subtitle} {/* Render the subtitle here */}
         </p>
 
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-10">
+        <div
+          className={cn(
+            "flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-10",
+            isArabic ? "md:grid-flow-col-dense" : "" // Adjust grid flow for RTL if necessary
+          )}
+        >
           <div className="order-2 md:order-1 space-y-8">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="flex items-center gap-6 md:gap-8"
+                className={cn(
+                  "flex items-center gap-6 md:gap-8",
+                  isArabic ? "flex-row-reverse" : "" // Reverse item order for RTL
+                )}
                 initial={{ opacity: 0.3 }}
                 animate={{ opacity: index === currentFeature ? 1 : 0.3 }}
                 transition={{ duration: 0.5 }}
               >
                 <motion.div
                   className={cn(
-                    "w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center border-2",
+                    "w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center border-2 shrink-0", // Added shrink-0 to prevent text pushing it
                     index === currentFeature
                       ? "bg-primary border-primary text-primary-foreground scale-110"
-                      : "bg-muted border-muted-foreground",
+                      : "bg-muted border-muted-foreground"
                   )}
                 >
                   {index <= currentFeature ? (
@@ -63,7 +81,12 @@ export function FeatureSteps({
                   )}
                 </motion.div>
 
-                <div className="flex-1">
+                <div
+                  className={cn(
+                    "flex-1",
+                    isArabic ? "text-right" : "text-left" // Text alignment
+                  )}
+                >
                   <h3 className="text-xl md:text-2xl font-semibold">
                     {feature.title || feature.step}
                   </h3>
@@ -77,7 +100,8 @@ export function FeatureSteps({
 
           <div
             className={cn(
-              "order-1 md:order-2 relative h-[200px] md:h-[300px] lg:h-[400px] overflow-hidden rounded-lg"
+              "order-1 md:order-2 relative h-[200px] md:h-[300px] lg:h-[400px] overflow-hidden rounded-lg",
+              imageHeight // Apply dynamic height here
             )}
           >
             <AnimatePresence mode="wait">
@@ -93,7 +117,7 @@ export function FeatureSteps({
                       transition={{ duration: 0.5, ease: "easeInOut" }}
                     >
                       <Image
-                        src={feature.image}
+                        src={feature.image} // Image path comes from the features array now
                         alt={feature.step}
                         className="w-full h-full object-cover transition-transform transform"
                         width={1000}
@@ -101,12 +125,12 @@ export function FeatureSteps({
                       />
                       <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-gray-950 via-gray-950/50 to-transparent" />
                     </motion.div>
-                  ),
+                  )
               )}
             </AnimatePresence>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
