@@ -43,7 +43,7 @@ export default function Home() {
       <HeroSection />
       <div id="services">
         <Feature />
-      </div>
+      </div> 
       <WhyChooseUS />
       <InfiniteScrollImages />
       <div className="bg-gradient-to-b from-gray-900 via-gray-950 to-black h-[40rem] flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
