@@ -4,7 +4,13 @@
 import React from "react";
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTelegram,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { cn } from "@/lib/utils"; // Assuming you have this utility for conditional classes
 
 export function TopHeader() {
@@ -50,7 +56,7 @@ export function TopHeader() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-            className="hover:text-white transition-colors"
+            className="hover:text-blue-500 transition-colors"
           >
             <FaFacebook size={16} /> {/* Standard icon size */}
           </Link>
@@ -59,7 +65,7 @@ export function TopHeader() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="hover:text-white transition-colors"
+            className="hover:text-blue-400 transition-colors"
           >
             <FaLinkedinIn size={16} />
           </Link>
@@ -68,9 +74,27 @@ export function TopHeader() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="hover:text-white transition-colors"
+            className="hover:text-pink-400  transition-colors"
           >
             <FaInstagram size={16} />
+          </Link>
+          <Link
+            className="hover:text-green-400 transform hover:scale-125 transition-all duration-200 ease-in-out"
+            href="https://www.instagram.com/tasheelalburaimi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Whatsapp"
+          >
+            <FaWhatsapp />
+          </Link>
+          <Link
+            className="hover:text-blue-400 transform hover:scale-125 transition-all duration-200 ease-in-out"
+            href="https://www.instagram.com/tasheelalburaimi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Telegram"
+          >
+            <FaTelegram />
           </Link>
         </div>
       </div>

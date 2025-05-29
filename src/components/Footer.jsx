@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTelegram,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
@@ -199,28 +205,28 @@ const Footer = () => {
               </p>
               <p className="mt-2 text-xs leading-5 text-gray-400">
                 Built with love by
-                <a
+                <Link
                   href="https://www.manzoorify.com"
                   target="_blank"
                   className="text-gray-300 hover:underline"
                   rel="noreferrer"
                 >
                   Manzoor Ahmad Wayar
-                </a>
+                </Link>
               </p>
             </div>
             {/* Social Media Icons */}
             <div className="flex space-x-6 text-xl">
-              <a
-                className="hover:text-green-300 transform hover:scale-125 transition-all duration-200 ease-in-out"
+              <Link
+                className="hover:text-blue-500 transform hover:scale-125 transition-all duration-200 ease-in-out"
                 href="https://www.facebook.com/profile.php?id=61576596532114"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
               >
                 <FaFacebook />
-              </a>
-              <a
+              </Link>
+              <Link
                 className="hover:text-blue-400 transform hover:scale-125 transition-all duration-200 ease-in-out"
                 href="https://www.linkedin.com/company/your-company-page"
                 target="_blank"
@@ -228,8 +234,8 @@ const Footer = () => {
                 aria-label="LinkedIn"
               >
                 <FaLinkedinIn />
-              </a>
-              <a
+              </Link>
+              <Link
                 className="hover:text-pink-400 transform hover:scale-125 transition-all duration-200 ease-in-out"
                 href="https://www.instagram.com/tasheelalburaimi/"
                 target="_blank"
@@ -237,7 +243,25 @@ const Footer = () => {
                 aria-label="Instagram"
               >
                 <FaInstagram />
-              </a>
+              </Link>
+              <Link
+                className="hover:text-green-400 transform hover:scale-125 transition-all duration-200 ease-in-out"
+                href="https://www.instagram.com/tasheelalburaimi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Whatsapp"
+              >
+                <FaWhatsapp />
+              </Link>
+              <Link
+                className="hover:text-blue-400 transform hover:scale-125 transition-all duration-200 ease-in-out"
+                href="https://www.instagram.com/tasheelalburaimi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram"
+              >
+                <FaTelegram />
+              </Link>
             </div>
           </div>
         </div>
