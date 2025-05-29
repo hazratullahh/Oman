@@ -22,7 +22,7 @@ export default async function Home({ params }) {
         currentLocale={resolvedParams.lang}
       />
       <div id="services">
-        <Feature dictionary={dictionary} />
+        <Feature dictionary={dictionary} currentLocale={resolvedParams.lang} />
       </div>
       <WhyChooseUS dictionary={dictionary} />
       <InfiniteScrollImages />
