@@ -67,8 +67,8 @@ const InfiniteScrollImages = ({ dictionary, currentLocale }) => {
       <h2
         className={`text-center text-2xl md:text-4xl font-bold mb-4 py-10 text-white ${
           currentLocale === "ar"
-            ? "text-right md:text-center"
-            : "text-left md:text-center"
+            ? "text-rights md:text-center"
+            : "text-lefts md:text-center"
         }`}
       >
         {dictionary.our_partners_heading} {/* Use the translated heading */}
