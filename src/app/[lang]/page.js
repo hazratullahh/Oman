@@ -16,7 +16,11 @@ export default async function Home({ params }) {
   return (
     <>
       <ScrollToHash />
-      <HeroSection dictionary={dictionary} />
+      {/* CORRECTED LINE: Pass resolvedParams.lang as currentLocale */}
+      <HeroSection
+        dictionary={dictionary}
+        currentLocale={resolvedParams.lang}
+      />
       <div id="services">
         <Feature dictionary={dictionary} />
       </div>

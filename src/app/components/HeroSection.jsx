@@ -7,7 +7,7 @@ import HeroContent from "./HeroContent";
 import HeroImageSlider from "./HeroImageSlider";
 import StatsCardsSection from "./StatsCardsSection";
 
-export default function HeroSection() {
+export default function HeroSection({ dictionary, currentLocale }) {
   const heroImages = [
     {
       src: "/images/hero/hero-1.jpg",
@@ -53,7 +53,7 @@ export default function HeroSection() {
                    min-h-[calc(100vh_+_10rem)] sm:min-h-[calc(100vh_+_8rem)] lg:min-h-[calc(100vh_+_6rem)]"
       >
         {/* Left Side: Hero Content */}
-        <HeroContent />
+        <HeroContent dictionary={dictionary} currentLocale={currentLocale} />
 
         {/* Right Side: Overlapping Image Slider */}
         <div className="py-8 sm:py-0">

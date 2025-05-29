@@ -15,5 +15,13 @@
   "menu_services": "Services",
   "menu_contact": "Contact",
   "menu_faq": "FAQ",
-  "menu_contact_us_button": "Contact Us"
+  "menu_contact_us_button": "Contact Us",
+
+  "hero_heading_part1": "Set up your ",
+  "hero_heading_part2": "business",
+  "hero_heading_part3": " investment With",
+  "hero_heading_part4": "Expert!",
+  "hero_description": "To transform life and business in Oman by making every interaction simple, every process predictable, and every outcome successful. Empowering clients with innovative solutions and personalized support.",
+  "hero_contact_us_button": "Contact Us",
+  "hero_tech_services_button": "Our Technology Services"
 }
