@@ -1,8 +1,8 @@
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
-import Form from "@/components/contactForm";
+import Form from "@/app/components/contactForm";
 import Image from "next/image";
-import LocationMap from "@/components/MapLocation";
+import LocationMap from "@/app/components/MapLocation";
 
 export const metadata = {
   title: "Contact Us | YourBrand",

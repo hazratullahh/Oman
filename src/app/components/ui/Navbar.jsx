@@ -6,8 +6,9 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ContactBtn } from "../ContactButton";
+import LanguageSwitcher from "../LanguageSwitcher";
 
-export function Navbar({ items, className }) {
+export function Navbar({ items, className, dictionary, currentLocale }) {
   const [activeTab, setActiveTab] = useState(items[0].name);
   const [isMobile, setIsMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,17 +35,22 @@ export function Navbar({ items, className }) {
   return (
     <>
       {/* Top gradient background with logo (desktop) */}
-      <div className="bg-gradient-to-t pl-0 md:pl-10 from-gray-900 via-gray-950 to-950">
-        <div className="max-w-[85%] mx-auto">
-          <Link href="/">
-            <Image
-              src="/logo.png"
-              alt="logo"
-              className="rounded w-40 hidden md:flex"
-              width={1000}
-              height={1000}
-            />
-          </Link>
+      <div className="bg-gradient-to-t pl-0   md:pl-10 from-gray-900 via-gray-950 to-950">
+        <div className="flex justify-between max-w-7xl mx-auto items-center ">
+          <div className="max-w-[85%] ">
+            <Link href="/">
+              <Image
+                src="/logo.png"
+                alt="logo"
+                className="rounded w-40 hidden md:flex"
+                width={1000}
+                height={1000}
+              />
+            </Link>
+          </div>
+          <div className="">
+            <LanguageSwitcher currentLocale={currentLocale} />
+          </div>
         </div>
       </div>
 

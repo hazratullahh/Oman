@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { renderCanvas } from "@/components/ui/canvas";
+import { renderCanvas } from "@/app/components/ui/canvas";
 import { DIcons } from "dicons";
 import { motion } from "framer-motion";
 
@@ -41,7 +41,6 @@ export function Hero() {
         </div>
 
         <div className="mb-10">
-
           <div className="w-full mx-auto hidden md:flex items-center justify-around ">
             <h2 className="mb-7 md:mb-10 text-2xl md:text-6xl font-semibold text-gray-50 uppercase">
               Tas-HEEL Co

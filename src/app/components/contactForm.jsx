@@ -1,12 +1,17 @@
 "use client";
 
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { ContactSchema } from '@/schema/contact';
+import React from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { ContactSchema } from "src/schema/contact";
 
 const Form = () => {
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm({
     resolver: yupResolver(ContactSchema),
   });
 
@@ -32,7 +37,11 @@ const Form = () => {
               placeholder="First Name"
               {...register("firstName")}
             />
-            {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>}
+            {errors.firstName && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.firstName.message}
+              </p>
+            )}
           </div>
 
           <div className="flex-1 mt-3 md:mt-0">
@@ -42,10 +51,13 @@ const Form = () => {
               placeholder="Last Name"
               {...register("lastName")}
             />
-            {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>}
+            {errors.lastName && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.lastName.message}
+              </p>
+            )}
           </div>
         </div>
-
 
         {/* Subject */}
         <input
@@ -54,7 +66,9 @@ const Form = () => {
           placeholder="Subject"
           {...register("subject")}
         />
-        {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>}
+        {errors.subject && (
+          <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>
+        )}
 
         {/* Email */}
         <input
@@ -63,7 +77,9 @@ const Form = () => {
           placeholder="Email"
           {...register("email")}
         />
-        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+        {errors.email && (
+          <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+        )}
 
         {/* Message */}
         <textarea
@@ -71,7 +87,9 @@ const Form = () => {
           placeholder="Message"
           {...register("message")}
         />
-        {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
+        {errors.message && (
+          <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+        )}
 
         {/* Privacy Policy */}
         <p className="tracking-wide leading-relaxed text-xs px-1 mb-4 text-gray-50">
@@ -89,9 +107,8 @@ const Form = () => {
           </button>
         </div>
       </form>
-
     </div>
   );
 };
 
-export default Form; 
+export default Form;

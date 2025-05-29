@@ -96,8 +96,8 @@ export default function HeroImageSlider({
               <Image
                 src={image.src}
                 alt={image.alt}
-                layout="fill"
-                objectFit="cover"
+                fill
+                className="object-cover" // Apply object-fit using a Tailwind CSS class
                 priority={positionState === "current"}
               />
             </motion.div>

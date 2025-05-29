@@ -1,4 +1,4 @@
-import { FeatureSteps } from "@/components/ui/WhyChooseSection";
+import { FeatureSteps } from "@/app/components/ui/WhyChooseSection";
 
 const features = [
   {
