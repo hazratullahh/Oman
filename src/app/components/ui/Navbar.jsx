@@ -1,4 +1,3 @@
-// src/app/components/ui/Navbar.jsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -10,8 +9,7 @@ import { ContactBtn } from "../ContactButton";
 import LanguageSwitcher from "../LanguageSwitcher";
 
 export function Navbar({ items, className, dictionary, currentLocale }) {
-  // Active tab should probably use the `key` now, or a derived value
-  const [activeTab, setActiveTab] = useState(items[0].key); // Initialize with the key of the first item
+  const [activeTab, setActiveTab] = useState(items[0].key);
   const [isMobile, setIsMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -36,10 +34,10 @@ export function Navbar({ items, className, dictionary, currentLocale }) {
 
   return (
     <>
-      {/* Top gradient background with logo (desktop) */}
-      <div className="bg-gradient-to-t pl-0   md:pl-10 from-gray-900 via-gray-950 to-950">
-        <div className="flex justify-between max-w-7xl mx-auto items-center ">
-          <div className="max-w-[85%] ">
+      {/* Top gradient background with logo and LanguageSwitcher (desktop) */}
+      <div className="bg-gradient-to-t pl-0 md:pl-10 from-gray-900 via-gray-950 to-950">
+        <div className="flex justify-between max-w-7xl mx-auto items-center">
+          <div className="max-w-[85%]">
             <Link href="/">
               <Image
                 src="/logo.png"
@@ -50,7 +48,8 @@ export function Navbar({ items, className, dictionary, currentLocale }) {
               />
             </Link>
           </div>
-          <div className="">
+          {/* LanguageSwitcher for desktop */}
+          <div className="hidden md:block">
             <LanguageSwitcher currentLocale={currentLocale} />
           </div>
         </div>
@@ -59,7 +58,9 @@ export function Navbar({ items, className, dictionary, currentLocale }) {
       {/* Mobile header */}
       <div className="bg-gradient-to-t from-gray-900 via-gray-950 to-950">
         <div className="max-w-[85%] mx-auto">
-          <div className="md:hidden flex items-center justify-between">
+          <div className="md:hidden flex items-center justify-between py-2">
+            {" "}
+            {/* Added py-2 for vertical padding */}
             <Link href="/">
               <Image
                 src="/logo.png"
@@ -69,11 +70,15 @@ export function Navbar({ items, className, dictionary, currentLocale }) {
                 height={1000}
               />
             </Link>
-            {/* Use dictionary for the Contact Us button */}
-            <ContactBtn
-              path="/contact"
-              name={dictionary.menu_contact_us_button}
-            />
+            <div className="flex items-center gap-4">
+              {" "}
+              {/* Container for language switcher and contact button */}
+              <LanguageSwitcher currentLocale={currentLocale} />
+              <ContactBtn
+                path="/contact"
+                name={dictionary.menu_contact_us_button}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -89,20 +94,19 @@ export function Navbar({ items, className, dictionary, currentLocale }) {
         <div className="flex items-center gap-3 bg-background border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
           {items.map((item) => {
             const Icon = item.icon;
-            const isActive = activeTab === item.key; // Compare with item.key now
+            const isActive = activeTab === item.key;
 
             return (
               <Link
-                key={item.key} // Use item.key for the unique key prop
+                key={item.key}
                 href={item.url}
-                onClick={() => setActiveTab(item.key)} // Set active tab by key
+                onClick={() => setActiveTab(item.key)}
                 className={cn(
                   "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
                   "text-foreground/80 hover:text-primary",
                   isActive && "bg-muted text-primary"
                 )}
               >
-                {/* Use the dictionary to get the translated name */}
                 <span className="hidden md:inline">{dictionary[item.key]}</span>
                 <span className="md:hidden">
                   <Icon size={18} strokeWidth={2.5} />
