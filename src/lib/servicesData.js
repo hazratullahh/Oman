@@ -25,7 +25,7 @@ const servicesData = {
     link: "https://www.uae.gov.ae/en/about-uae/emirates-id-renewal",
     id: 2,
     en: {
-      title: "Renew Emirates ID",
+      title: "How to Easily Renew Emirates ID",
       description1:
         "Emirates ID cards must be renewed within 30 days of their expiration. Failure to renew will result in a late fee. We offer an Emirates ID card renewal service, meeting all requirements in as little as 24 hours.",
       description2:
@@ -39,30 +39,12 @@ const servicesData = {
         "تجديد الهوية الإماراتية ضروري لضمان صلاحيتها للاستخدام المستمر في المسائل القانونية والإدارية. تتم عملية التجديد عادة قبل تاريخ انتهاء الصلاحية. تتضمن العملية تقديم طلب مع المستندات الضرورية، بما في ذلك هويتك الإماراتية القديمة. التجديد بسيط، ولكن التوقيت الصحيح يمكن أن يمنع حدوث فترات انقطاع في الصلاحية، مما قد يسبب إزعاجات لحاملها.",
     },
   },
-  "opening-companies-in-oman": {
-    image: "/images/service/service-3.jpg",
-    link: "https://www.oman.om/business/starting-a-business",
-    id: 3,
-    en: {
-      title:
-        "Establishing Companies and Establishments in the Sultanate of Oman",
-      description1:
-        "**Opening companies and establishments in Oman:** We provide fast and reliable licensing and commercial registration services for Gulf and Omani companies and establishments in the Sultanate of Oman. Our team of experts provides personalized advice and comprehensive guidance to facilitate all legal procedures, ensuring a smooth and efficient experience for our clients establishing their businesses in the Omani market.",
-      description2: "",
-    },
-    ar: {
-      title: "تأسيس الشركات والمنشآت في سلطنة عمان",
-      description1:
-        "**تأسيس الشركات والمنشآت في عمان:** نقدم خدمات سريعة وموثوقة لترخيص وتسجيل الشركات والمؤسسات الخليجية والعمانية تجاريًا في سلطنة عمان. يقدم فريق خبرائنا نصائح شخصية وإرشادات شاملة لتسهيل جميع الإجراءات القانونية، مما يضمن تجربة سلسة وفعالة لعملائنا في تأسيس أعمالهم في السوق العماني.",
-      description2: "",
-    },
-  },
   "transferring-commercial-records-saudi-investment": {
     image: "/images/service/service-4.jpg",
     link: "https://www.saudigov.sa/en/investment-in-saudi-arabia",
     id: 4,
     en: {
-      title: "Transfer Saudi Records",
+      title: "How to Easily Transfer Saudi Records",
       description1:
         "**Existing commercial records and transferring them with the lists to open an investment in Saudi Arabia:** In Saudi Arabia, managing commercial records and transferring them for investment purposes is an integral step for businesses wishing to operate in the kingdom. Investors must ensure that they meet local regulations for transferring commercial records, including proper documentation and permits. The process facilitates foreign investment and helps businesses enter the Saudi market with ease.",
       description2:
@@ -81,7 +63,7 @@ const servicesData = {
     link: "https://www.oman.om/residency-services",
     id: 5,
     en: {
-      title: "Complete Omani Residency",
+      title: "Easily Complete Omani Residency",
       description1:
         "A notification from the Ministry of Labor for private sector employees and a letter from the government agency for government sector employees for the first issuance. Attach a 4x6 passport-sized photo with a white background for the first-time issuance of a resident card for those under the age of seven.",
       description2: "",
@@ -154,7 +136,7 @@ const servicesData = {
     link: "https://www.carregistry.com/transfer-ownership",
     id: 9,
     en: {
-      title: "Traffic Services",
+      title: "Traffic Services Transactions",
       description1:
         "We provide comprehensive services for completing traffic transactions and renewing vehicles without the need for a physical visit or inspection. We also offer quick and efficient car export services from the UAE to Oman, ensuring all procedures run smoothly to save our customers time and effort.",
       description2: "",
@@ -239,6 +221,24 @@ const servicesData = {
         "**تطوير تطبيقات الجوال:** يتيح تطوير تطبيقات الجوال للشركات إنشاء تطبيقات للهواتف الذكية والأجهزة اللوحية، مما يعزز تفاعل العملاء ويقدم الخدمات أثناء التنقل. باستخدام تطبيقات الجوال، يمكن للشركات تحسين تجربة المستخدم، وتسهيل المعاملات، وزيادة ولاء العملاء. تتضمن عملية التطوير إنشاء تطبيقات سهلة الاستخدام وعملية ومتوافقة مع أنظمة iOS و Android.",
       description2:
         "قدم منتجاتك وخدماتك مباشرة إلى متناول يد عملائك—في أي مكان وفي أي وقت—من خلال تطبيق جوال مصمم خصيصًا. اجذب المستخدمين فورًا من خلال إشعارات فورية مستهدفة، وقدم محتوى وتوصيات مخصصة، وبسّط المعاملات باستخدام المدفوعات الآمنة داخل التطبيق والدفع بنقرة واحدة، وعزز الولاء عبر المكافآت والمزايا الحصرية. بالإضافة إلى ذلك، احصل على رؤى عميقة وفي الوقت الفعلي حول سلوك المستخدم لتحسين عروضك باستمرار وتعزيز الرضا. سواء كنت تحجز المواعيد، أو تعرض المنتجات، أو تقدم خدمات حسب الطلب، فإن تطبيق الجوال يمكّن عملك من زيادة الاحتفاظ بالعملاء، وتعزيز علاقات العملاء، والبقاء في المقدمة في سوق اليوم سريع الخطى.",
+    },
+  },
+  "opening-companies-in-oman": {
+    image: "/images/service/service-3.jpg",
+    link: "https://www.oman.om/business/starting-a-business",
+    id: 3,
+    en: {
+      title:
+        "Establishing Companies and Establishments in the Sultanate of Oman",
+      description1:
+        "**Opening companies and establishments in Oman:** We provide fast and reliable licensing and commercial registration services for Gulf and Omani companies and establishments in the Sultanate of Oman. Our team of experts provides personalized advice and comprehensive guidance to facilitate all legal procedures, ensuring a smooth and efficient experience for our clients establishing their businesses in the Omani market.",
+      description2: "",
+    },
+    ar: {
+      title: "تأسيس الشركات والمنشآت في سلطنة عمان",
+      description1:
+        "**تأسيس الشركات والمنشآت في عمان:** نقدم خدمات سريعة وموثوقة لترخيص وتسجيل الشركات والمؤسسات الخليجية والعمانية تجاريًا في سلطنة عمان. يقدم فريق خبرائنا نصائح شخصية وإرشادات شاملة لتسهيل جميع الإجراءات القانونية، مما يضمن تجربة سلسة وفعالة لعملائنا في تأسيس أعمالهم في السوق العماني.",
+      description2: "",
     },
   },
   "mvp-development-business": {

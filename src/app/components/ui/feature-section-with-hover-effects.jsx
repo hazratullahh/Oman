@@ -1,4 +1,3 @@
-// src/app/components/ui/feature-section-with-hover-effects.jsx
 "use client";
 
 import { cn, limitString } from "@/lib/utils";
