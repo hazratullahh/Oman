@@ -156,7 +156,7 @@ const Page = async ({ params }) => {
             }`}
           >
             <p className="py-5 text-justify text-lg md:text-xl font-sans">
-              {service.description1.replace(/\*\*/g, "")}
+              {service.description2.replace(/\*\*/g, "")}
             </p>
             {service.description2 && (
               <p className="py-5 text-justify text-lg md:text-xl font-sans">
