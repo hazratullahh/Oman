@@ -23,5 +23,9 @@
   "hero_heading_part4": "Expert!",
   "hero_description": "To transform life and business in Oman by making every interaction simple, every process predictable, and every outcome successful. Empowering clients with innovative solutions and personalized support.",
   "hero_contact_us_button": "Contact Us",
-  "hero_tech_services_button": "Our Technology Services"
+  "hero_tech_services_button": "Our Technology Services",
+
+  "stats_happy_clients": "Happy Clients",
+  "stats_projects_completed": "Projects Completed",
+  "stats_regions_served": "Regions Served"
 }

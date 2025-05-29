@@ -67,7 +67,10 @@ export default function HeroSection({ dictionary, currentLocale }) {
 
       {/* Stats Cards Section - positioned to overlap the bottom of the hero */}
       <div className="pb-8 sm:py-0">
-        <StatsCardsSection />
+        <StatsCardsSection
+          dictionary={dictionary}
+          currentLocale={currentLocale}
+        />
       </div>
     </main>
   );

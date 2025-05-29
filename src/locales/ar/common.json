@@ -23,5 +23,9 @@
   "hero_heading_part4": "الخبراء!",
   "hero_description": "لتحويل الحياة والأعمال في عُمان من خلال جعل كل تفاعل بسيطًا، وكل عملية متوقعة، وكل نتيجة ناجحة. تمكين العملاء بحلول مبتكرة ودعم شخصي.",
   "hero_contact_us_button": "اتصل بنا",
-  "hero_tech_services_button": "خدماتنا التكنولوجية"
+  "hero_tech_services_button": "خدماتنا التكنولوجية",
+
+  "stats_happy_clients": "عملاء سعداء",
+  "stats_projects_completed": "مشاريع مكتملة",
+  "stats_regions_served": "مناطق مخدومة"
 }
