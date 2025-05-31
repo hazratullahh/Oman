@@ -63,7 +63,6 @@ const InfiniteScrollImages = ({ dictionary, currentLocale }) => {
           </radialGradient>
         </defs>
       </svg>
-
       <h2
         className={`text-center text-2xl md:text-4xl font-bold mb-4 py-10 text-white ${
           currentLocale === "ar"
@@ -73,7 +72,6 @@ const InfiniteScrollImages = ({ dictionary, currentLocale }) => {
       >
         {dictionary.our_partners_heading} {/* Use the translated heading */}
       </h2>
-
       <Slider {...settings}>
         {images.map((src, idx) => (
           <div key={idx} className="px-4 py-10">
