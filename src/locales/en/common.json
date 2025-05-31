@@ -90,5 +90,26 @@
   "our_mission_heading": "Our Mission",
   "our_mission_paragraph": "To transform life and business in the Oman by making every interaction simple, every process predictable, and every outcome successful. We are committed to empowering our clients with innovative solutions, personalized support, and unwavering dedication—ensuring they thrive in a dynamic and evolving environment.",
   "our_vision_heading": "Our Vision",
-  "our_vision_paragraph": "To become the most trusted and sought-after partner in the Oman, recognized for driving exceptional value and sustainable success for individuals and businesses alike. We envision a future where our clients confidently navigate challenges, seize opportunities, and realize their full potential through our expertise and passion for excellence."
+  "our_vision_paragraph": "To become the most trusted and sought-after partner in the Oman, recognized for driving exceptional value and sustainable success for individuals and businesses alike. We envision a future where our clients confidently navigate challenges, seize opportunities, and realize their full potential through our expertise and passion for excellence.",
+
+  "contact_us_heading": "Contact us",
+  "contact_form_heading": "Send Us A Message",
+  "contact_form_first_name_placeholder": "First Name",
+  "contact_form_last_name_placeholder": "Last Name",
+  "contact_form_subject_placeholder": "Subject",
+  "contact_form_email_placeholder": "Email",
+  "contact_form_message_placeholder": "Message",
+  "contact_form_privacy_policy": "By submitting this form, you agree to our privacy policy.",
+  "contact_form_send_button": "Send",
+  "contact_form_sending_button": "Sending...",
+  "contact_form_success_message": "Thank you for your message! We'll get back to you soon.",
+
+  "firstName_required": "First Name is required",
+  "lastName_required": "Last Name is required",
+  "subject_required": "Subject is required",
+  "email_required": "Email is required",
+  "email_invalid": "Invalid email format",
+  "message_required": "Message is required",
+
+  "our_location_heading": "Our Location"
 }
