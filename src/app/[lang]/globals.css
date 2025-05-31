@@ -1,3 +1,5 @@
+/* src/app/globals.css */
+
 @import "tailwindcss";
 
 :root {
@@ -61,6 +63,11 @@ body {
 html[dir="rtl"] {
   direction: rtl;
   text-align: right; /* Default text alignment for RTL */
+}
+
+/* Add this LTR utility class */
+.ltr {
+  direction: ltr !important; /* Use !important to override global RTL */
 }
 
 /* Example for adjusting margin/padding for RTL */
