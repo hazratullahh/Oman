@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { ContactBtn } from "../ContactButton";
+// import { ContactBtn } from "../ContactButton";
 import LanguageSwitcher from "../LanguageSwitcher";
 
 export function Navbar({ items, className, dictionary, currentLocale }) {
@@ -74,10 +74,10 @@ export function Navbar({ items, className, dictionary, currentLocale }) {
               {" "}
               {/* Container for language switcher and contact button */}
               <LanguageSwitcher currentLocale={currentLocale} />
-              <ContactBtn
+              {/* <ContactBtn
                 path="/contact"
                 name={dictionary.menu_contact_us_button}
-              />
+              /> */}
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ import ScrollToHash from "@/app/components/ScrollToHash";
 import { Testimonials } from "@/app/components/Testimonials";
 import { WhyChooseUS } from "@/app/components/WhyChoose-Us";
 import { testimonials } from "@/lib/utils";
-import { getDictionary } from "@/lib/i18n"; // Make sure this import path is correct
+import { getDictionary } from "@/lib/i18n"; // Make sure this import path is correct 
 
 export default async function Home({ params }) {
   const resolvedParams = await params;

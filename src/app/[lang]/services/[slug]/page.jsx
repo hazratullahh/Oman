@@ -22,7 +22,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { slug, lang } = params;
+  const { slug, lang } = await params;
   const service = getServiceBySlug(slug, lang);
 
   const defaultTitle = "Service Not Found | TAS-HEEL";
@@ -70,7 +70,7 @@ export async function generateMetadata({ params }) {
 }
 
 const Page = async ({ params }) => {
-  const { slug, lang } = params;
+  const { slug, lang } = await params;
 
   const service = getServiceBySlug(slug, lang);
   const isArabic = lang === "ar";
