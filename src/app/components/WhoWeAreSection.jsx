@@ -1,9 +1,12 @@
+// src/app/components/WhoWeAreSection.jsx
 "use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { cn } from "@/lib/utils"; // Assuming you have cn utility
 
-export function WhoWeAreSection() {
+export function WhoWeAreSection({ dictionary, currentLocale }) {
+  // Accept props
   // stagger container: each direct child will animate in sequence
   const container = {
     hidden: {},
@@ -20,9 +23,14 @@ export function WhoWeAreSection() {
     visible: { opacity: 1, y: 0 },
   };
 
+  const isArabic = currentLocale === "ar";
+
   return (
     <motion.div
-      className="bg-gradient-to-bl from-gray-900 via-gray-950 to-gray-800 overflow-hidden"
+      className={cn(
+        "bg-gradient-to-bl from-gray-900 via-gray-950 to-gray-800 overflow-hidden",
+        isArabic ? "text-right" : "text-left" // Apply text alignment based on locale
+      )}
       variants={container}
       initial="hidden"
       whileInView="visible"
@@ -40,24 +48,21 @@ export function WhoWeAreSection() {
               variants={fadeUp}
             >
               <h1 className="text-4xl font-bold tracking-tight text-gray-50 text-balance sm:text-6xl">
-                Who We Are<span className="font-serif">!</span>
+                {dictionary.who_we_are_heading}{" "}
+                {/* Use dictionary for heading */}
+                <span className="font-serif">!</span>
               </h1>
               <p className="relative mt-6 text-lg leading-8 text-gray-100 sm:max-w-md lg:max-w-xl text-justify">
-                We are a one-stop service center providing comprehensive support
-                for individuals, entrepreneurs, and businesses in the Oman. We
-                specialize in business setup and administration, visa assistance,
-                vehicle registration, and handling legal and bureaucratic matters
-                of any complexity.
+                {dictionary.who_we_are_paragraph1}{" "}
+                {/* Use dictionary for paragraph 1 */}
               </p>
               <p className="relative mt-8 text-lg leading-8 text-gray-100 sm:max-w-md lg:max-w-xl text-justify">
-                Combining the roles of a business consultant, PRO specialist,
-                document processing assistant, and personal coordinator, we
-                enable our clients to focus on growth and development—not
-                paperwork
+                {dictionary.who_we_are_paragraph2}{" "}
+                {/* Use dictionary for paragraph 2 */}
               </p>
             </motion.div>
 
-            {/* Right images block */}
+            {/* Right images block (no changes needed here for translation) */}
             <motion.div
               className="flex justify-end gap-8 mt-14 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0"
               variants={fadeUp}

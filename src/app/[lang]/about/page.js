@@ -1,3 +1,5 @@
+// src/app/[lang]/about/page.js
+import { getDictionary } from "@/lib/i18n"; // Import getDictionary
 import { MissionVision } from "@/app/components/VisionMission";
 import { WhoWeAreSection } from "@/app/components/WhoWeAreSection";
 
@@ -31,11 +33,23 @@ export const metadata = {
   },
 };
 
-const Page = () => {
+// Change `Page` to an async function to receive `params`
+const Page = async ({ params }) => {
+  const resolvedParams = await params;
+  const dictionary = await getDictionary(resolvedParams.lang); // Fetch the dictionary
+
   return (
     <>
-      <WhoWeAreSection />
-      <MissionVision />
+      {/* Pass dictionary and currentLocale to WhoWeAreSection */}
+      <WhoWeAreSection
+        dictionary={dictionary}
+        currentLocale={resolvedParams.lang}
+      />
+      {/* Pass dictionary and currentLocale to MissionVision */}
+      <MissionVision
+        dictionary={dictionary}
+        currentLocale={resolvedParams.lang}
+      />
     </>
   );
 };
