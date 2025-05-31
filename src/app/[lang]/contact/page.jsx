@@ -58,7 +58,7 @@ const Page = async ({ params }) => {
               <div className="relative h-full">
                 <Image
                   className="transition-all duration-300 cursor-pointer filter hover:grayscale-0 w-full h-full lg:rounded-l-2xl rounded-2xl bg-blend-multiply bg-gray-100"
-                  src="/images/contact.png"
+                  src="/images/contact2.jpg"
                   width={1080}
                   height={1080}
                   alt="image description" // Consider translating this alt text if needed
