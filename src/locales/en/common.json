@@ -111,5 +111,14 @@
   "email_invalid": "Invalid email format",
   "message_required": "Message is required",
 
-  "our_location_heading": "Our Location"
+  "our_location_heading": "Our Location",
+
+  "faq_meta_title": "FAQ | fqg",
+  "faq_meta_description": "Find answers to the most frequently asked questions about fqg’s services, processes, and how we can help you succeed in the Oman.",
+  "faq_meta_description_og": "Explore fqg’s FAQ to learn more about our business setup, PRO services, visa assistance, and more in the Oman.",
+  "faq_meta_image_alt": "fqg FAQ",
+  "faq_meta_description_twitter": "Got questions? Check out fqg’s FAQ for quick answers on our services, processes, and how we support your growth in the Oman.",
+  "back_button_text": "Back",
+  "faq_heading": "Frequently Asked Questions",
+  "faq_description": "Find answers to common questions about our service, policies, and security. Still have questions? Reach out anytime."
 }
