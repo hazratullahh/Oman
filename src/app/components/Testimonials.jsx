@@ -3,6 +3,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
+import ElfsightGoogleReviews from "./ElfsightGoogleReviews";
 
 export const Testimonials = ({
   items,
@@ -75,7 +76,11 @@ export const Testimonials = ({
           {dictionary.testimonials_subheading}{" "}
         </p>
       </div>
-      <div
+      <div className=" flex flex-col items-center bg-gradient-to-b from-gray-200 via-gray-300 to-slate-100 rounded-3xl justify-center relative overflow-hidden">
+        {/* Your previous Testimonials component is replaced by the Elfsight widget */}
+        <ElfsightGoogleReviews />
+      </div>
+      {/* <div
         ref={containerRef}
         className={cn(
           "scroller relative z-20 max-w-7xl overflow-hidden",
@@ -108,7 +113,6 @@ export const Testimonials = ({
                 ></div>
                 <span className="relative z-20 text-sm leading-[1.6] font-normal text-gray-50 dark:text-gray-100 ltr text-left">
                   {" "}
-                  {/* Add LTR and text-left here too for safety */}
                   {item.quote}
                 </span>
                 <div
@@ -125,13 +129,11 @@ export const Testimonials = ({
                   >
                     <span className="text-sm leading-[1.6] font-normal text-gray-50 dark:text-gray-400 ltr text-left">
                       {" "}
-                      {/* Add LTR and text-left */}
                       {item.name}
                     </span>
                     <span className="text-sm leading-[1.6] font-normal text-gray-50 dark:text-gray-400 ltr text-left">
                       {" "}
-                      {/* Add LTR and text-left */}
-                      {item.title}
+=                      {item.title}
                     </span>
                   </span>
                 </div>
@@ -139,7 +141,7 @@ export const Testimonials = ({
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </>
   );
 };
