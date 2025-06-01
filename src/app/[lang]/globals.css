@@ -79,3 +79,12 @@ html[dir="rtl"] .ml-4 {
   margin-right: 1rem;
   margin-left: 0; /* Reset LTR property */
 }
+
+a[href*="elfsight.com/google-reviews-widget"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+a[href*="elfsight.com"] {
+  display: none !important;
+  visibility: hidden !important;
+}

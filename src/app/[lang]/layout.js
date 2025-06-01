@@ -7,6 +7,7 @@ import { TopHeader } from "@/app/components/TopHeader";
 // Make sure this import path is correct and uses "i18n", not "18n"
 import { getDictionary } from "@/lib/i18n";
 import { dir } from "i18next";
+import HideElfsight from "@/components/HideElfsight";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,6 +64,7 @@ export default async function RootLayout({ children, params }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <HideElfsight />
         {/* Pass resolvedParams.lang to components */}
         <TopHeader
           dictionary={dictionary}
