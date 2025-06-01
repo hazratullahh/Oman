@@ -6,7 +6,8 @@ import ScrollToHash from "@/app/components/ScrollToHash";
 import { Testimonials } from "@/app/components/Testimonials";
 import { WhyChooseUS } from "@/app/components/WhyChoose-Us";
 import { testimonials } from "@/lib/utils";
-import { getDictionary } from "@/lib/i18n"; // Make sure this import path is correct 
+import { getDictionary } from "@/lib/i18n"; // Make sure this import path is correct
+import StatsCardsSection from "@/components/StatsCardsSection";
 
 export default async function Home({ params }) {
   const resolvedParams = await params;
@@ -32,6 +33,13 @@ export default async function Home({ params }) {
         dictionary={dictionary}
         currentLocale={resolvedParams.lang}
       />
+      {/* Stats Cards Section - positioned to overlap the bottom of the hero */}
+      <div className="py-10 bg-gradient-to-t from-gray-800 via-gray-750 to-black mx-auto text-center">
+        <StatsCardsSection
+          dictionary={dictionary}
+          currentLocale={resolvedParams.lang}
+        />
+      </div>
       <div className="bg-gradient-to-b from-gray-900 via-gray-950 to-black h-[40rem] flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <Testimonials
           items={testimonials}

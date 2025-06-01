@@ -63,7 +63,7 @@ const Footer = ({ dictionary, currentLocale }) => {
             <ul>
               <li className="my-3">
                 <Link
-                  href="/"
+                  href={`/${currentLocale}/`}
                   className="hover:text-green-300 transition-colors"
                 >
                   {footerDict.home_link} {/* Translated link text */}
@@ -71,7 +71,7 @@ const Footer = ({ dictionary, currentLocale }) => {
               </li>
               <li className="my-3">
                 <Link
-                  href="/about"
+                  href={`/${currentLocale}/about`}
                   className="hover:text-green-300 transition-colors"
                 >
                   {footerDict.about_us_link} {/* Translated link text */}
@@ -79,7 +79,7 @@ const Footer = ({ dictionary, currentLocale }) => {
               </li>
               <li className="my-3">
                 <Link
-                  href="/contact"
+                  href={`/${currentLocale}/contact`}
                   className="hover:text-green-300 transition-colors"
                 >
                   {footerDict.contact_us_link} {/* Translated link text */}
@@ -87,7 +87,7 @@ const Footer = ({ dictionary, currentLocale }) => {
               </li>
               <li className="my-3">
                 <Link
-                  href="/faq"
+                  href={`/${currentLocale}/faq`}
                   className="hover:text-green-300 transition-colors"
                 >
                   {footerDict.faq_link} {/* Translated link text */}
@@ -104,7 +104,7 @@ const Footer = ({ dictionary, currentLocale }) => {
             <ul>
               <li className="my-3">
                 <Link
-                  href="/services/obtaining-an-emirates-id"
+                  href={`/${currentLocale}/services/obtaining-an-emirates-id`}
                   className="hover:text-green-300 transition-colors"
                 >
                   {footerDict.service_emirates_id_obtain}{" "}
@@ -113,7 +113,7 @@ const Footer = ({ dictionary, currentLocale }) => {
               </li>
               <li className="my-3">
                 <Link
-                  href="/services/enewing-an-emirates-id"
+                  href={`/${currentLocale}/services/enewing-an-emirates-id`}
                   className="hover:text-green-300 transition-colors"
                 >
                   {footerDict.service_emirates_id_renew}{" "}
@@ -122,7 +122,7 @@ const Footer = ({ dictionary, currentLocale }) => {
               </li>
               <li className="my-3">
                 <Link
-                  href="/services/opening-companies-in-oman"
+                  href={`/${currentLocale}/services/opening-companies-in-oman`}
                   className="hover:text-green-300 transition-colors"
                 >
                   {footerDict.service_omani_company_setup}{" "}
@@ -131,7 +131,7 @@ const Footer = ({ dictionary, currentLocale }) => {
               </li>
               <li className="my-3">
                 <Link
-                  href="/services/web-app-development"
+                  href={`/${currentLocale}/services/web-app-development`}
                   className="hover:text-green-300 transition-colors"
                 >
                   {footerDict.service_web_app_dev}{" "}
@@ -140,7 +140,7 @@ const Footer = ({ dictionary, currentLocale }) => {
               </li>
               <li className="my-3">
                 <Link
-                  href="/services/mvp-development-business"
+                  href={`/${currentLocale}/services/mvp-development-business`}
                   className="hover:text-green-300 transition-colors"
                 >
                   {footerDict.service_mvp_dev} {/* Translated service name */}

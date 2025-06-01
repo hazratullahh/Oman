@@ -11,19 +11,27 @@ export default function HeroSection({ dictionary, currentLocale }) {
   const heroImages = [
     {
       src: "/images/hero/hero-1.jpg",
-      alt: "Modern business office with team collaboration",
+      alt: "web development",
     },
     {
       src: "/images/hero/hero-2.jpg",
-      alt: "Professional in business meeting, focusing on a tablet",
+      alt: "mobile development",
     },
     {
       src: "/images/hero/hero-3.jpg",
-      alt: "Sleek office building against a blue sky",
+      alt: "Id Card",
     },
     {
       src: "/images/hero/hero-4.jpg",
-      alt: "Abstract network connections representing global reach",
+      alt: "Id Card",
+    },
+    {
+      src: "/images/hero/hero-5.jpg",
+      alt: "cars transfer",
+    },
+    {
+      src: "/images/hero/hero-6.jpg",
+      alt: "update id card",
     },
   ];
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -48,8 +56,8 @@ export default function HeroSection({ dictionary, currentLocale }) {
 
       {/* Main Content Container - sits on top of the background */}
       <div
-        className="relative z-10 max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-start
-                   px-6 pt-24 pb-40 md:px-8
+        className=" z-10 max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-start
+                   px-6 py-24  md:px-8
                    min-h-[calc(100vh_+_10rem)] sm:min-h-[calc(100vh_+_8rem)] lg:min-h-[calc(100vh_+_6rem)]"
       >
         {/* Left Side: Hero Content */}
@@ -66,12 +74,12 @@ export default function HeroSection({ dictionary, currentLocale }) {
       </div>
 
       {/* Stats Cards Section - positioned to overlap the bottom of the hero */}
-      <div className="pb-8 sm:py-0">
+      {/* <div className="pb-8 sm:py-0">
         <StatsCardsSection
           dictionary={dictionary}
           currentLocale={currentLocale}
         />
-      </div>
+      </div> */}
     </main>
   );
 }

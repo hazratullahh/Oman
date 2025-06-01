@@ -49,6 +49,13 @@ export default function HeroContent({ dictionary, currentLocale }) {
         {/* Conditional rendering for heading parts based on language */}
         {isArabic ? (
           <>
+            {dictionary.hero_heading_part1}
+            <span className="text-red-400">
+              {dictionary.hero_heading_part2}
+            </span>
+            {dictionary.hero_heading_part3}
+            <br className="hidden sm:inline" />
+
             <motion.span
               className="relative inline-block text-green-300 bg-clip-text bg-gradient-to-r from-green-300 to-green-500"
               animate={{ scale: [1, 1.05, 1] }}
@@ -57,12 +64,6 @@ export default function HeroContent({ dictionary, currentLocale }) {
               {dictionary.hero_heading_part4}
               <span className="absolute left-0 bottom-0 h-2 bg-green-500 w-full rounded-full transform -translate-y-1 opacity-60"></span>
             </motion.span>
-            {dictionary.hero_heading_part3}
-            <br className="hidden sm:inline" />
-            <span className="text-red-400">
-              {dictionary.hero_heading_part2}
-            </span>
-            {dictionary.hero_heading_part1}
           </>
         ) : (
           <>

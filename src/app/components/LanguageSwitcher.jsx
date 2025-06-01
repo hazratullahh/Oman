@@ -3,13 +3,12 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { FaGlobe, FaCaretDown, FaCheck } from "react-icons/fa"; // Globe icon, dropdown arrow, checkmark
-import { FaFlagUsa, FaFlag } from "react-icons/fa6"; // Using fa6 for more specific flags if available, or just fa
-import { RiFlag2Fill } from "react-icons/ri"; // General flag if specific country flags aren't suitable or available
+import Image from "next/image"; // Import the Image component
+import { FaGlobe, FaCaretDown, FaCheck } from "react-icons/fa";
 
 const locales = [
-  { code: "en", name: "English", icon: FaFlagUsa }, // Using USA flag for English
-  { code: "ar", name: "العربية", icon: RiFlag2Fill }, // Using a generic flag for Arabic, consider a specific country flag if appropriate (e.g., FaFlagSa for Saudi Arabia if that fits your context, or FaFlagUae for UAE)
+  { code: "en", name: "English", icon: "/images/us.png" }, // Using USA flag for English
+  { code: "ar", name: "العربية", icon: "/images/su.png" }, // Using Saudi Arabia flag for Arabic, corrected extension
 ];
 
 export default function LanguageSwitcher({ currentLocale }) {
@@ -20,18 +19,22 @@ export default function LanguageSwitcher({ currentLocale }) {
 
   const getLocalizedPath = (newLocale) => {
     const pathSegments = pathname.split("/");
+    // Find the current locale in the path and remove it, or just keep the path
+    const filteredSegments = pathSegments.filter(
+      (segment) => !locales.some((locale) => locale.code === segment)
+    );
     const originalPath =
-      pathSegments.length > 2 ? pathSegments.slice(2).join("/") : "";
+      filteredSegments.length > 1 ? filteredSegments.slice(1).join("/") : "";
     return `/${newLocale}${originalPath ? `/${originalPath}` : ""}`;
   };
 
   const handleLocaleChange = (newLocale) => {
     if (newLocale === currentLocale) {
-      setIsOpen(false); // Close dropdown even if already selected
+      setIsOpen(false);
       return;
     }
     router.push(getLocalizedPath(newLocale));
-    setIsOpen(false); // Close dropdown after selection
+    setIsOpen(false);
   };
 
   // Close dropdown when clicking outside
@@ -47,8 +50,9 @@ export default function LanguageSwitcher({ currentLocale }) {
     };
   }, []);
 
-  const CurrentLocaleIcon =
-    locales.find((lang) => lang.code === currentLocale)?.icon || FaGlobe; // Fallback to globe icon
+  // Find the current locale's icon path
+  const currentLocaleIconPath =
+    locales.find((lang) => lang.code === currentLocale)?.icon || null;
 
   return (
     <div className="relative" ref={dropdownRef}>
@@ -59,9 +63,18 @@ export default function LanguageSwitcher({ currentLocale }) {
         aria-expanded={isOpen}
         aria-label="Select Language"
       >
-        <CurrentLocaleIcon className="text-lg" />
-        <span className="font-semibold uppercase">{currentLocale}</span>{" "}
-        {/* Show current locale code */}
+        {currentLocaleIconPath ? (
+          <Image
+            src={currentLocaleIconPath}
+            alt={`${currentLocale} flag`}
+            width={20}
+            height={15}
+            className="rounded-sm"
+          />
+        ) : (
+          <FaGlobe className="text-lg" />
+        )}
+        <span className="font-semibold uppercase">{currentLocale}</span>
         <FaCaretDown
           className={`transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
@@ -71,25 +84,28 @@ export default function LanguageSwitcher({ currentLocale }) {
 
       {isOpen && (
         <div className="absolute right-0 mt-2 w-40 bg-gray-800 border border-gray-700 rounded-md shadow-lg py-1 z-50">
-          {locales.map((lang) => {
-            const LangIcon = lang.icon;
-            return (
-              <button
-                key={lang.code}
-                onClick={() => handleLocaleChange(lang.code)}
-                className="flex items-center justify-between w-full px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white text-sm transition-colors duration-200"
-                role="menuitem"
-              >
-                <div className="flex items-center gap-2">
-                  <LangIcon className="text-lg" />
-                  <span>{lang.name}</span>
-                </div>
-                {currentLocale === lang.code && (
-                  <FaCheck className="text-blue-500" />
-                )}
-              </button>
-            );
-          })}
+          {locales.map((lang) => (
+            <button
+              key={lang.code}
+              onClick={() => handleLocaleChange(lang.code)}
+              className="flex items-center justify-between w-full px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white text-sm transition-colors duration-200"
+              role="menuitem"
+            >
+              <div className="flex items-center gap-2">
+                <Image
+                  src={lang.icon}
+                  alt={`${lang.name} flag`}
+                  width={20}
+                  height={15}
+                  className="rounded-sm"
+                />
+                <span>{lang.name}</span>
+              </div>
+              {currentLocale === lang.code && (
+                <FaCheck className="text-blue-500" />
+              )}
+            </button>
+          ))}
         </div>
       )}
     </div>

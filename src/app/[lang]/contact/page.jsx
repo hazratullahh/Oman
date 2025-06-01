@@ -3,40 +3,54 @@ import { IoIosMail } from "react-icons/io";
 import Form from "@/app/components/contactForm";
 import Image from "next/image";
 import LocationMap from "@/app/components/MapLocation";
+import { getDictionary } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
 
-export const metadata = {
-  title: "Contact Us | YourBrand",
-  description:
-    "Get in touch with YourBrand. Whether you have questions about our services, need support, or want to discuss a project, our team is here to help you succeed in the Oman.",
-  openGraph: {
-    title: "Contact Us | YourBrand",
-    description:
-      "Reach out to YourBrand for expert guidance in business setup, PRO services, visa assistance and more. We're ready to support your growth in the Oman.",
-    url: "https://yourdomain.com/contact",
-    siteName: "YourBrand",
-    images: [
-      {
-        url: "https://yourdomain.com/og-contact.jpg",
-        width: 1200,
-        height: 630,
-        alt: "YourBrand Contact Us",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Contact Us | YourBrand",
-    description:
-      "Need assistance? Contact YourBrand for personalized business solutions, PRO support, and more in the Oman.",
-    images: ["https://yourdomain.com/twitter-contact.jpg"],
-  },
-};
+export async function generateMetadata({ params }) {
+  // Await params here before using its properties
+  const resolvedParams = await params;
+  const dictionary = await getDictionary(resolvedParams.lang);
 
-const Page = () => {
+  return {
+    title: dictionary.contact_meta_title, // Use translated title
+    description: dictionary.contact_meta_description, // Use translated description
+    openGraph: {
+      title: dictionary.contact_meta_title_og, // Use translated Open Graph title
+      description: dictionary.contact_meta_description_og, // Use translated Open Graph description
+      url: "https://yourdomain.com/contact",
+      siteName: "YourBrand",
+      images: [
+        {
+          url: "https://yourdomain.com/og-contact.jpg",
+          width: 1200,
+          height: 630,
+          alt: dictionary.contact_meta_image_alt, // Use translated image alt
+        },
+      ],
+      locale: resolvedParams.lang === "ar" ? "ar_AE" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dictionary.contact_meta_title_twitter, // Use translated Twitter title
+      description: dictionary.contact_meta_description_twitter, // Use translated Twitter description
+      images: ["https://yourdomain.com/twitter-contact.jpg"],
+    },
+  };
+}
+
+const Page = async ({ params }) => {
+  const resolvedParams = await params;
+  const dictionary = await getDictionary(resolvedParams.lang);
+  const isArabic = resolvedParams.lang === "ar";
+
   return (
-    <section className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden py-12 md:pt-28">
+    <section
+      className={cn(
+        "min-h-screen bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden py-12 md:pt-28",
+        isArabic ? "text-right" : "text-left"
+      )}
+    >
       <div className="m-auto max-w-7xl px-4">
         <div className="grid lg:grid-cols-2 grid-cols-1">
           <div className="lg:mb-0 mb-10">
@@ -44,31 +58,52 @@ const Page = () => {
               <div className="relative h-full">
                 <Image
                   className="transition-all duration-300 cursor-pointer filter hover:grayscale-0 w-full h-full lg:rounded-l-2xl rounded-2xl bg-blend-multiply bg-gray-100"
-                  src="/images/contact.png"
+                  src="/images/contact2.jpg"
                   width={1080}
                   height={1080}
-                  alt="image description"
+                  alt="image description" // Consider translating this alt text if needed
                 />
-                <h1 className="font-manrope text-gray-50 text-4xl font-bold leading-10 absolute top-11 left-11">
-                  Contact us
+                <h1
+                  className={cn(
+                    "font-manrope text-gray-50 text-4xl font-bold leading-10 absolute top-11",
+                    isArabic ? "right-11" : "left-11"
+                  )}
+                >
+                  {dictionary.contact_us_heading}
                 </h1>
 
                 <div className="absolute bottom-0 w-full lg:p-11 p-5 backdrop-filter">
                   <div className="bg-gray-600/15 backdrop-blur-2xl rounded-lg p-6 block">
-                    <div className="flex items-center mb-6">
+                    <div
+                      className={cn(
+                        "flex items-center mb-6",
+                        isArabic ? "flex-row-reverse" : "flex-row"
+                      )}
+                    >
                       <FaPhoneAlt color="white" />
                       <a
-                        href="tel:470-601-1911"
-                        className="text-white text-base lg:text-lg font-normal leading-6 ml-5"
+                        href="tel:+96899726225"
+                        className={cn(
+                          "text-white text-base lg:text-lg font-normal leading-6",
+                          isArabic ? "mr-5" : "ml-5"
+                        )}
                       >
                         +96 899 726 225
                       </a>
                     </div>
-                    <div className="flex items-center">
+                    <div
+                      className={cn(
+                        "flex items-center",
+                        isArabic ? "flex-row-reverse" : "flex-row"
+                      )}
+                    >
                       <IoIosMail color="white" />
                       <a
-                        href="mailto:contact@filingform.com"
-                        className="text-white text-base lg:text-lg font-normal leading-6 ml-5"
+                        href="mailto:contact@manzoor.com"
+                        className={cn(
+                          "text-white text-base lg:text-lg font-normal leading-6",
+                          isArabic ? "mr-5" : "ml-5"
+                        )}
                       >
                         contact@manzoor.com
                       </a>
@@ -78,11 +113,14 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <Form />
+          <Form dictionary={dictionary} currentLocale={resolvedParams.lang} />
         </div>
       </div>
 
-      <LocationMap />
+      <LocationMap
+        dictionary={dictionary}
+        currentLocale={resolvedParams.lang}
+      />
     </section>
   );
 };

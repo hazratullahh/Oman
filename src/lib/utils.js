@@ -39,16 +39,16 @@ export const testimonials = [
 
 export function limitString(str, limit) {
   // Ensure that both arguments are provided correctly
-  if (typeof str !== 'string') {
-      throw new TypeError('First argument must be a string.');
+  if (typeof str !== "string") {
+    throw new TypeError("First argument must be a string.");
   }
-  if (typeof limit !== 'number' || limit <= 0) {
-      throw new TypeError('Second argument must be a positive number.');
+  if (typeof limit !== "number" || limit <= 0) {
+    throw new TypeError("Second argument must be a positive number.");
   }
 
   // Truncate and append "..." if string exceeds the limit
   if (str.length > limit) {
-      return str.slice(0, limit) + "...";
+    return str.slice(0, limit) + "...";
   }
 
   // Return the string as is if the length is within the limit

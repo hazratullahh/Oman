@@ -39,6 +39,24 @@ const servicesData = {
         "تجديد الهوية الإماراتية ضروري لضمان صلاحيتها للاستخدام المستمر في المسائل القانونية والإدارية. تتم عملية التجديد عادة قبل تاريخ انتهاء الصلاحية. تتضمن العملية تقديم طلب مع المستندات الضرورية، بما في ذلك هويتك الإماراتية القديمة. التجديد بسيط، ولكن التوقيت الصحيح يمكن أن يمنع حدوث فترات انقطاع في الصلاحية، مما قد يسبب إزعاجات لحاملها.",
     },
   },
+  "completing-omani-residency": {
+    image: "/images/service/service-5.jpg",
+    link: "https://www.oman.om/residency-services",
+    id: 3,
+    en: {
+      title: "Easily Complete Omani Residency",
+      description1:
+        "A notification from the Ministry of Labor for private sector employees and a letter from the government agency for government sector employees for the first issuance. Attach a 4x6 passport-sized photo with a white background for the first-time issuance of a resident card for those under the age of seven.",
+      description2: "",
+    },
+    ar: {
+      title: "إتمام الإقامة العمانية",
+      description1:
+        "إشعار من وزارة العمل لموظفي القطاع الخاص ورسالة من الجهة الحكومية لموظفي القطاع الحكومي للإصدار الأول. إرفاق صورة شخصية مقاس 4×6 بخلفية بيضاء للإصدار الأول لبطاقة الإقامة.",
+      description2: "",
+    },
+  },
+
   "transferring-commercial-records-saudi-investment": {
     image: "/images/service/service-4.jpg",
     link: "https://www.saudigov.sa/en/investment-in-saudi-arabia",
@@ -58,20 +76,22 @@ const servicesData = {
         "يجب أن يتوافق نقل السجلات التجارية مع قوانين الاستثمار والأعمال في المملكة العربية السعودية، والتي تتطلب تقديم سجلات مفصلة ووثائق قانونية حديثة. بمجرد نقل السجلات بنجاح، يمكن للشركات بدء العمليات بأقل العوائق القانونية. وقد قامت الحكومة بتبسيط هذه العملية لتشجيع التنويع الاقتصادي وجذب الاستثمارات العالمية.",
     },
   },
-  "completing-omani-residency": {
-    image: "/images/service/service-5.jpg",
-    link: "https://www.oman.om/residency-services",
+
+  "opening-companies-in-oman": {
+    image: "/images/service/service-3.jpg",
+    link: "https://www.oman.om/business/starting-a-business",
     id: 5,
     en: {
-      title: "Easily Complete Omani Residency",
+      title:
+        "Establishing Companies and Establishments in the Sultanate of Oman",
       description1:
-        "A notification from the Ministry of Labor for private sector employees and a letter from the government agency for government sector employees for the first issuance. Attach a 4x6 passport-sized photo with a white background for the first-time issuance of a resident card for those under the age of seven.",
+        "**Opening companies and establishments in Oman:** We provide fast and reliable licensing and commercial registration services for Gulf and Omani companies and establishments in the Sultanate of Oman. Our team of experts provides personalized advice and comprehensive guidance to facilitate all legal procedures, ensuring a smooth and efficient experience for our clients establishing their businesses in the Omani market.",
       description2: "",
     },
     ar: {
-      title: "إتمام الإقامة العمانية",
+      title: "تأسيس الشركات والمنشآت في سلطنة عمان",
       description1:
-        "إشعار من وزارة العمل لموظفي القطاع الخاص ورسالة من الجهة الحكومية لموظفي القطاع الحكومي للإصدار الأول. إرفاق صورة شخصية مقاس 4×6 بخلفية بيضاء للإصدار الأول لبطاقة الإقامة لمن هم دون سن السابعة.",
+        "**تأسيس الشركات والمنشآت في عمان:** نقدم خدمات سريعة وموثوقة لترخيص وتسجيل الشركات والمؤسسات الخليجية والعمانية تجاريًا في سلطنة عمان. يقدم فريق خبرائنا نصائح شخصية وإرشادات شاملة لتسهيل جميع الإجراءات القانونية، مما يضمن تجربة سلسة وفعالة لعملائنا في تأسيس أعمالهم في السوق العماني.",
       description2: "",
     },
   },
@@ -223,24 +243,7 @@ const servicesData = {
         "قدم منتجاتك وخدماتك مباشرة إلى متناول يد عملائك—في أي مكان وفي أي وقت—من خلال تطبيق جوال مصمم خصيصًا. اجذب المستخدمين فورًا من خلال إشعارات فورية مستهدفة، وقدم محتوى وتوصيات مخصصة، وبسّط المعاملات باستخدام المدفوعات الآمنة داخل التطبيق والدفع بنقرة واحدة، وعزز الولاء عبر المكافآت والمزايا الحصرية. بالإضافة إلى ذلك، احصل على رؤى عميقة وفي الوقت الفعلي حول سلوك المستخدم لتحسين عروضك باستمرار وتعزيز الرضا. سواء كنت تحجز المواعيد، أو تعرض المنتجات، أو تقدم خدمات حسب الطلب، فإن تطبيق الجوال يمكّن عملك من زيادة الاحتفاظ بالعملاء، وتعزيز علاقات العملاء، والبقاء في المقدمة في سوق اليوم سريع الخطى.",
     },
   },
-  "opening-companies-in-oman": {
-    image: "/images/service/service-3.jpg",
-    link: "https://www.oman.om/business/starting-a-business",
-    id: 3,
-    en: {
-      title:
-        "Establishing Companies and Establishments in the Sultanate of Oman",
-      description1:
-        "**Opening companies and establishments in Oman:** We provide fast and reliable licensing and commercial registration services for Gulf and Omani companies and establishments in the Sultanate of Oman. Our team of experts provides personalized advice and comprehensive guidance to facilitate all legal procedures, ensuring a smooth and efficient experience for our clients establishing their businesses in the Omani market.",
-      description2: "",
-    },
-    ar: {
-      title: "تأسيس الشركات والمنشآت في سلطنة عمان",
-      description1:
-        "**تأسيس الشركات والمنشآت في عمان:** نقدم خدمات سريعة وموثوقة لترخيص وتسجيل الشركات والمؤسسات الخليجية والعمانية تجاريًا في سلطنة عمان. يقدم فريق خبرائنا نصائح شخصية وإرشادات شاملة لتسهيل جميع الإجراءات القانونية، مما يضمن تجربة سلسة وفعالة لعملائنا في تأسيس أعمالهم في السوق العماني.",
-      description2: "",
-    },
-  },
+
   "mvp-development-business": {
     image: "/images/service/service-14.jpg",
     link: "https://www.mvpdev.com",

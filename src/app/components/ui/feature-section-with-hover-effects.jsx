@@ -1,3 +1,4 @@
+// src/app/components/FeaturesSectionWithHoverEffects.jsx
 "use client";
 
 import { cn, limitString } from "@/lib/utils";
@@ -47,13 +48,13 @@ export function FeaturesSectionWithHoverEffects({ dictionary, currentLocale }) {
         <Feature
           key={feature.id}
           title={feature.title}
-          description={feature.description1}
+          description={feature.id === 5 ? "" : feature.description1}
           slug={feature.slug}
           icon={serviceIcons[feature.slug]}
           index={index}
           isArabic={isArabic}
           totalServices={totalServices}
-          currentLocale={currentLocale} // Pass currentLocale down to Feature
+          currentLocale={currentLocale}
         />
       ))}
     </div>
@@ -68,10 +69,9 @@ const Feature = ({
   index,
   isArabic,
   totalServices,
-  currentLocale, // Receive currentLocale here
+  currentLocale,
 }) => {
   return (
-    // Crucial Change: Prepend the locale to the slug
     <Link href={`/${currentLocale}/services/${slug}`}>
       <div
         className={cn(
@@ -112,6 +112,7 @@ const Feature = ({
             {title}
           </span>
         </div>
+        {/* The description paragraph will now be empty for ID 5 */}
         <p className="text-sm text-neutral-100 dark:text-neutral-300 max-w-xs relative z-10 px-10">
           {limitString(description, 65)}
         </p>

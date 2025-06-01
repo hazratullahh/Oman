@@ -39,13 +39,13 @@ export function TopHeader() {
             {/* Smaller icon for mobile */}
             <span>+96 899 726 225</span>
           </Link>
-          <span className="hidden sm:inline-block text-gray-600">|</span>
+          {/* <span className="hidden sm:inline-block text-gray-600">|</span> */}
 
-          <span className="flex items-center gap-1 whitespace-nowrap">
+          {/* <span className="flex items-center gap-1 whitespace-nowrap">
             <MapPin size={14} className="text-blue-400" />{" "}
-            {/* Smaller icon for mobile */}
+            
             <span>Oman - Al Buraimi</span>
-          </span>
+          </span> */}
         </div>
 
         {/* Social Media (Right/Bottom on Mobile) */}
