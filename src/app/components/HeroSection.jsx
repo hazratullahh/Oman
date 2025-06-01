@@ -10,20 +10,28 @@ import StatsCardsSection from "./StatsCardsSection";
 export default function HeroSection({ dictionary, currentLocale }) {
   const heroImages = [
     {
-      src: "/images/hero/hero-5.jpg",
+      src: "/images/hero/hero-1.jpg",
       alt: "web development",
     },
     {
-      src: "/images/hero/hero-6.jpg",
+      src: "/images/hero/hero-2.jpg",
       alt: "mobile development",
     },
     {
-      src: "/images/hero/hero-7.jpg",
+      src: "/images/hero/hero-3.jpg",
       alt: "Id Card",
     },
     {
-      src: "/images/hero/hero-8.jpg",
+      src: "/images/hero/hero-4.jpg",
+      alt: "Id Card",
+    },
+    {
+      src: "/images/hero/hero-5.jpg",
       alt: "cars transfer",
+    },
+    {
+      src: "/images/hero/hero-6.jpg",
+      alt: "update id card",
     },
   ];
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
