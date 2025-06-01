@@ -71,7 +71,7 @@ export const Testimonials = ({
   return (
     <>
       <div
-        className={`flex flex-col items-center gap-1 px-4 ${
+        className={`flex flex-col items-center gap-1 px-4 md:pt-8 ${
           isArabic ? "text-right" : "text-left"
         }`}
       >
