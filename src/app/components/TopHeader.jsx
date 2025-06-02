@@ -89,7 +89,7 @@ export function TopHeader() {
           </Link>
           <Link
             className="hover:text-blue-400 transform hover:scale-125 transition-all duration-200 ease-in-out"
-            href="https://t.me/+971526540233"
+            href="https://t.me/+96877386169"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Telegram"
