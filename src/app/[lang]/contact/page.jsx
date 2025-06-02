@@ -17,11 +17,11 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: dictionary.contact_meta_title_og, // Use translated Open Graph title
       description: dictionary.contact_meta_description_og, // Use translated Open Graph description
-      url: "https://yourdomain.com/contact",
-      siteName: "YourBrand",
+      url: "https://tasheelom.com/contact",
+      siteName: "Tas Heel",
       images: [
         {
-          url: "https://yourdomain.com/og-contact.jpg",
+          url: "https://tasheelom.com/og-image.jpg",
           width: 1200,
           height: 630,
           alt: dictionary.contact_meta_image_alt, // Use translated image alt
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: dictionary.contact_meta_title_twitter, // Use translated Twitter title
       description: dictionary.contact_meta_description_twitter, // Use translated Twitter description
-      images: ["https://yourdomain.com/twitter-contact.jpg"],
+      images: ["https://tasheelom.com/twitter-image.jpg"],
     },
   };
 }

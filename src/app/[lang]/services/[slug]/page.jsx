@@ -38,8 +38,8 @@ export async function generateMetadata({ params }) {
   const title = `${service.title} | TAS-HEEL`;
   const description =
     service.description1.replace(/\*\*/g, "").slice(0, 157).trim() + "...";
-  const url = `https://fqg.com/${lang}/services/${service.slug}`; // Include lang in URL
-  const imageUrl = `https://fqg.com${service.image}`;
+  const url = `https://tasheelom.com/${lang}/services/${service.slug}`; // Include lang in URL
+  const imageUrl = `https://tasheelom.com/${service.image}`;
 
   return {
     title,
@@ -48,13 +48,13 @@ export async function generateMetadata({ params }) {
       title,
       description,
       url,
-      siteName: "fqg",
+      siteName: "tasheelom",
       images: [
         {
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: `${service.title} – fqg`,
+          alt: `${service.title} – tasheelom`,
         },
       ],
       locale: lang === "ar" ? "ar_AR" : "en_US",

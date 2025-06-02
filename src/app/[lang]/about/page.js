@@ -10,19 +10,19 @@ export async function generateMetadata({ params }) {
   return {
     title: dictionary.about_meta_title,
     description:
-      "Learn how YourBrand transforms life and business in the Oman—making every interaction simple, every process predictable, and every outcome successful.",
+      "Learn how Tasheel transforms life and business in the Oman—making every interaction simple, every process predictable, and every outcome successful.",
     openGraph: {
       title: dictionary.about_meta_title,
       description:
-        "Discover YourBrand’s mission and vision: empowering clients in the Oman with innovative solutions, personalized support, and unwavering dedication.",
-      url: "https://yourdomain.com/about",
-      siteName: "YourBrand",
+        "Discover Tasheel’s mission and vision: empowering clients in the Oman with innovative solutions, personalized support, and unwavering dedication.",
+      url: "https://tasheelom.com/about",
+      siteName: "Tasheel",
       images: [
         {
-          url: "https://yourdomain.com/og-about.jpg",
+          url: "https://tasheelom.com/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: "YourBrand About Us",
+          alt: "Tasheel About Us",
         },
       ],
       // Use resolvedParams.lang here
@@ -33,8 +33,8 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: dictionary.about_meta_title,
       description:
-        "Discover YourBrand’s mission & vision to transform life and business in the Oman with simple, predictable, successful processes.",
-      images: ["https://yourdomain.com/twitter-about.jpg"],
+        "Discover Tasheel’s mission & vision to transform life and business in the Oman with simple, predictable, successful processes.",
+      images: ["https://tasheelom.com/twitter-image.jpg"],
     },
   };
 }

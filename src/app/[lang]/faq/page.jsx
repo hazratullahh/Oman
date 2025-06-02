@@ -129,11 +129,11 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: dictionary.faq_meta_title,
       description: dictionary.faq_meta_description_og,
-      url: "https://fqg.com/faq", // Consider making this dynamic if your domain changes
-      siteName: "fqg",
+      url: "https://tasheelom.com/faq", // Consider making this dynamic if your domain changes
+      siteName: "tasheelom",
       images: [
         {
-          url: "https://fqg.com/og-faq.jpg", // Consider making this dynamic if your image path changes
+          url: "https://tasheelom.com/og-image.jpg", // Consider making this dynamic if your image path changes
           width: 1200,
           height: 630,
           alt: dictionary.faq_meta_image_alt,
@@ -146,7 +146,7 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: dictionary.faq_meta_title,
       description: dictionary.faq_meta_description_twitter,
-      images: ["https://fqg.com/twitter-faq.jpg"], // Consider making this dynamic
+      images: ["https://tasheelom.com/twitter-image.jpg"], // Consider making this dynamic
     },
   };
 }
