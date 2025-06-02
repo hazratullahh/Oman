@@ -52,7 +52,7 @@ const Page = async ({ params }) => {
       )}
     >
       <div className="m-auto max-w-7xl px-4">
-        <div className="grid lg:grid-cols-2 grid-cols-1">
+        <div className="grid lg:grid-cols-2 gap-4 sm:gap-8 grid-cols-1">
           <div className="lg:mb-0 mb-10">
             <div className="group w-full h-full">
               <div className="relative h-full">
@@ -82,7 +82,10 @@ const Page = async ({ params }) => {
                     >
                       <FaPhoneAlt color="white" />
                       <a
-                        href="tel:+96899726225"
+                        href="https://wa.me/96899726225"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Whatsapp"
                         className={cn(
                           "text-white text-base lg:text-lg font-normal leading-6",
                           isArabic ? "mr-5" : "ml-5"
@@ -97,15 +100,15 @@ const Page = async ({ params }) => {
                         isArabic ? "flex-row-reverse" : "flex-row"
                       )}
                     >
-                      <IoIosMail color="white" />
+                      <IoIosMail size={20} color="white" />
                       <a
-                        href="mailto:contact@manzoor.com"
+                        href="mailto:support@tasheelom.com"
                         className={cn(
                           "text-white text-base lg:text-lg font-normal leading-6",
                           isArabic ? "mr-5" : "ml-5"
                         )}
                       >
-                        contact@manzoor.com
+                        support@tasheelom.com
                       </a>
                     </div>
                   </div>

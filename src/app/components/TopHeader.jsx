@@ -21,12 +21,12 @@ export function TopHeader() {
         {/* Adjusted gap and text size for mobile */}
         <div className="flex flex-wrap justify-center sm:justify-start items-center gap-x-4 gap-y-1 text-xs sm:text-sm mb-1 sm:mb-0">
           <Link
-            href="mailto:youremail.gmail.com"
+            href="mailto:support@tasheelom.com"
             className="flex items-center gap-1 hover:text-white transition-colors whitespace-nowrap"
           >
             <Mail size={14} className="text-green-400" />{" "}
             {/* Smaller icon for mobile */}
-            <span>youremail.gmail.com</span>
+            <span>support@tasheelom.com</span>
           </Link>
           {/* Separators hidden on very small screens, shown from sm */}
           <span className="hidden sm:inline-block text-gray-600">|</span>
