@@ -4,10 +4,10 @@ import "./globals.css";
 import Footer from "@/app/components/Footer";
 import { NavbarItem } from "@/app/components/NavbarItem";
 import { TopHeader } from "@/app/components/TopHeader";
-// Make sure this import path is correct and uses "i18n", not "18n"
 import { getDictionary } from "@/lib/i18n";
 import { dir } from "i18next";
 import HideElfsight from "@/components/HideElfsight";
+import WhatsappChat from "@/components/WhatsappChat"; // Import the new component
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +20,6 @@ const geistMono = Geist_Mono({
 });
 
 export async function generateMetadata({ params }) {
-  // Await params here for metadata generation
   const resolvedParams = await params;
   const dictionary = await getDictionary(resolvedParams.lang);
 
@@ -53,19 +52,15 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function RootLayout({ children, params }) {
-  // Await params here for the RootLayout component as well
-  const resolvedParams = await params; // <-- This is the crucial line to add/ensure is there
-
-  const dictionary = await getDictionary(resolvedParams.lang); // Use resolvedParams.lang here
+  const resolvedParams = await params;
+  const dictionary = await getDictionary(resolvedParams.lang);
 
   return (
-    // Use resolvedParams.lang for the html tag's lang and dir attributes
     <html lang={resolvedParams.lang} dir={dir(resolvedParams.lang)}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <HideElfsight />
-        {/* Pass resolvedParams.lang to components */}
         <TopHeader
           dictionary={dictionary}
           currentLocale={resolvedParams.lang}
@@ -76,6 +71,11 @@ export default async function RootLayout({ children, params }) {
         />
         {children}
         <Footer dictionary={dictionary} currentLocale={resolvedParams.lang} />
+        {/* Add the WhatsappChat component here */}
+        <WhatsappChat
+          dictionary={dictionary}
+          currentLocale={resolvedParams.lang}
+        />
       </body>
     </html>
   );
