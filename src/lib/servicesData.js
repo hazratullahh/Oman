@@ -192,7 +192,6 @@ const servicesData = {
       title: "Web App Development",
       description1:
         "**Web App Development:** Web app development is a crucial aspect of modern business solutions. With the increasing need for businesses to offer seamless digital experiences, having a web app tailored to your business's unique needs is essential. Web apps provide customers with easy access to services and products through any browser, ensuring consistent engagement. The development process involves designing the interface, coding functionalities, and testing to ensure responsiveness across devices.",
-      // NEW PACKAGES STRUCTURE
       packages: [
         {
           name: "Basic Next.js Website Package",
@@ -232,7 +231,6 @@ const servicesData = {
       title: "تطوير تطبيقات الويب",
       description1:
         "**تطوير تطبيقات الويب:** يعد تطوير تطبيقات الويب جانبًا حيويًا في حلول الأعمال الحديثة. مع تزايد الحاجة إلى أن تقدم الشركات تجارب رقمية سلسة، فإن وجود تطبيق ويب مصمم خصيصًا لاحتياجات عملك الفريدة أمر ضروري. توفر تطبيقات الويب للعملاء سهولة الوصول إلى الخدمات والمنتجات من خلال أي متصفح، مما يضمن مشاركة متسقة. تتضمن عملية التطوير تصميم الواجهة، وترميز الوظائف، والاختبار لضمان الاستجابة عبر الأجهزة.",
-      // NEW PACKAGES STRUCTURE
       packages: [
         {
           name: "حزمة موقع Next.js الأساسية",
@@ -277,7 +275,6 @@ const servicesData = {
       title: "Graphic Design",
       description1:
         "**Graphic Design:** Graphic design is the art of visually communicating ideas through digital or print media. Whether it's creating logos, marketing materials, or user interfaces, graphic design plays a key role in shaping a brand's identity. Effective design not only attracts attention but also communicates your message clearly, ensuring customers understand and engage with your brand. A strong graphic design can elevate your marketing efforts and create a memorable customer experience.",
-      // NEW PACKAGES STRUCTURE
       packages: [
         {
           name: "Logo & Branding Starter",
@@ -315,7 +312,6 @@ const servicesData = {
       title: "التصميم الجرافيكي",
       description1:
         "**التصميم الجرافيكي:** التصميم الجرافيكي هو فن توصيل الأفكار بصريًا من خلال الوسائط الرقمية أو المطبوعة. سواء كان ذلك إنشاء شعارات أو مواد تسويقية أو واجهات مستخدم، يلعب التصميم الجرافيكي دورًا رئيسيًا في تشكيل هوية العلامة التجارية. التصميم الفعال لا يجذب الانتباه فحسب، بل يوصل رسالتك بوضوح، مما يضمن فهم العملاء وتفاعلهم مع علامتك التجارية. يمكن للتصميم الجرافيكي القوي أن يرفع جهودك التسويقية ويخلق تجربة عملاء لا تُنسى.",
-      // NEW PACKAGES STRUCTURE
       packages: [
         {
           name: "حزمة شعار وعلامة تجارية للمبتدئين",
@@ -358,7 +354,6 @@ const servicesData = {
       title: "Mobile App Development",
       description1:
         "**Mobile App Development:** Mobile app development allows businesses to create applications for smartphones and tablets, enhancing customer engagement and offering services on the go. With mobile apps, businesses can improve user experience, facilitate transactions, and increase customer retention. The development process involves creating apps that are intuitive, functional, and compatible with both iOS and Android systems.",
-      // NEW PACKAGES STRUCTURE
       packages: [
         {
           name: "Basic App Package",
@@ -396,7 +391,6 @@ const servicesData = {
       title: "تطوير تطبيقات الجوال",
       description1:
         "**تطوير تطبيقات الجوال:** يتيح تطوير تطبيقات الجوال للشركات إنشاء تطبيقات للهواتف الذكية والأجهزة اللوحية، مما يعزز تفاعل العملاء ويقدم الخدمات أثناء التنقل. باستخدام تطبيقات الجوال، يمكن للشركات تحسين تجربة المستخدم، وتسهيل المعاملات، وزيادة ولاء العملاء. تتضمن عملية التطوير إنشاء تطبيقات سهلة الاستخدام وعملية ومتوافقة مع أنظمة iOS و Android.",
-      // NEW PACKAGES STRUCTURE
       packages: [
         {
           name: "حزمة التطبيق الأساسية",
@@ -442,6 +436,44 @@ const servicesData = {
         "**MVP Development for Business:** MVP (Minimum Viable Product) development is a strategic approach for launching a new product with the core features that address the primary needs of users. By focusing on essential functionalities, businesses can quickly validate ideas, gather user feedback, and improve the product before scaling. MVP development reduces risks and helps businesses avoid investing heavily in unproven ideas.",
       description2:
         "The MVP development process is designed to minimize resources spent while providing a functioning prototype that showcases the potential of the product. It helps businesses test assumptions, make informed decisions, and adapt quickly to user feedback. Once the MVP is successfully validated, businesses can invest more resources to scale the product and add additional features that enhance user experience and value.",
+      packages: [
+        {
+          name: "MVP Starter Package",
+          price: "$1,000 USD", // Lowered price
+          features: [
+            "Discovery call to define core features and user flow",
+            "Basic wireframing and clickable prototype for a single platform (web or mobile)",
+            "Development of essential core features for a functional MVP",
+            "Basic backend integration (e.g., Firebase, Supabase) for data storage",
+            "2 weeks of post-launch minor bug fixes",
+          ],
+        },
+        {
+          name: "Enhanced MVP Package",
+          price: "$2,500 USD", // Lowered price
+          features: [
+            "Detailed discovery and user story mapping",
+            "Refined UI/UX design for a responsive web or mobile app",
+            "Development of core features + 1-2 key secondary features",
+            "Scalable backend development with basic user authentication",
+            "Basic analytics setup to track user engagement",
+            "1 month of post-launch support and minor feature adjustments",
+          ],
+        },
+        {
+          name: "Pro MVP Package",
+          price: "$3,500 USD", // Lowered price
+          features: [
+            "Comprehensive strategy and technical roadmap planning",
+            "Custom UI/UX design with a focus on user experience",
+            "Development of a robust MVP with essential features and light scalability options",
+            "Secure backend development with custom API integration (if needed)",
+            "Integration with one third-party service (e.g., simple payment gateway)",
+            "Basic testing and deployment support",
+            "1.5 months of post-launch support, performance checks, and iterative improvements",
+          ],
+        },
+      ],
     },
     ar: {
       title: "تطوير MVP للأعمال",
@@ -449,6 +481,44 @@ const servicesData = {
         "**تطوير MVP للأعمال:** تطوير MVP (الحد الأدنى من المنتج القابل للتطبيق) هو نهج استراتيجي لإطلاق منتج جديد بميزات أساسية تلبي الاحتياجات الأساسية للمستخدمين. من خلال التركيز على الوظائف الأساسية، يمكن للشركات التحقق بسرعة من الأفكار، وجمع ملاحظات المستخدمين، وتحسين المنتج قبل التوسع. يقلل تطوير MVP المخاطر ويساعد الشركات على تجنب الاستثمار بكثافة في الأفكار غير المثبتة.",
       description2:
         "تم تصميم عملية تطوير MVP لتقليل الموارد المستهلكة مع توفير نموذج أولي وظيفي يعرض إمكانات المنتج. يساعد الشركات على اختبار الافتراضات، واتخاذ قرارات مستنيرة، والتكيف بسرعة مع ملاحظات المستخدمين. بمجرد التحقق من صحة MVP بنجاح، يمكن للشركات استثمار المزيد من الموارد لتوسيع نطاق المنتج وإضافة ميزات إضافية تعزز تجربة المستخدم والقيمة.",
+      packages: [
+        {
+          name: "حزمة MVP للمبتدئين",
+          price: "1,000 دولار أمريكي", // Lowered price
+          features: [
+            "مكالمة اكتشاف لتحديد الميزات الأساسية وتدفق المستخدم",
+            "تصميم أولي أساسي ونموذج أولي قابل للنقر لمنصة واحدة (ويب أو جوال)",
+            "تطوير الميزات الأساسية الضرورية لمنتج MVP وظيفي",
+            "تكامل خلفية أساسي (مثل Firebase, Supabase) لتخزين البيانات",
+            "أسبوعين من إصلاح الأخطاء الطفيفة بعد الإطلاق",
+          ],
+        },
+        {
+          name: "حزمة MVP المحسّنة",
+          price: "2,500 دولار أمريكي", // Lowered price
+          features: [
+            "اكتشاف مفصل ورسم خرائط قصة المستخدم",
+            "تصميم واجهة مستخدم/تجربة مستخدم مُحسّن لتطبيق ويب أو جوال متجاوب",
+            "تطوير الميزات الأساسية + 1-2 ميزة ثانوية رئيسية",
+            "تطوير خلفية قابلة للتطوير مع مصادقة مستخدم أساسية",
+            "إعداد تحليلات أساسي لتتبع تفاعل المستخدم",
+            "شهر واحد من الدعم بعد الإطلاق وتعديلات الميزات الطفيفة",
+          ],
+        },
+        {
+          name: "حزمة MVP الاحترافية",
+          price: "3,500 دولار أمريكي", // Lowered price
+          features: [
+            "استراتيجية شاملة وتخطيط خارطة طريق تقنية",
+            "تصميم واجهة مستخدم/تجربة مستخدم مخصص مع التركيز على تجربة المستخدم",
+            "تطوير منتج MVP قوي بميزات أساسية وخيارات قابلية تطوير خفيفة",
+            "تطوير خلفية آمنة مع تكامل واجهة برمجة تطبيقات مخصصة (إذا لزم الأمر)",
+            "تكامل مع خدمة خارجية واحدة (مثل بوابة دفع بسيطة)",
+            "دعم الاختبار الأساسي والنشر",
+            "1.5 شهر من الدعم بعد الإطلاق، وفحوصات الأداء، والتحسينات المتكررة",
+          ],
+        },
+      ],
     },
   },
 };
