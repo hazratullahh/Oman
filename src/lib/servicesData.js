@@ -151,7 +151,6 @@ const servicesData = {
     },
   },
   "transferring-car-ownership": {
-    // Note: slug name changed slightly to match original title
     image: "/images/service/service-9.jpg",
     link: "https://www.carregistry.com/transfer-ownership",
     id: 9,
@@ -169,7 +168,6 @@ const servicesData = {
     },
   },
   "authenticating-documents-omani-Oman-foreign-affairs": {
-    // Note: slug name changed slightly to match original title
     image: "/images/service/service-10.jpg",
     link: "https://www.mofa.gov.om/en/services/authentication",
     id: 10,
@@ -194,15 +192,81 @@ const servicesData = {
       title: "Web App Development",
       description1:
         "**Web App Development:** Web app development is a crucial aspect of modern business solutions. With the increasing need for businesses to offer seamless digital experiences, having a web app tailored to your business's unique needs is essential. Web apps provide customers with easy access to services and products through any browser, ensuring consistent engagement. The development process involves designing the interface, coding functionalities, and testing to ensure responsiveness across devices.",
-      description2:
-        "A web app can streamline your business operations by automating various tasks, improving customer interaction, and offering services remotely. Whether it's a customer portal, e-commerce platform, or internal tool, web app development ensures that your business adapts to the digital age, improving efficiency, accessibility, and growth potential. It’s essential to choose a team that understands your business model and creates a scalable and secure web application.",
+      // NEW PACKAGES STRUCTURE
+      packages: [
+        {
+          name: "Basic Next.js Website Package",
+          price: "$400 USD",
+          features: [
+            "Responsive 5-page Next.js site (Home, About, Services, Blog, Contact) with static generation",
+            "Basic on-page SEO setup",
+            "Headless CMS integration (e.g., Contentful or Sanity) for easy content updates",
+          ],
+        },
+        {
+          name: "Standard Next.js Website Package",
+          price: "$650 USD",
+          features: [
+            "Responsive 10-page Next.js site with a mix of static generation and server-side rendering as needed",
+            "On-page SEO + Google Analytics setup",
+            "Headless CMS integration (Contentful, Sanity, or Strapi) + basic training for your team",
+            "Contact form, newsletter signup, and social-media link integration",
+          ],
+        },
+        {
+          name: "Premium Next.js Website Package",
+          price: "$1,100 USD",
+          features: [
+            "Responsive 15+-page Next.js site featuring:",
+            "Full dynamic functionality (SSR, ISR, API routes)",
+            "Custom data-fetching strategies for performance and SEO",
+            "Advanced SEO (keyword research, detailed metadata, structured data)",
+            "E-commerce integration (Next.js Commerce or headless Shopify)",
+            "Blog setup, newsletter automation workflows, live chat integration",
+            "1 month of free support and maintenance after launch",
+          ],
+        },
+      ],
     },
     ar: {
       title: "تطوير تطبيقات الويب",
       description1:
         "**تطوير تطبيقات الويب:** يعد تطوير تطبيقات الويب جانبًا حيويًا في حلول الأعمال الحديثة. مع تزايد الحاجة إلى أن تقدم الشركات تجارب رقمية سلسة، فإن وجود تطبيق ويب مصمم خصيصًا لاحتياجات عملك الفريدة أمر ضروري. توفر تطبيقات الويب للعملاء سهولة الوصول إلى الخدمات والمنتجات من خلال أي متصفح، مما يضمن مشاركة متسقة. تتضمن عملية التطوير تصميم الواجهة، وترميز الوظائف، والاختبار لضمان الاستجابة عبر الأجهزة.",
-      description2:
-        "يمكن لتطبيق الويب تبسيط عمليات عملك عن طريق أتمتة المهام المختلفة، وتحسين تفاعل العملاء، وتقديم الخدمات عن بعد. سواء كان ذلك بوابة عملاء، أو منصة للتجارة الإلكترونية، أو أداة داخلية، يضمن تطوير تطبيقات الويب تكيف عملك مع العصر الرقمي، مما يحسن الكفاءة وإمكانية الوصول وإمكانات النمو. من الضروري اختيار فريق يفهم نموذج عملك وينشئ تطبيق ويب قابل للتطوير وآمن.",
+      // NEW PACKAGES STRUCTURE
+      packages: [
+        {
+          name: "حزمة موقع Next.js الأساسية",
+          price: "400 دولار أمريكي",
+          features: [
+            "موقع Next.js متجاوب من 5 صفحات (الرئيسية، من نحن، الخدمات، المدونة، اتصل بنا) مع إنشاء ثابت",
+            "إعداد أساسي لتحسين محركات البحث (SEO) على الصفحة",
+            "تكامل نظام إدارة المحتوى (CMS) بدون رأس (مثل Contentful أو Sanity) لتحديثات المحتوى بسهولة",
+          ],
+        },
+        {
+          name: "حزمة موقع Next.js القياسية",
+          price: "650 دولار أمريكي",
+          features: [
+            "موقع Next.js متجاوب من 10 صفحات بمزيج من الإنشاء الثابت والعرض من جانب الخادم حسب الحاجة",
+            "إعداد تحسين محركات البحث (SEO) على الصفحة + Google Analytics",
+            "تكامل نظام إدارة المحتوى (CMS) بدون رأس (Contentful، Sanity، أو Strapi) + تدريب أساسي لفريقك",
+            "نموذج اتصال، اشتراك في النشرة الإخبارية، وتكامل روابط وسائل التواصل الاجتماعي",
+          ],
+        },
+        {
+          name: "حزمة موقع Next.js المميزة",
+          price: "1,100 دولار أمريكي",
+          features: [
+            "موقع Next.js متجاوب من 15+ صفحة يتميز بـ:",
+            "وظائف ديناميكية كاملة (SSR، ISR، مسارات API)",
+            "استراتيجيات مخصصة لجلب البيانات للأداء وتحسين محركات البحث (SEO)",
+            "تحسين محركات البحث (SEO) متقدم (بحث الكلمات الرئيسية، بيانات تعريف مفصلة، بيانات منظمة)",
+            "تكامل التجارة الإلكترونية (Next.js Commerce أو Shopify بدون رأس)",
+            "إعداد المدونة، سير عمل أتمتة النشرة الإخبارية، تكامل الدردشة المباشرة",
+            "شهر واحد من الدعم والصيانة المجانية بعد الإطلاق",
+          ],
+        },
+      ],
     },
   },
   "graphic-design": {
@@ -213,15 +277,77 @@ const servicesData = {
       title: "Graphic Design",
       description1:
         "**Graphic Design:** Graphic design is the art of visually communicating ideas through digital or print media. Whether it's creating logos, marketing materials, or user interfaces, graphic design plays a key role in shaping a brand's identity. Effective design not only attracts attention but also communicates your message clearly, ensuring customers understand and engage with your brand. A strong graphic design can elevate your marketing efforts and create a memorable customer experience.",
-      description2:
-        "Incorporating graphic design into your business strategy allows you to build a cohesive brand identity, enhance customer engagement, and create visually appealing content. From social media posts to packaging and advertisements, graphic design ensures consistency across all touchpoints with your audience. Professional designers will work with you to craft designs that align with your brand's values and target market, helping you stand out in a competitive environment.",
+      // NEW PACKAGES STRUCTURE
+      packages: [
+        {
+          name: "Logo & Branding Starter",
+          price: "$120 USD",
+          features: [
+            "2 logo concepts + 2 rounds of revisions",
+            "Basic color palette and font pairing",
+            "Delivered in .PNG, .SVG, and .EPS formats",
+          ],
+        },
+        {
+          name: "Standard Branding Kit",
+          price: "$280 USD",
+          features: [
+            "3 logo concepts + up to 3 rounds of revisions",
+            "Full branding kit (logo, color palette, typography, usage guidelines)",
+            "Business card and letterhead design",
+            "Social-media profile graphics (Facebook, Instagram, LinkedIn)",
+          ],
+        },
+        {
+          name: "Premium Design Suite",
+          price: "$520 USD",
+          features: [
+            "5 logo concepts + unlimited revisions until approval",
+            "Complete visual identity (logo, color palette, typography, iconography)",
+            "Stationery set: business card, letterhead, envelope + tri-fold brochure design",
+            "Social-media kit: post templates, banner designs, story layouts + one promotional poster/flyer",
+            "Source files (AI, PSD) and comprehensive style guide PDF",
+          ],
+        },
+      ],
     },
     ar: {
       title: "التصميم الجرافيكي",
       description1:
         "**التصميم الجرافيكي:** التصميم الجرافيكي هو فن توصيل الأفكار بصريًا من خلال الوسائط الرقمية أو المطبوعة. سواء كان ذلك إنشاء شعارات أو مواد تسويقية أو واجهات مستخدم، يلعب التصميم الجرافيكي دورًا رئيسيًا في تشكيل هوية العلامة التجارية. التصميم الفعال لا يجذب الانتباه فحسب، بل يوصل رسالتك بوضوح، مما يضمن فهم العملاء وتفاعلهم مع علامتك التجارية. يمكن للتصميم الجرافيكي القوي أن يرفع جهودك التسويقية ويخلق تجربة عملاء لا تُنسى.",
-      description2:
-        "يسمح لك دمج التصميم الجرافيكي في استراتيجية عملك ببناء هوية علامة تجارية متماسكة، وتعزيز مشاركة العملاء، وإنشاء محتوى جذاب بصريًا. من منشورات وسائل التواصل الاجتماعي إلى التعبئة والإعلانات، يضمن التصميم الجرافيكي الاتساق عبر جميع نقاط الاتصال مع جمهورك. سيعمل المصممون المحترفون معك لصياغة تصاميم تتوافق مع قيم علامتك التجارية والسوق المستهدف، مما يساعدك على التميز في بيئة تنافسية.",
+      // NEW PACKAGES STRUCTURE
+      packages: [
+        {
+          name: "حزمة شعار وعلامة تجارية للمبتدئين",
+          price: "120 دولار أمريكي",
+          features: [
+            "مفهومين للشعار + جولتين من التعديلات",
+            "لوحة ألوان أساسية وتنسيق الخطوط",
+            "تسليمها بتنسيقات .PNG و .SVG و .EPS",
+          ],
+        },
+        {
+          name: "حزمة العلامة التجارية القياسية",
+          price: "280 دولار أمريكي",
+          features: [
+            "3 مفاهيم للشعار + ما يصل إلى 3 جولات من التعديلات",
+            "مجموعة علامة تجارية كاملة (الشعار، لوحة الألوان، الطباعة، إرشادات الاستخدام)",
+            "تصميم بطاقة عمل وورق رسائل",
+            "رسومات ملفات تعريف وسائل التواصل الاجتماعي (فيسبوك، إنستغرام، لينكد إن)",
+          ],
+        },
+        {
+          name: "حزمة التصميم المميزة",
+          price: "520 دولار أمريكي",
+          features: [
+            "5 مفاهيم للشعار + تعديلات غير محدودة حتى الموافقة",
+            "هوية بصرية كاملة (الشعار، لوحة الألوان، الطباعة، الأيقونات)",
+            "مجموعة قرطاسية: بطاقة عمل، ورق رسائل، ظرف + تصميم كتيب ثلاثي الطيات",
+            "مجموعة وسائل التواصل الاجتماعي: قوالب منشورات، تصاميم لافتات، تخطيطات قصص + ملصق/نشرة ترويجية واحدة",
+            "ملفات المصدر (AI، PSD) ودليل أسلوب شامل بتنسيق PDF",
+          ],
+        },
+      ],
     },
   },
   "mobile-app-development": {
@@ -232,15 +358,77 @@ const servicesData = {
       title: "Mobile App Development",
       description1:
         "**Mobile App Development:** Mobile app development allows businesses to create applications for smartphones and tablets, enhancing customer engagement and offering services on the go. With mobile apps, businesses can improve user experience, facilitate transactions, and increase customer retention. The development process involves creating apps that are intuitive, functional, and compatible with both iOS and Android systems.",
-      description2:
-        "Deliver your products and services directly to your customers’ fingertips—anywhere, anytime—through a tailor-made mobile app. Engage users instantly through targeted push notifications, deliver personalized content and recommendations, streamline transactions with secure in-app payments and one-tap checkout, and build loyalty via rewards and exclusive perks. Plus, gain deep, real-time insights into user behavior to continuously refine your offerings and boost satisfaction. Whether you’re booking appointments, showcasing products, or offering on-demand services, a mobile app empowers your business to drive retention, strengthen customer relationships, and stay ahead in today’s fast-paced market.",
+      // NEW PACKAGES STRUCTURE
+      packages: [
+        {
+          name: "Basic App Package",
+          price: "$500 USD",
+          features: [
+            "Simple cross-platform app (React Native or Flutter) with 3 screens (Login, Main, Profile)",
+            "Backend API integration (Firebase or REST)",
+            "Basic UI design and testing on Android & iOS emulators",
+          ],
+        },
+        {
+          name: "Standard App Package",
+          price: "$850 USD",
+          features: [
+            "Cross-platform app with 5 screens (Login, Home, Features, Settings, Profile)",
+            "Custom UI/UX design tailored for both iOS & Android",
+            "Backend API + user authentication + push notifications",
+            "Deployment support for App Store & Google Play submission",
+          ],
+        },
+        {
+          name: "Premium App Package",
+          price: "$1,400 USD",
+          features: [
+            "Cross-platform (or fully native in Swift & Kotlin) app with 10+ screens",
+            "Advanced UI/UX design with animations + in-app purchases setup",
+            "Full backend development (Node.js/Express or Django) including database, API, push notifications, analytics",
+            "Admin dashboard for content management",
+            "App Store & Google Play submission + 1 month of post-launch bug fixes/support",
+          ],
+        },
+      ],
     },
     ar: {
       title: "تطوير تطبيقات الجوال",
       description1:
         "**تطوير تطبيقات الجوال:** يتيح تطوير تطبيقات الجوال للشركات إنشاء تطبيقات للهواتف الذكية والأجهزة اللوحية، مما يعزز تفاعل العملاء ويقدم الخدمات أثناء التنقل. باستخدام تطبيقات الجوال، يمكن للشركات تحسين تجربة المستخدم، وتسهيل المعاملات، وزيادة ولاء العملاء. تتضمن عملية التطوير إنشاء تطبيقات سهلة الاستخدام وعملية ومتوافقة مع أنظمة iOS و Android.",
-      description2:
-        "قدم منتجاتك وخدماتك مباشرة إلى متناول يد عملائك—في أي مكان وفي أي وقت—من خلال تطبيق جوال مصمم خصيصًا. اجذب المستخدمين فورًا من خلال إشعارات فورية مستهدفة، وقدم محتوى وتوصيات مخصصة، وبسّط المعاملات باستخدام المدفوعات الآمنة داخل التطبيق والدفع بنقرة واحدة، وعزز الولاء عبر المكافآت والمزايا الحصرية. بالإضافة إلى ذلك، احصل على رؤى عميقة وفي الوقت الفعلي حول سلوك المستخدم لتحسين عروضك باستمرار وتعزيز الرضا. سواء كنت تحجز المواعيد، أو تعرض المنتجات، أو تقدم خدمات حسب الطلب، فإن تطبيق الجوال يمكّن عملك من زيادة الاحتفاظ بالعملاء، وتعزيز علاقات العملاء، والبقاء في المقدمة في سوق اليوم سريع الخطى.",
+      // NEW PACKAGES STRUCTURE
+      packages: [
+        {
+          name: "حزمة التطبيق الأساسية",
+          price: "500 دولار أمريكي",
+          features: [
+            "تطبيق بسيط متعدد المنصات (React Native أو Flutter) بثلاث شاشات (تسجيل الدخول، الرئيسية، الملف الشخصي)",
+            "تكامل واجهة برمجة التطبيقات الخلفية (Firebase أو REST)",
+            "تصميم واجهة المستخدم الأساسي واختبارها على محاكيات Android و iOS",
+          ],
+        },
+        {
+          name: "حزمة التطبيق القياسية",
+          price: "850 دولار أمريكي",
+          features: [
+            "تطبيق متعدد المنصات بخمس شاشات (تسجيل الدخول، الرئيسية، الميزات، الإعدادات، الملف الشخصي)",
+            "تصميم واجهة المستخدم/تجربة المستخدم مخصص لكل من iOS و Android",
+            "واجهة برمجة تطبيقات خلفية + مصادقة المستخدم + إشعارات الدفع",
+            "دعم النشر لمتجر التطبيقات ومتجر Google Play",
+          ],
+        },
+        {
+          name: "حزمة التطبيق المميزة",
+          price: "1,400 دولار أمريكي",
+          features: [
+            "تطبيق متعدد المنصات (أو أصلي بالكامل في Swift & Kotlin) بأكثر من 10 شاشات",
+            "تصميم واجهة المستخدم/تجربة المستخدم متقدم مع الرسوم المتحركة + إعداد عمليات الشراء داخل التطبيق",
+            "تطوير خلفي كامل (Node.js/Express أو Django) بما في ذلك قاعدة البيانات، واجهة برمجة التطبيقات، إشعارات الدفع، التحليلات",
+            "لوحة تحكم للمسؤول لإدارة المحتوى",
+            "إرسال إلى متجر التطبيقات ومتجر Google Play + شهر واحد من إصلاحات الأخطاء/الدعم بعد الإطلاق",
+          ],
+        },
+      ],
     },
   },
 
@@ -276,6 +464,7 @@ export const getAllServices = (lang) => {
       title: service[lang]?.title || service.en.title, // Fallback to English
       description1: service[lang]?.description1 || service.en.description1,
       description2: service[lang]?.description2 || service.en.description2,
+      packages: service[lang]?.packages || [], // Include packages, fallback to empty array
     };
   });
 };
@@ -292,8 +481,8 @@ export const getServiceBySlug = (slug, lang) => {
     title: service[lang]?.title || service.en.title,
     description1: service[lang]?.description1 || service.en.description1,
     description2: service[lang]?.description2 || service.en.description2,
+    packages: service[lang]?.packages || [], // Include packages, fallback to empty array
   };
 };
 
-// This array is for generateStaticParams to know all possible slugs
 export const serviceSlugs = Object.keys(servicesData);
