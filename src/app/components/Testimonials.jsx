@@ -65,8 +65,8 @@ export const Testimonials = ({
   return (
     <>
       <div
-        className={`flex flex-col items-center gap-1 px-4 ${
-          isArabic ? "text-right" : "text-left" // Keep this for heading alignment
+        className={`flex flex-col items-center gap-1 px-4 md:pt-8 ${
+          isArabic ? "text-right" : "text-left"
         }`}
       >
         <h2 className="max-w-[720px] text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight text-gray-50">
