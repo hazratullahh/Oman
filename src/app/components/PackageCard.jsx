@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 
 const CheckIcon = () => (
   <svg
-    className="flex-shrink-0 h-3 w-3 text-emerald-400"
+    className="flex-shrink-0 h-4 w-4 text-emerald-400 mt-1" // Slightly larger, with top margin for alignment
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -51,8 +51,7 @@ const PackageCard = ({
   return (
     <div
       className={`
-        relative flex flex-col items-center justify-between
-        rounded-xl p-8 h-full
+        relative flex flex-col rounded-xl p-8
         transition-all duration-700 ease-in-out
         transform-gpu
         perspective-1000
@@ -98,7 +97,8 @@ const PackageCard = ({
         </div>
       )}
 
-      <div className="relative z-10 flex flex-col items-center w-full pb-3">
+      {/* Content wrapper with flexible height for better text flow */}
+      <div className="relative z-10 flex flex-col items-center w-full flex-grow">
         <h3 className="text-2xl font-extrabold text-white mb-2 leading-tight text-center tracking-tight">
           {packageName}
         </h3>
@@ -106,20 +106,26 @@ const PackageCard = ({
           {price}
         </p>
 
-        <ul className={`w-full divide-y divide-gray-700`}>
+        {/* Feature list adjusted for better spacing and text */}
+        <ul className={`w-full divide-y divide-gray-700 flex-grow mb-6`}>
+          {" "}
+          {/* flex-grow to push the list down, mb-6 for consistent spacing before button */}
           {features.map((feature, index) => (
             <li
               key={index}
               className={`
-                flex items-center text-sm font-semibold text-white py-1.5 leading-snug
+                flex items-start text-base font-medium text-gray-200 py-2 leading-relaxed // Adjusted font size and line height
                 ${isArabic ? "flex-row-reverse" : ""}
               `}
             >
               <CheckIcon />
               <span
-                className={`${isArabic ? "mr-1.5" : "ml-1.5"} ${
-                  isArabic ? "text-right" : "text-left"
-                } `}
+                className={`
+                  ${
+                    isArabic ? "mr-2" : "ml-2"
+                  } // Adjusted margin for better spacing
+                  ${isArabic ? "text-right" : "text-left"}
+                `}
               >
                 {feature}
               </span>
@@ -128,11 +134,13 @@ const PackageCard = ({
         </ul>
       </div>
 
-      <div className="mt-4 w-full relative z-10">
+      <div className="w-full relative z-10">
+        {" "}
+        {/* Removed mt-auto here, handled by flex-grow above */}
         <button
           onClick={handleChoosePlan}
           className={`
-            w-full py-2.5 rounded-md text-base font-bold transition-all duration-300 ease-in-out
+            w-full py-3 rounded-md cursor-pointer text-lg font-bold transition-all duration-300 ease-in-out
             ${
               isRecommended
                 ? "bg-emerald-500 text-white hover:bg-emerald-600 shadow-lg " +
