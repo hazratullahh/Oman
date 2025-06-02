@@ -155,7 +155,7 @@ const Footer = ({ dictionary, currentLocale }) => {
             </h3>
             {/* Email */}
             <Link
-              href="mailto:youremail.gmail.com"
+              href="mailto:support@tasheelom.com"
               className="text-gray-300 text-sm flex items-start gap-3 my-4 hover:text-white transition-colors"
             >
               <Mail size={18} className="text-green-400 mt-1 flex-shrink-0" />{" "}
@@ -164,7 +164,7 @@ const Footer = ({ dictionary, currentLocale }) => {
                   {footerDict.email_label}
                 </span>{" "}
                 {/* Translated label */}
-                <span>youremail.gmail.com</span>
+                <span>support@tasheelom.com</span>
               </div>
             </Link>
 
