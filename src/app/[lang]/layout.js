@@ -125,6 +125,7 @@ export default async function RootLayout({ children, params }) {
           dictionary={dictionary}
           currentLocale={resolvedParams.lang}
         />
+        <SpeedInsights />
       </body>
     </html>
   );
