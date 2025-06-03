@@ -1,14 +1,14 @@
 {
-  "home_title": "Home | Your Oman Business & PRO Partner",
-  "home_description": "To transform life and business in the Oman by making every interaction simple, every process predictable, and every outcome successful. Empowering clients with innovative solutions and personalized support.",
+  "home_page_meta_title": "Home | Your Oman Business & PRO Partner",
+  "home_page_meta_description": "To transform life and business in the Oman by making every interaction simple, every process predictable, and every outcome successful. Empowering clients with innovative solutions and personalized support.",
+
+  "social_share_title": "Your Oman Business & PRO Partner",
+  "social_share_description": "Transforming life and business in the Oman with simple, predictable, and successful processes. Expert PRO, visa, company setup, and more.",
+
   "services_section_title": "Our Services",
   "why_choose_us_section_title": "Why Choose Us",
   "testimonials_section_title": "What Our Clients Say",
   "read_more": "Read More",
-  "open_graph_title": "Your Oman Business & PRO Partner",
-  "open_graph_description": "Transforming life and business in the Oman with simple, predictable, and successful processes. Expert PRO, visa, company setup, and more.",
-  "twitter_title": "Your Oman Business & PRO Partner",
-  "twitter_description": "Transforming life and business in the Oman with simple, predictable, and successful processes. Expert PRO, visa, company setup, and more.",
 
   "chat_bubble_heading": "I checked the website, and I have a few questions to ask",
   "chat_button_text": "Chat With Us",
@@ -116,21 +116,26 @@
 
   "our_location_heading": "Our Location",
 
-  "faq_meta_title": "FAQ | fqg",
-  "faq_meta_description": "Find answers to the most frequently asked questions about fqg’s services, processes, and how we can help you succeed in the Oman.",
-  "faq_meta_description_og": "Explore fqg’s FAQ to learn more about our business setup, PRO services, visa assistance, and more in the Oman.",
-  "faq_meta_image_alt": "fqg FAQ",
-  "faq_meta_description_twitter": "Got questions? Check out fqg’s FAQ for quick answers on our services, processes, and how we support your growth in the Oman.",
+  "faq_meta_title": "FAQ | TAS-HEEL",
+  "faq_meta_description": "Find answers to the most frequently asked questions about TAS-HEEL’s services, processes, and how we can help you succeed in the Oman.",
+  "faq_meta_description_og": "Explore TAS-HEEL’s FAQ to learn more about our business setup, PRO services, visa assistance, and more in the Oman.",
+  "faq_meta_image_alt": "TAS-HEEL FAQ",
+  "faq_meta_description_twitter": "Got questions? Check out TAS-HEEL’s FAQ for quick answers on our services, processes, and how we support your growth in the Oman.",
   "back_button_text": "Back",
   "faq_heading": "Frequently Asked Questions",
   "faq_description": "Find answers to common questions about our service, policies, and security. Still have questions? Reach out anytime.",
-  "about_meta_title": "About Us | Your Oman Business & PRO Partner",
 
-  "contact_meta_title": "Contact Us | Tas-Heel",
-  "contact_meta_description": "Get in touch with Tas-Heel. Whether you have questions about our services, need support, or want to discuss a project, our team is here to help you succeed in the Oman.",
-  "contact_meta_title_og": "Contact Us | Tas-Heel",
-  "contact_meta_description_og": "Reach out to Tas-Heel for expert guidance in business setup, PRO services, visa assistance and more. We're ready to support your growth in the Oman.",
-  "contact_meta_image_alt": "Tas-Heel Contact Us",
-  "contact_meta_title_twitter": "Contact Us | Tas-Heel",
-  "contact_meta_description_twitter": "Need assistance? Contact Tas-Heel for personalized business solutions, PRO support, and more in the Oman."
+  "about_meta_title": "About Us | TAS-HEEL",
+  "about_meta_description": "Learn how TAS-HEEL transforms life and business in the Oman—making every interaction simple, every process predictable, and every outcome successful.",
+  "about_meta_description_og": "Discover TAS-HEEL’s mission and vision: empowering clients in the Oman with innovative solutions, personalized support, and unwavering dedication.",
+  "about_meta_image_alt": "TAS-HEEL About Us",
+  "about_meta_description_twitter": "Discover TAS-HEEL’s mission & vision to transform life and business in the Oman with simple, predictable, successful processes.",
+
+  "contact_meta_title": "Contact Us | TAS-HEEL",
+  "contact_meta_description": "Get in touch with TAS-HEEL. Whether you have questions about our services, need support, or want to discuss a project, our team is here to help you succeed in the Oman.",
+  "contact_meta_title_og": "Contact Us | TAS-HEEL",
+  "contact_meta_description_og": "Reach out to TAS-HEEL for expert guidance in business setup, PRO services, visa assistance and more. We're ready to support your growth in the Oman.",
+  "contact_meta_image_alt": "TAS-HEEL Contact Us",
+  "contact_meta_title_twitter": "Contact Us | TAS-HEEL",
+  "contact_meta_description_twitter": "Need assistance? Contact TAS-HEEL for personalized business solutions, PRO support, and more in the Oman."
 }

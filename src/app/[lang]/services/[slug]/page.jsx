@@ -1,12 +1,9 @@
+// services/[slug]/page.jsx
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  getAllServices,
-  getServiceBySlug,
-  serviceSlugs,
-} from "@/lib/servicesData";
-import PackageCard from "@/components/PackageCard"; // Ensure this import path is correct
+import { getServiceBySlug, serviceSlugs } from "@/lib/servicesData";
+import PackageCard from "@/components/PackageCard";
 
 export async function generateStaticParams() {
   const locales = ["en", "ar"];
@@ -33,10 +30,13 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const title = `${service.title} | TAS-HEEL`;
+  const title = service.title;
+
   const description =
+    service.metaDescription ||
     service.description1.replace(/\*\*/g, "").slice(0, 157).trim() + "...";
-  const url = `https://tasheelom.com/${lang}/services/${service.slug}`; // Include lang in URL
+
+  const url = `https://tasheelom.com/${lang}/services/${service.slug}`;
   const imageUrl = `https://tasheelom.com/${service.image}`;
 
   return {
@@ -113,7 +113,7 @@ const Page = async ({ params }) => {
             }`}
           >
             <Link
-              href={`/${lang}/#service`}
+              href={`/${lang}/#services`}
               className={`inline-flex items-center space-x-2 text-indigo-400 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded ${
                 isArabic ? "flex-row-reverse space-x-reverse" : ""
               }`}
@@ -160,8 +160,6 @@ const Page = async ({ params }) => {
             </p>
           </div>
         </div>{" "}
-        {/* End of main content div constrained by max-w-3xl */}
-        {/* Conditional rendering for packages - This section can span wider */}
         {service.packages && service.packages.length > 0 && (
           <div className="mt-16 mx-auto px-4 max-w-7xl">
             {" "}
@@ -179,10 +177,6 @@ const Page = async ({ params }) => {
                   price={pkg.price}
                   features={pkg.features}
                   isArabic={isArabic}
-                  // A more robust way to mark the recommended package:
-                  // If there are 3 packages, recommend the middle one (index 1).
-                  // If there are 2 packages, recommend the second one (index 1).
-                  // If there's only 1, don't mark as recommended unless you explicitly want to.
                   isRecommended={
                     (service.packages.length === 3 && index === 1) ||
                     (service.packages.length === 2 && index === 1)
@@ -192,12 +186,10 @@ const Page = async ({ params }) => {
             </div>
           </div>
         )}
-        {/* Fallback to description2 if no packages are defined and description2 exists */}
         {!service.packages ||
           (service.packages.length === 0 && service.description2 && (
             <div
               className={`prose prose-invert text-white mt-8 max-w-3xl mx-auto px-4 ${
-                // Ensure this also respects max-w-3xl
                 isArabic ? "text-right" : "text-left"
               }`}
             >
@@ -206,9 +198,7 @@ const Page = async ({ params }) => {
               </p>
             </div>
           ))}
-        {/* </section> Removed this closing tag here, moved it to the very end */}
       </section>{" "}
-      {/* Final closing tag for the main section */}
     </>
   );
 };

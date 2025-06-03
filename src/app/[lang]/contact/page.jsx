@@ -75,7 +75,8 @@ const Page = async ({ params }) => {
                 <div className="absolute bottom-0 w-full lg:p-11 p-5 backdrop-filter">
                   <div
                     dir={isArabic ? "ltr" : "ltr"}
-                    className="bg-gray-600/15 backdrop-blur-2xl rounded-lg p-6 block" >
+                    className="bg-gray-600/15 backdrop-blur-2xl rounded-lg p-6 block"
+                  >
                     <div
                       className={cn(
                         "flex items-center mb-6",

@@ -1,3 +1,4 @@
+// about/page.js
 import { getDictionary } from "@/lib/i18n"; // Import getDictionary
 import { MissionVision } from "@/components/VisionMission"; // Corrected typo here if needed
 import { WhoWeAreSection } from "@/components/WhoWeAreSection";
