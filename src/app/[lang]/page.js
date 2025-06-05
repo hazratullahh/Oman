@@ -51,11 +51,16 @@ export async function generateMetadata({ params }) {
     title: dictionary.home_page_meta_title,
     description: dictionary.home_page_meta_description,
     keywords: keywords,
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
+    },
     openGraph: {
       title: dictionary.social_share_title,
       description: dictionary.social_share_description,
       url,
-      siteName: "TAS-HEEL",
+      siteName: "tasheelom",
       images: [
         {
           url: imageUrl,

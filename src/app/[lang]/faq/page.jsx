@@ -119,34 +119,80 @@ const faqData = [
 
 // Metadata can now be dynamic based on the dictionary
 export async function generateMetadata({ params }) {
-  // Await params here before accessing its properties
-  const resolvedParams = await params;
-  const dictionary = await getDictionary(resolvedParams.lang);
+  // Resolve parameters and fetch localized strings
+  const { lang } = await params;
+  const dictionary = await getDictionary(lang);
+
+  // Base URLs and image paths for the FAQ page
+  const baseUrl = `https://tasheelom.com/${lang}/faq`;
+  const ogImageUrl = `https://tasheelom.com/og-image.jpg`;
+  const twitterImageUrl = `https://tasheelom.com/twitter-image.jpg`;
+
+  // SEO keywords tailored for the FAQ page (Arabic vs. English)
+  const keywords =
+    lang === "ar"
+      ? [
+          "الأسئلة الشائعة",
+          "تسهيل عمان",
+          "دعم العملاء",
+          "كيفية التسجيل",
+          "أسئلة حول الخدمات",
+          "إجراءات تسهيل",
+          "الوثائق المطلوبة",
+          "الرسوم والتكاليف",
+          "وقت المعالجة",
+        ]
+      : [
+          "FAQ",
+          "Tasheel Oman",
+          "Customer Support",
+          "How to Register",
+          "Service Questions",
+          "Tasheel Procedures",
+          "Required Documents",
+          "Fees and Costs",
+          "Processing Time",
+        ];
 
   return {
+    // Document <title> and <meta name="description">
     title: dictionary.faq_meta_title,
     description: dictionary.faq_meta_description,
+
+    // <meta name="keywords">
+    keywords,
+
+    // Favicon and related icons
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
+    },
+
+    // Open Graph metadata for social sharing
     openGraph: {
       title: dictionary.faq_meta_title,
       description: dictionary.faq_meta_description_og,
-      url: "https://tasheelom.com/faq", // Consider making this dynamic if your domain changes
+      url: baseUrl,
       siteName: "tasheelom",
       images: [
         {
-          url: "https://tasheelom.com/og-image.jpg", // Consider making this dynamic if your image path changes
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: dictionary.faq_meta_image_alt,
         },
       ],
-      locale: resolvedParams.lang === "ar" ? "ar_AR" : "en_US", // Use resolvedParams.lang
+      locale: lang === "ar" ? "ar_AR" : "en_US",
       type: "website",
     },
+
+    // Twitter card metadata
     twitter: {
       card: "summary_large_image",
       title: dictionary.faq_meta_title,
       description: dictionary.faq_meta_description_twitter,
-      images: ["https://tasheelom.com/twitter-image.jpg"], // Consider making this dynamic
+      images: [twitterImageUrl],
     },
   };
 }

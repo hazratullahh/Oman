@@ -1,4 +1,3 @@
-// services/[slug]/page.jsx
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,21 +26,52 @@ export async function generateMetadata({ params }) {
     return {
       title: defaultTitle,
       description: defaultDescription,
+      // Provide basic favicon if desired
+      icons: {
+        icon: "/favicon.ico",
+        shortcut: "/favicon.ico",
+        apple: "/apple-touch-icon.png",
+      },
     };
   }
 
+  // Page title & description
   const title = service.title;
-
   const description =
     service.metaDescription ||
     service.description1.replace(/\*\*/g, "").slice(0, 157).trim() + "...";
 
+  // Construct URL and image paths
   const url = `https://tasheelom.com/${lang}/services/${service.slug}`;
   const imageUrl = `https://tasheelom.com/${service.image}`;
 
+  // Keywords: use `service.keywords` if provided, otherwise fall back to title + defaults
+  const keywords = service.keywords && service.keywords.length
+    ? service.keywords
+    : [
+        service.title,
+        "Tasheel Oman",
+        "Oman Business Services",
+        "PRO Oman",
+        "Transaction Processing",
+      ];
+
   return {
+    // <title> and <meta name="description">
     title,
     description,
+
+    // <meta name="keywords">
+    keywords,
+
+    // Favicon and related icons
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
+    },
+
+    // Open Graph metadata for social sharing
     openGraph: {
       title,
       description,
@@ -58,6 +88,8 @@ export async function generateMetadata({ params }) {
       locale: lang === "ar" ? "ar_AR" : "en_US",
       type: "website",
     },
+
+    // Twitter card metadata
     twitter: {
       card: "summary_large_image",
       title,

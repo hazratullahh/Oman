@@ -4,41 +4,89 @@ import { MissionVision } from "@/components/VisionMission"; // Corrected typo he
 import { WhoWeAreSection } from "@/components/WhoWeAreSection";
 
 export async function generateMetadata({ params }) {
-  // Await params here before using its properties
+  // Resolve params and fetch localized dictionary entries
   const resolvedParams = await params;
-  const dictionary = await getDictionary(resolvedParams.lang);
+  const { lang } = resolvedParams;
+  const dictionary = await getDictionary(lang);
+
+  // Base URLs for the About Us page and social images
+  const baseUrl = `https://tasheelom.com/${lang}/about`;
+  const ogImageUrl = `https://tasheelom.com/og-image.jpg`;
+  const twitterImageUrl = `https://tasheelom.com/twitter-image.jpg`;
+
+  // SEO keywords tailored to the About Us page (Arabic vs. English)
+  const keywords =
+    lang === "ar"
+      ? [
+          "من نحن",
+          "تسهيل عمان",
+          "عن الشركة",
+          "رؤية تسهيل",
+          "رسالة تسهيل",
+          "قيم تسهيل عمان",
+          "فريق تسهيل",
+          "خدمات الأعمال في عمان",
+          "تسهيل تخليص معاملات",
+        ]
+      : [
+          "About Us",
+          "Tasheel Oman",
+          "Company Overview",
+          "Our Mission",
+          "Our Vision",
+          "Company Values",
+          "Oman Business Services",
+          "PRO Oman",
+          "Team Tasheel",
+          "Tasheel Transaction Processing",
+        ];
 
   return {
+    // Document <title> and <meta name="description">
     title: dictionary.about_meta_title,
     description:
-      "Learn how Tasheel transforms life and business in the Oman—making every interaction simple, every process predictable, and every outcome successful.",
+      "Learn how Tasheel transforms life and business in Oman—making every interaction simple, every process predictable, and every outcome successful.",
+
+    // Meta keywords
+    keywords,
+
+    // Favicon and related icons
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
+    },
+
+    // Open Graph metadata for social sharing
     openGraph: {
       title: dictionary.about_meta_title,
       description:
-        "Discover Tasheel’s mission and vision: empowering clients in the Oman with innovative solutions, personalized support, and unwavering dedication.",
-      url: "https://tasheelom.com/about",
-      siteName: "Tasheel",
+        "Discover Tasheel’s mission and vision: empowering clients in Oman with innovative solutions, personalized support, and unwavering dedication.",
+      url: baseUrl,
+      siteName: "tasheelom",
       images: [
         {
-          url: "https://tasheelom.com/og-image.jpg",
+          url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: "Tasheel About Us",
+          alt: dictionary.about_meta_title,
         },
       ],
-      // Use resolvedParams.lang here
-      locale: resolvedParams.lang === "ar" ? "ar_AE" : "en_US",
+      locale: lang === "ar" ? "ar_AE" : "en_US",
       type: "website",
     },
+
+    // Twitter card metadata
     twitter: {
       card: "summary_large_image",
       title: dictionary.about_meta_title,
       description:
-        "Discover Tasheel’s mission & vision to transform life and business in the Oman with simple, predictable, successful processes.",
-      images: ["https://tasheelom.com/twitter-image.jpg"],
+        "Discover Tasheel’s mission & vision to transform life and business in Oman with simple, predictable, successful processes.",
+      images: [twitterImageUrl],
     },
   };
 }
+
 
 // The Page component already awaits params, so no change needed there.
 const Page = async ({ params }) => {

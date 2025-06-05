@@ -7,37 +7,84 @@ import { getDictionary } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 export async function generateMetadata({ params }) {
-  // Await params here before using its properties
-  const resolvedParams = await params;
-  const dictionary = await getDictionary(resolvedParams.lang);
+  // Resolve parameters and fetch localized strings
+  const { lang } = await params;
+  const dictionary = await getDictionary(lang);
+
+  // Base URLs for this Contact Us page
+  const baseUrl = `https://tasheelom.com/${lang}/contact`;
+  const ogImageUrl = `https://tasheelom.com/og-image.jpg`;
+  const twitterImageUrl = `https://tasheelom.com/twitter-image.jpg`;
+
+  // SEO keywords tailored for the Contact Us page (Arabic vs. English)
+  const keywords =
+    lang === "ar"
+      ? [
+          "اتصل بنا",
+          "تسهيل عمان",
+          "خدمة العملاء",
+          "دعم العملاء",
+          "عنوان تسهيل عمان",
+          "هاتف تسهيل عمان",
+          "بريد إلكتروني",
+          "نموذج الاتصال",
+          "خدمات عمان",
+        ]
+      : [
+          "Contact Us",
+          "Tasheel Oman",
+          "Customer Support",
+          "Help Center",
+          "Address",
+          "Phone Number",
+          "Email",
+          "Contact Form",
+          "Oman Services",
+        ];
 
   return {
-    title: dictionary.contact_meta_title, // Use translated title
-    description: dictionary.contact_meta_description, // Use translated description
+    // <title> and <meta name="description">
+    title: dictionary.contact_meta_title,
+    description: dictionary.contact_meta_description,
+
+    // <meta name="keywords">
+    keywords,
+
+    // Favicon and related icons
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
+    },
+
+    // Open Graph metadata for social sharing
     openGraph: {
-      title: dictionary.contact_meta_title_og, // Use translated Open Graph title
-      description: dictionary.contact_meta_description_og, // Use translated Open Graph description
-      url: "https://tasheelom.com/contact",
-      siteName: "Tas Heel",
+      title: dictionary.contact_meta_title_og,
+      description: dictionary.contact_meta_description_og,
+      url: baseUrl,
+      siteName: "tasheelom",
       images: [
         {
-          url: "https://tasheelom.com/og-image.jpg",
+          url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: dictionary.contact_meta_image_alt, // Use translated image alt
+          alt: dictionary.contact_meta_image_alt,
         },
       ],
-      locale: resolvedParams.lang === "ar" ? "ar_AE" : "en_US",
+      locale: lang === "ar" ? "ar_AE" : "en_US",
       type: "website",
     },
+
+    // Twitter card metadata
     twitter: {
       card: "summary_large_image",
-      title: dictionary.contact_meta_title_twitter, // Use translated Twitter title
-      description: dictionary.contact_meta_description_twitter, // Use translated Twitter description
-      images: ["https://tasheelom.com/twitter-image.jpg"],
+      title: dictionary.contact_meta_title_twitter,
+      description: dictionary.contact_meta_description_twitter,
+      images: [twitterImageUrl],
     },
   };
 }
+
 
 const Page = async ({ params }) => {
   const resolvedParams = await params;
