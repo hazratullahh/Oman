@@ -45,8 +45,8 @@ export async function generateMetadata({ params }) {
 
   const keywords = (
     lang === "ar"
-      ? ["سجل عمان","بطاقة اماراتية","فتح سجل تجاري عمان","خدمات PRO عمان","تسهيل عمان"]
-      : ["Oman company registration","Emirati ID card","open commercial register Oman","PRO Oman","Tasheelom"]
+      ? ["سجل عمان", "بطاقة اماراتية", "فتح سجل تجاري عمان", "خدمات PRO عمان", "تسهيل عمان"]
+      : ["Oman company registration", "Emirati ID card", "open commercial register Oman", "PRO Oman", "Tasheelom"]
   ).join(", ");
 
   return {
@@ -139,15 +139,17 @@ export default async function Home({ params }) {
         </Suspense>
       </div>
 
-      <Suspense fallback={<div>Loading testimonials…</div>}>
-        <Testimonials
-          items={testimonials}
-          direction="right"
-          speed="slow"
-          dictionary={dict}
-          currentLocale={lang}
-        />
-      </Suspense>
+      <div className="bg-gradient-to-b from-gray-900 via-gray-950 to-black h-[40rem] flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+        <Suspense fallback={<div>Loading testimonials…</div>}>
+          <Testimonials
+            items={testimonials}
+            direction="right"
+            speed="slow"
+            dictionary={dict}
+            currentLocale={lang}
+          />
+        </Suspense>
+      </div>
     </>
   );
 }
