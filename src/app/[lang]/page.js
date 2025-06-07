@@ -1,126 +1,153 @@
 // src/app/[lang]/page.js
-import { Feature } from "@/app/components/Feature";
-import HeroSection from "@/app/components/HeroSection";
-import InfiniteScrollImages from "@/app/components/InfiniteScrollImages ";
-import ScrollToHash from "@/app/components/ScrollToHash";
-import { Testimonials } from "@/app/components/Testimonials";
-import { WhyChooseUS } from "@/app/components/WhyChoose-Us";
-import { testimonials } from "@/lib/utils";
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
 import { getDictionary } from "@/lib/i18n";
-import StatsCardsSection from "@/components/StatsCardsSection";
+import ScrollToHash from "@/app/components/ScrollToHash";
+import HeroSection from "@/app/components/HeroSection";
+import { Feature } from "@/app/components/Feature";
+import { testimonials } from "@/lib/utils";
+
+// Dynamically load non-critical, heavy components with correct export mapping
+const WhyChooseUS = dynamic(
+  () =>
+    import("@/app/components/WhyChoose-Us").then((mod) => mod.WhyChooseUS),
+  { suspense: true }
+);
+const InfiniteScrollImages = dynamic(
+  () =>
+    import("@/app/components/InfiniteScrollImages ").then(
+      (mod) => mod.default
+    ),
+  { suspense: true }
+);
+const StatsCardsSection = dynamic(
+  () =>
+    import("@/components/StatsCardsSection").then((mod) => mod.default),
+  { suspense: true }
+);
+const Testimonials = dynamic(
+  () =>
+    import("@/app/components/Testimonials").then((mod) => mod.Testimonials),
+  { suspense: true }
+);
+
+// Edge + ISR
+export const runtime = "edge";
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }) {
   const { lang } = await params;
-  const dictionary = await getDictionary(lang);
+  const dict = await getDictionary(lang);
 
-  const url = `https://tasheelom.com/${lang}`;
-  const imageUrl = `https://tasheelom.com/og-image.jpg`;
-  const keywords =
+  const baseUrl = new URL("https://tasheelom.com");
+  const pageUrl = `${baseUrl}/${lang}`;
+  const ogImage = `${baseUrl}/og-image.jpg`;
+
+  const keywords = (
     lang === "ar"
-      ? [
-          "سجل عمان",
-          "بطاقة اماراتية",
-          "استثمار في السعودية",
-          "تصميم مواقع",
-          "تسهيل عمان",
-          "خطوات اصدار بطاقة الهوية الاماراتية",
-          "فتح سجل تجاري في عمان",
-          "بطاقة الهوية الاماراتية",
-          "تسهيل تخليص معاملات",
-          "تسهيل",
-          "عمان",
-          "خدمات أعمال عمان",
-          "PRO عمان",
-        ]
-      : [
-          "Oman company registration",
-          "Emirati ID card",
-          "investment in Saudi Arabia", // Again, consider relevance.
-          "web design",
-          "Tas-Heel Oman",
-          "steps to issue Emirati ID card",
-          "open commercial register in Oman",
-          "Emirati ID card",
-          "Tas-Heel transaction processing",
-          "Tas-Heel",
-          "Oman",
-          "Oman business services",
-          "PRO Oman",
-        ];
+      ? ["سجل عمان","بطاقة اماراتية","فتح سجل تجاري عمان","خدمات PRO عمان","تسهيل عمان"]
+      : ["Oman company registration","Emirati ID card","open commercial register Oman","PRO Oman","Tasheelom"]
+  ).join(", ");
+
   return {
-    title: dictionary.home_page_meta_title,
-    description: dictionary.home_page_meta_description,
-    keywords: keywords,
+    metadataBase: baseUrl,
+    title: dict.home_page_meta_title,
+    description: dict.home_page_meta_description,
+    keywords,
+    alternates: {
+      canonical: pageUrl,
+      languages: {
+        en: `${baseUrl}/en`,
+        ar: `${baseUrl}/ar`,
+      },
+    },
+    authors: [{ name: "Tasheelom Team" }],
+    robots: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
     icons: {
       icon: "/favicon.ico",
       shortcut: "/favicon.ico",
       apple: "/apple-touch-icon.png",
     },
     openGraph: {
-      title: dictionary.social_share_title,
-      description: dictionary.social_share_description,
-      url,
-      siteName: "tasheelom",
-      images: [
-        {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: dictionary.social_share_title,
-        },
-      ],
+      title: dict.social_share_title,
+      description: dict.social_share_description,
+      url: pageUrl,
+      siteName: "Tasheelom",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: dict.social_share_title }],
       locale: lang === "ar" ? "ar_AR" : "en_US",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: dictionary.social_share_title,
-      description: dictionary.social_share_description,
-      images: [imageUrl],
+      title: dict.social_share_title,
+      description: dict.social_share_description,
+      images: [ogImage],
     },
+    other: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
+      { rel: "preload", as: "image", href: "/images/hero/hero-1.jpg" },
+      {
+        rel: "search",
+        type: "application/opensearchdescription+xml",
+        title: "Search Tasheelom",
+        url: "/opensearch.xml",
+      },
+    ],
+  };
+}
+
+export function generateViewport() {
+  return {
+    viewport: "width=device-width, initial-scale=1",
+    themeColor: "#5bbad5",
   };
 }
 
 export default async function Home({ params }) {
-  const resolvedParams = await params;
-
-  const dictionary = await getDictionary(resolvedParams.lang);
+  const { lang } = await params; // required await
+  const dict = await getDictionary(lang);
 
   return (
     <>
       <ScrollToHash />
-      <HeroSection
-        dictionary={dictionary}
-        currentLocale={resolvedParams.lang}
-      />
-      <div id="services">
-        {" "}
-        {/* Corrected ID to "services" */}
-        <Feature dictionary={dictionary} currentLocale={resolvedParams.lang} />
+
+      {/* Critical: SSR’d */}
+      <HeroSection dictionary={dict} currentLocale={lang} />
+      <section id="services">
+        <Feature dictionary={dict} currentLocale={lang} />
+      </section>
+
+      {/* Lazy-loaded */}
+      <Suspense fallback={<div>Loading WhyChooseUS…</div>}>
+        <WhyChooseUS dictionary={dict} currentLocale={lang} />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading images…</div>}>
+        <InfiniteScrollImages dictionary={dict} currentLocale={lang} />
+      </Suspense>
+
+      <div className="py-10 bg-gradient-to-t from-gray-800 via-gray-750 to-black text-center">
+        <Suspense fallback={<div>Loading stats…</div>}>
+          <StatsCardsSection dictionary={dict} currentLocale={lang} />
+        </Suspense>
       </div>
-      <WhyChooseUS
-        dictionary={dictionary}
-        currentLocale={resolvedParams.lang}
-      />
-      <InfiniteScrollImages
-        dictionary={dictionary}
-        currentLocale={resolvedParams.lang}
-      />
-      <div className="py-10 bg-gradient-to-t from-gray-800 via-gray-750 to-black mx-auto text-center">
-        <StatsCardsSection
-          dictionary={dictionary}
-          currentLocale={resolvedParams.lang}
-        />
-      </div>
-      <div className="bg-gradient-to-b from-gray-900 via-gray-950 to-black h-[40rem] flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+
+      <Suspense fallback={<div>Loading testimonials…</div>}>
         <Testimonials
           items={testimonials}
           direction="right"
           speed="slow"
-          dictionary={dictionary}
-          currentLocale={resolvedParams.lang}
+          dictionary={dict}
+          currentLocale={lang}
         />
-      </div>
+      </Suspense>
     </>
   );
 }
