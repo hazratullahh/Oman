@@ -28,11 +28,19 @@ export default function HeroBackgroundSlider({ image }) {
       animate="center"
       exit="exit"
     >
-      <Image
+      {/* <Image
         src={image.src}
         alt={image.alt}
         layout="fill"
         objectFit="cover"
+        quality={90}
+        priority
+      /> */}
+       <Image
+        src={image.src}
+        alt={image.alt}
+        fill                         // replaces the old `layout="fill"`
+        style={{ objectFit: "cover" }} // replaces the old `objectFit="cover"`
         quality={90}
         priority
       />
