@@ -19,12 +19,14 @@ function getDirection(lang) {
   return lang === "ar" ? "rtl" : "ltr"
 }
 
-// 1️⃣ Metadata (title, description, keywords, icons, OG, Twitter, alternates, canonical)
+// 1️⃣ Metadata (title, description, keywords, icons, OG, Twitter, canonical)
+// We set a trailing-slash canonical here so Next.js emits exactly one correct <link rel="canonical">
 export async function generateMetadata({ params }) {
   const { lang } = await params
   const dict = await getDictionary(lang)
   const baseUrl = "https://tasheelom.com"
-  const siteUrl = `${baseUrl}/${lang}`
+  // match your next.config.js trailingSlash: true
+  const siteUrl = `${baseUrl}/${lang}/`
 
   return {
     title: dict.home_page_meta_title,
@@ -34,12 +36,8 @@ export async function generateMetadata({ params }) {
     metadataBase: new URL(baseUrl),
     alternates: {
       canonical: siteUrl,
-      // one entry per locale, including the current one
-      languages: {
-        en: `${baseUrl}/en`,
-        ar: `${baseUrl}/ar`,
-        "x-default": baseUrl,
-      },
+      // we’ll handle hreflang links manually in <head>
+      languages: {}
     },
     icons: {
       icon: "/favicon.ico",
@@ -55,7 +53,12 @@ export async function generateMetadata({ params }) {
       description: dict.social_share_description,
       url: siteUrl,
       siteName: "Tasheelom",
-      images: [{ url: `${siteUrl}/og-image.jpg`, width: 1200, height: 630, alt: "Tasheelom Services" }],
+      images: [{
+        url: `${siteUrl}og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Tasheelom Services"
+      }],
       locale: lang === "ar" ? "ar_AR" : "en_US",
       type: "website",
     },
@@ -63,20 +66,11 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: dict.social_share_title,
       description: dict.social_share_description,
-      images: [`${siteUrl}/twitter-image.jpg`],
+      images: [`${siteUrl}twitter-image.jpg`],
     },
     other: [
-      {
-        rel: "search",
-        type: "application/opensearchdescription+xml",
-        title: "Search Tasheelom",
-        url: "/opensearch.xml",
-      },
-      {
-        rel: "sitemap",
-        type: "application/xml",
-        url: "/sitemap.xml",
-      },
+      { rel: "search", type: "application/opensearchdescription+xml", title: "Search Tasheelom", url: "/opensearch.xml" },
+      { rel: "sitemap", type: "application/xml", url: "/sitemap.xml" },
     ],
   }
 }
@@ -95,6 +89,15 @@ export default async function RootLayout({ children, params }) {
   const { lang } = await params
   const dict = await getDictionary(lang)
 
+  const baseUrl = "https://tasheelom.com"
+  const siteUrl = `${baseUrl}/${lang}/`
+  // hreflang map including self and x-default
+  const hrefLangs = {
+    en: `${baseUrl}/en/`,
+    ar: `${baseUrl}/ar/`,
+    "x-default": `${baseUrl}/`
+  }
+
   return (
     <html lang={lang} dir={getDirection(lang)}>
       <head>
@@ -110,13 +113,15 @@ export default async function RootLayout({ children, params }) {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="theme-color" content="#5bbad5" />
 
-        {/* 
-          ————
-          Note: we’ve REMOVED manual canonical & alternate hreflang links here.
-          Next.js will inject exactly one <link rel="canonical"> and one
-          <link rel="alternate" hreflang="…"> per locale based on generateMetadata().
-          ————
-        */}
+        {/* ——— Explicit hreflang links ——— */}
+        {Object.entries(hrefLangs).map(([hreflang, href]) => (
+          <link
+            key={hreflang}
+            rel="alternate"
+            hrefLang={hreflang}
+            href={href}
+          />
+        ))}
 
         {/* SEO basics */}
         <meta name="author" content="Manzoor Ahmad Wayar (Manzoorify)" />
