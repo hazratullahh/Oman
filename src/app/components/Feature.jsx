@@ -13,9 +13,9 @@ function Feature({ dictionary, currentLocale }) {
           isArabic ? "text-right" : "text-left" // Base text alignment for the whole div
         }`}
       >
-        <h1 className="text-gray-50 text-lg md:text-4xl font-bold mb-2">
+        <h3 className="text-gray-50 text-lg md:text-4xl font-bold mb-2">
           {dictionary.feature_title}
-        </h1>
+        </h3>
         <p
           className={`text-gray-50 text-md md:text-xl w-full md:w-[80%] mb-4 overflow-hidden ${
             isArabic ? "mr-0 ml-auto" : "ml-0 mr-auto" // Corrected: push to right for AR, left for EN

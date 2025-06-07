@@ -238,9 +238,9 @@ const FaqServer = async ({ params }) => {
         </Link>
       </div>
       <section className="text-center max-w-3xl mb-12 px-4">
-        <h1 className="text-5xl text-center font-extrabold mb-4 tracking-tight">
+        <h2 className="text-5xl text-center font-extrabold mb-4 tracking-tight">
           {dictionary.faq_heading}
-        </h1>
+        </h2>
 
         <p className="text-gray-400 text-lg max-w-xl mx-auto">
           {dictionary.faq_description}

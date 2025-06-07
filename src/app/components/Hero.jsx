@@ -57,7 +57,7 @@ export function Hero() {
 
           <div className="px-2">
             <div className="border-white relative mx-auto h-full max-w-7xl border p-6  [mask-image:radial-gradient(800rem_96rem_at_center,white,transparent)] md:px-12 md:py-16">
-              <h1 className="flex font-serif capitalize select-none flex-col px-3 py-2 text-center text-5xl font-semibold leading-none tracking-tight md:flex-col md:text-8xl lg:flex-row lg:text-8xl text-white">
+              <h2 className="flex font-serif capitalize select-none flex-col px-3 py-2 text-center text-5xl font-semibold leading-none tracking-tight md:flex-col md:text-8xl lg:flex-row lg:text-8xl text-white">
                 <DIcons.Plus
                   strokeWidth={4}
                   className="text-white absolute -left-5 -top-5 h-10 w-10"
@@ -75,7 +75,7 @@ export function Hero() {
                   className="text-white absolute -bottom-5 -right-5 h-10 w-10"
                 />
                 Setup your business investment with expert!
-              </h1>
+              </h2>
               <div className="flex items-center justify-center gap-1 md:mt-6">
                 <span className="relative flex h-3 w-3 items-center justify-center">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>

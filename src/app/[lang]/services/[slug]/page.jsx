@@ -117,9 +117,9 @@ const Page = async ({ params }) => {
   if (!service) {
     return (
       <section className={`py-20 text-center ${isArabic ? "rtl" : "ltr"}`}>
-        <h1 className="text-2xl font-bold text-white">
+        <h2 className="text-2xl font-bold text-white">
           {serviceNotFoundTitle}
-        </h1>
+        </h2>
         <p className="mt-4 text-gray-400">{serviceNotFoundMessage}</p>
       </section>
     );
@@ -169,9 +169,9 @@ const Page = async ({ params }) => {
             </Link>
           </div>
 
-          <h1 className="text-3xl font-extrabold text-white mb-6">
+          <h6 className="text-3xl font-extrabold text-white mb-6">
             {service.title}
-          </h1>
+          </h6>
           <div className="relative w-full h-64 mb-8">
             <Image
               src={service.image}

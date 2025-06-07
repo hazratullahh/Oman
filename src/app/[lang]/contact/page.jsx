@@ -153,14 +153,14 @@ export default async function ContactPage({ params }) {
                 className="w-full h-full object-cover transition filter group-hover:grayscale-0"
                 priority
               />
-              <h1
+              <h3
                 className={cn(
                   "absolute top-8 font-manrope text-4xl font-bold text-gray-50",
                   isArabic ? "right-8" : "left-8"
                 )}
               >
                 {dict.contact_us_heading}
-              </h1>
+              </h3>
               <div className="absolute bottom-0 w-full p-6 bg-gray-800/50 backdrop-blur-lg rounded-b-2xl">
                 <div className="flex items-center mb-4">
                   <FaPhoneAlt color="#fff" />
