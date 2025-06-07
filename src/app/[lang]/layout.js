@@ -23,19 +23,22 @@ function getDirection(lang) {
 export async function generateMetadata({ params }) {
   const { lang } = await params
   const dict = await getDictionary(lang)
-  const siteUrl = `https://tasheelom.com/${lang}`
+  const baseUrl = "https://tasheelom.com"
+  const siteUrl = `${baseUrl}/${lang}`
 
   return {
     title: dict.home_page_meta_title,
     description: dict.home_page_meta_description,
-    keywords: dict.home_page_meta_keywords,       // you can pull in a comma-separated string
+    keywords: dict.home_page_meta_keywords,
     robots: "index, follow",
-    metadataBase: new URL("https://tasheelom.com"),
+    metadataBase: new URL(baseUrl),
     alternates: {
       canonical: siteUrl,
+      // one entry per locale, including the current one
       languages: {
-        en: "https://tasheelom.com/en",
-        ar: "https://tasheelom.com/ar",
+        en: `${baseUrl}/en`,
+        ar: `${baseUrl}/ar`,
+        "x-default": baseUrl,
       },
     },
     icons: {
@@ -91,9 +94,6 @@ export function generateViewport() {
 export default async function RootLayout({ children, params }) {
   const { lang } = await params
   const dict = await getDictionary(lang)
-  const siteUrl = `https://tasheelom.com/${lang}`
-
-  // JSON-LD snippets omitted for brevity (keep yours as-is)…
 
   return (
     <html lang={lang} dir={getDirection(lang)}>
@@ -110,15 +110,16 @@ export default async function RootLayout({ children, params }) {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="theme-color" content="#5bbad5" />
 
-        {/* SEO basics */}
-        <link rel="canonical" href={siteUrl} />
-        <meta name="author" content="Tasheelom Team" />
-        {/* Meta description comes from generateMetadata */}
+        {/* 
+          ————
+          Note: we’ve REMOVED manual canonical & alternate hreflang links here.
+          Next.js will inject exactly one <link rel="canonical"> and one
+          <link rel="alternate" hreflang="…"> per locale based on generateMetadata().
+          ————
+        */}
 
-        {/* International */}
-        <link rel="alternate" href="https://tasheelom.com/en" hrefLang="en" />
-        <link rel="alternate" href="https://tasheelom.com/ar" hrefLang="ar" />
-        <link rel="alternate" href="https://tasheelom.com" hrefLang="x-default" />
+        {/* SEO basics */}
+        <meta name="author" content="Manzoor Ahmad Wayar (Manzoorify)" />
 
         {/* Inline critical CSS */}
         <style dangerouslySetInnerHTML={{ __html: `/* YOUR CRITICAL CSS HERE */` }} />
