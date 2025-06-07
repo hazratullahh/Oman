@@ -1,181 +1,204 @@
-import { FaPhoneAlt } from "react-icons/fa";
-import { IoIosMail } from "react-icons/io";
+// src/app/[lang]/page.js
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
+import Script from "next/script";
+import { getDictionary } from "@/lib/i18n";
+import ScrollToHash from "@/app/components/ScrollToHash";
 import Form from "@/app/components/contactForm";
 import Image from "next/image";
 import LocationMap from "@/app/components/MapLocation";
-import { getDictionary } from "@/lib/i18n";
+import { FaPhoneAlt } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
 import { cn } from "@/lib/utils";
 
+export const runtime    = "edge";    // Edge function
+export const revalidate = 3600;      // ISR: revalidate every hour
+
 export async function generateMetadata({ params }) {
-  // Resolve parameters and fetch localized strings
-  const { lang } = await params;
-  const dictionary = await getDictionary(lang);
-
-  // Base URLs for this Contact Us page
-  const baseUrl = `https://tasheelom.com/${lang}/contact`;
-  const ogImageUrl = `https://tasheelom.com/og-image.jpg`;
-  const twitterImageUrl = `https://tasheelom.com/twitter-image.jpg`;
-
-  // SEO keywords tailored for the Contact Us page (Arabic vs. English)
-  const keywords =
-    lang === "ar"
-      ? [
-          "اتصل بنا",
-          "تسهيل عمان",
-          "خدمة العملاء",
-          "دعم العملاء",
-          "عنوان تسهيل عمان",
-          "هاتف تسهيل عمان",
-          "بريد إلكتروني",
-          "نموذج الاتصال",
-          "خدمات عمان",
-        ]
-      : [
-          "Contact Us",
-          "Tasheel Oman",
-          "Customer Support",
-          "Help Center",
-          "Address",
-          "Phone Number",
-          "Email",
-          "Contact Form",
-          "Oman Services",
-        ];
+  const { lang }       = await params;
+  const dict           = await getDictionary(lang);
+  const baseUrl        = new URL("https://tasheelom.com");
+  const pageUrl        = `${baseUrl}/${lang}/contact`;
+  const ogImageUrl     = `${baseUrl}/og-image.jpg`;
+  const twitterImgUrl  = `${baseUrl}/twitter-image.jpg`;
+  const keywordsArr    = lang === "ar"
+    ? [
+        "اتصل بنا","تسهيل عمان","خدمة العملاء","دعم العملاء",
+        "عنوان تسهيل عمان","هاتف تسهيل عمان","بريد إلكتروني",
+        "نموذج الاتصال","خدمات عمان"
+      ]
+    : [
+        "Contact Us","Tasheel Oman","Customer Support","Help Center",
+        "Address","Phone Number","Email","Contact Form","Oman Services"
+      ];
 
   return {
-    // <title> and <meta name="description">
-    title: dictionary.contact_meta_title,
-    description: dictionary.contact_meta_description,
-
-    // <meta name="keywords">
-    keywords,
-
-    // Favicon and related icons
+    metadataBase: baseUrl,
+    title:        dict.contact_meta_title,
+    description:  dict.contact_meta_description,
+    keywords:     keywordsArr.join(", "),
+    alternates: {
+      canonical: pageUrl,
+      languages: {
+        en: `${baseUrl}/en/contact`,
+        ar: `${baseUrl}/ar/contact`,
+      },
+    },
+    authors: [{ name: "Tasheelom Team" }],
+    robots: { index: true, follow: true, "max-snippet": -1 },
     icons: {
-      icon: "/favicon.ico",
+      icon:     "/favicon.ico",
       shortcut: "/favicon.ico",
-      apple: "/apple-touch-icon.png",
+      apple:    "/apple-touch-icon.png",
     },
-
-    // Open Graph metadata for social sharing
     openGraph: {
-      title: dictionary.contact_meta_title_og,
-      description: dictionary.contact_meta_description_og,
-      url: baseUrl,
-      siteName: "tasheelom",
+      title:       dict.contact_meta_title_og,
+      description: dict.contact_meta_description_og,
+      url:         pageUrl,
+      siteName:    "Tasheelom",
       images: [
-        {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: dictionary.contact_meta_image_alt,
-        },
+        { url: ogImageUrl, width: 1200, height: 630, alt: dict.contact_meta_image_alt }
       ],
-      locale: lang === "ar" ? "ar_AE" : "en_US",
-      type: "website",
+      locale: lang === "ar" ? "ar_AR" : "en_US",
+      type:   "website",
     },
-
-    // Twitter card metadata
     twitter: {
-      card: "summary_large_image",
-      title: dictionary.contact_meta_title_twitter,
-      description: dictionary.contact_meta_description_twitter,
-      images: [twitterImageUrl],
+      card:        "summary_large_image",
+      title:       dict.contact_meta_title_twitter,
+      description: dict.contact_meta_description_twitter,
+      images:      [twitterImgUrl],
     },
+    other: [
+      // Font loading hints
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
+    ],
   };
 }
 
+export function generateViewport() {
+  return {
+    viewport:   "width=device-width, initial-scale=1",
+    themeColor: "#5bbad5",
+  };
+}
 
-const Page = async ({ params }) => {
-  const resolvedParams = await params;
-  const dictionary = await getDictionary(resolvedParams.lang);
-  const isArabic = resolvedParams.lang === "ar";
+export default async function ContactPage({ params }) {
+  const { lang }         = await params;
+  const dict             = await getDictionary(lang);
+  const isArabic         = lang === "ar";
+
+  // LocalBusiness JSON-LD
+  const localBusinessLd = {
+    "@context": "https://schema.org",
+    "@type":    "LocalBusiness",
+    name:       "Tasheelom",
+    image:      "https://tasheelom.com/favicon.ico",
+    "@id":      "https://tasheelom.com/#company",
+    url:        "https://tasheelom.com/",
+    telephone:  "+968-99726225",
+    address: {
+      "@type":           "PostalAddress",
+      streetAddress:    "Your Street Address Here",
+      addressLocality:  "Muscat",
+      addressRegion:    "Muscat",
+      postalCode:       "12345",
+      addressCountry:   "OM"
+    },
+    geo: {
+      "@type":        "GeoCoordinates",
+      latitude:       23.5859,
+      longitude:      58.4059
+    },
+    openingHoursSpecification: [
+      {
+        "@type":      "OpeningHoursSpecification",
+        dayOfWeek:    ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        opens:        "08:00",
+        closes:       "17:00"
+      }
+    ],
+    sameAs: [
+      "https://www.facebook.com/tasheelom",
+      "https://twitter.com/tasheelom"
+    ]
+  };
 
   return (
-    <section
-      className={cn(
-        "min-h-screen bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden py-12 md:pt-28",
-        isArabic ? "text-right" : "text-left"
-      )}
-    >
-      <div className="m-auto max-w-7xl px-4">
-        <div className="grid lg:grid-cols-2 gap-4 sm:gap-8 grid-cols-1">
-          <div className="lg:mb-0 mb-10">
-            <div className="group w-full h-full">
-              <div className="relative h-full">
-                <Image
-                  className="transition-all duration-300 cursor-pointer filter hover:grayscale-0 w-full h-full lg:rounded-l-2xl rounded-2xl bg-blend-multiply bg-gray-100"
-                  src="/images/contact2.jpg"
-                  width={1080}
-                  height={1080}
-                  alt="image description" // Consider translating this alt text if needed
-                />
-                <h1
-                  className={cn(
-                    "font-manrope text-gray-50 text-4xl font-bold leading-10 absolute top-11",
-                    isArabic ? "right-11" : "left-11"
-                  )}
-                >
-                  {dictionary.contact_us_heading}
-                </h1>
+    <>
+      {/* Inject LocalBusiness structured data into the head */}
+      <Script
+        id="local-business-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessLd) }}
+      />
 
-                <div className="absolute bottom-0 w-full lg:p-11 p-5 backdrop-filter">
-                  <div
-                    dir={isArabic ? "ltr" : "ltr"}
-                    className="bg-gray-600/15 backdrop-blur-2xl rounded-lg p-6 block"
+      <ScrollToHash />
+
+      <section
+        className={cn(
+          "min-h-screen bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden py-12 md:pt-28",
+          isArabic ? "text-right" : "text-left"
+        )}
+      >
+        <div className="m-auto max-w-7xl px-4">
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Image & Quick Contact */}
+            <div className="relative group rounded-2xl overflow-hidden">
+              <Image
+                src="/images/contact2.jpg"
+                width={1080}
+                height={1080}
+                alt={dict.contact_image_alt || "Contact Us"}
+                className="w-full h-full object-cover transition filter group-hover:grayscale-0"
+                priority
+              />
+              <h1
+                className={cn(
+                  "absolute top-8 font-manrope text-4xl font-bold text-gray-50",
+                  isArabic ? "right-8" : "left-8"
+                )}
+              >
+                {dict.contact_us_heading}
+              </h1>
+              <div className="absolute bottom-0 w-full p-6 bg-gray-800/50 backdrop-blur-lg rounded-b-2xl">
+                <div className="flex items-center mb-4">
+                  <FaPhoneAlt color="#fff" />
+                  <a
+                    href="tel:+96899726225"
+                    className="ml-4 text-white text-lg"
                   >
-                    <div
-                      className={cn(
-                        "flex items-center mb-6",
-                        isArabic ? "flex-row-reverse" : "flex-row"
-                      )}
-                    >
-                      <FaPhoneAlt color="white" />
-                      <a
-                        href="https://wa.me/96899726225"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Whatsapp"
-                        className={cn(
-                          "text-white text-base lg:text-lg font-normal leading-6",
-                          isArabic ? "mr-5" : "ml-5"
-                        )}
-                      >
-                        +96 899 726 225
-                      </a>
-                    </div>
-                    <div
-                      className={cn(
-                        "flex items-center",
-                        isArabic ? "flex-row-reverse" : "flex-row"
-                      )}
-                    >
-                      <IoIosMail size={20} color="white" />
-                      <a
-                        href="mailto:support@tasheelom.com"
-                        className={cn(
-                          "text-white text-base lg:text-lg font-normal leading-6",
-                          isArabic ? "mr-5" : "ml-5"
-                        )}
-                      >
-                        support@tasheelom.com
-                      </a>
-                    </div>
-                  </div>
+                    +968 9972 6225
+                  </a>
                 </div>
+                <div className="flex items-center">
+                  <IoIosMail color="#fff" size={20} />
+                  <a
+                    href="mailto:support@tasheelom.com"
+                    className="ml-4 text-white text-lg"
+                  >
+                    support@tasheelom.com
+                  </a>
+                </div>
+                {/* Plain-text address for crawlers */}
+                <address className="mt-4 not-italic text-gray-200">
+                  123 Business St., Muscat, Oman
+                </address>
               </div>
             </div>
+
+            {/* Contact Form */}
+            <Suspense fallback={<div className="text-center text-gray-400">Loading form…</div>}>
+              <Form dictionary={dict} currentLocale={lang} />
+            </Suspense>
           </div>
-          <Form dictionary={dictionary} currentLocale={resolvedParams.lang} />
         </div>
-      </div>
 
-      <LocationMap
-        dictionary={dictionary}
-        currentLocale={resolvedParams.lang}
-      />
-    </section>
+        {/* Interactive Map */}
+        <div className="mt-16">
+          <LocationMap dictionary={dict} currentLocale={lang} />
+        </div>
+      </section>
+    </>
   );
-};
-
-export default Page;
+}
