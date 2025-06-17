@@ -20,12 +20,10 @@ function getDirection(lang) {
 }
 
 // 1️⃣ Metadata (title, description, keywords, icons, OG, Twitter, canonical)
-// We set a trailing-slash canonical here so Next.js emits exactly one correct <link rel="canonical">
 export async function generateMetadata({ params }) {
   const { lang } = await params
   const dict = await getDictionary(lang)
   const baseUrl = "https://tasheelom.com"
-  // match your next.config.js trailingSlash: true
   const siteUrl = `${baseUrl}/${lang}/`
 
   return {
@@ -36,7 +34,6 @@ export async function generateMetadata({ params }) {
     metadataBase: new URL(baseUrl),
     alternates: {
       canonical: siteUrl,
-      // we’ll handle hreflang links manually in <head>
       languages: {}
     },
     icons: {
@@ -90,8 +87,6 @@ export default async function RootLayout({ children, params }) {
   const dict = await getDictionary(lang)
 
   const baseUrl = "https://tasheelom.com"
-  const siteUrl = `${baseUrl}/${lang}/`
-  // hreflang map including self and x-default
   const hrefLangs = {
     en: `${baseUrl}/en/`,
     ar: `${baseUrl}/ar/`,
@@ -115,12 +110,7 @@ export default async function RootLayout({ children, params }) {
 
         {/* ——— Explicit hreflang links ——— */}
         {Object.entries(hrefLangs).map(([hreflang, href]) => (
-          <link
-            key={hreflang}
-            rel="alternate"
-            hrefLang={hreflang}
-            href={href}
-          />
+          <link key={hreflang} rel="alternate" hrefLang={hreflang} href={href} />
         ))}
 
         {/* SEO basics */}
@@ -138,6 +128,20 @@ export default async function RootLayout({ children, params }) {
           strategy="afterInteractive"
           src="https://example.com/path/to/ccagen.js"
         />
+
+        {/* ── GOOGLE ADS GLOBAL SITE TAG ── */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17150909417"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17150909417');
+          `}
+        </Script>
       </head>
 
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
